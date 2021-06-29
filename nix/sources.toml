@@ -1,0 +1,10 @@
+# nvfetcher.toml
+[vast-release]
+src.github = "tenzir/vast"
+src.include_regex = "release/*"
+fetch.github = "tenzir/vast"
+
+[vast-latest]
+src.git = "https://github.com/tenzir/vast"
+fetch.github = "tenzir/vast"
+

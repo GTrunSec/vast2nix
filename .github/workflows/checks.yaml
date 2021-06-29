@@ -1,0 +1,50 @@
+name: "CI"
+on:
+  pull_request:
+  push:
+jobs:
+  nix-build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.3.4
+      with:
+        fetch-depth: 0
+    - uses: cachix/install-nix-action@v13
+      with:
+        install_url:
+          https://github.com/numtide/nix-flakes-installer/releases/download/nix-2.4pre20210604_8e6ee1b/install
+        extra_nix_config: |
+          experimental-features = nix-command flakes
+          system-features = nixos-test benchmark big-parallel kvm recursive-nix
+          substituters = https://zeek.cachix.org https://cache.nixos.org
+          trusted-public-keys = zeek.cachix.org-1:w590YE/k5sB26LSWvDCI3dccCXipBwyPenhBH2WNDWI= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+
+    - uses: cachix/cachix-action@v10
+      with:
+        name: zeek
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+
+    - name: Run Flake Check
+      run: nix -Lv flake check
+
+    - name: Run Flake Show
+      run: nix -Lv flake show
+
+    - name: Build Threatbus
+      run: nix -Lv build .#threatbus
+    - name: Check threatbus Exec
+      run: nix run ./#threatbus -- --help
+
+    - name: Build Latest Threatbus
+      run: nix -Lv build .#threatbus-latest
+
+    - name: Build threatbus-pyvast Release
+      run: nix -Lv build .#threatbus-pyvast
+    - name: Check threatbus-pyvast Exec
+      run: nix run ./#threatbus-pyvast -- --help
+
+    - name: Build Latest threatbus-pyvast
+      run: nix -Lv build .#threatbus-pyvast-latest
+
+    - name: Build threatbus-zeek Script
+      run: nix -Lv build .#threatbus-zeek
