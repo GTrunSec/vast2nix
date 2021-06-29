@@ -4,6 +4,7 @@ on:
   push:
 jobs:
   nix-build:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.3.4
@@ -30,21 +31,18 @@ jobs:
     - name: Run Flake Show
       run: nix -Lv flake show
 
-    - name: Build Threatbus
+    - name: Build vast
       run: nix -Lv build .#threatbus
     - name: Check threatbus Exec
       run: nix run ./#threatbus -- --help
 
-    - name: Build Latest Threatbus
-      run: nix -Lv build .#threatbus-latest
+    - name: Build Latest vast
+      run: nix -Lv build .#vast-latest
 
-    - name: Build threatbus-pyvast Release
-      run: nix -Lv build .#threatbus-pyvast
-    - name: Check threatbus-pyvast Exec
-      run: nix run ./#threatbus-pyvast -- --help
+    - name: Build vast-pyvast Release
+      run: nix -Lv build .#vast-pyvast
+    - name: Check pyvast Exec
+      run: nix run ./#pyvast -- --help
 
-    - name: Build Latest threatbus-pyvast
-      run: nix -Lv build .#threatbus-pyvast-latest
-
-    - name: Build threatbus-zeek Script
-      run: nix -Lv build .#threatbus-zeek
+    - name: Build Latest pyvast
+      run: nix -Lv build .#vast-pyvast-latest
