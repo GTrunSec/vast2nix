@@ -39,8 +39,10 @@
         rec {
           packages = flake-utils.lib.flattenTree
             {
-              vast = pkgs.vast-release;
+              vast = pkgs.vast;
+              vast-latest = pkgs.vast-latest;
               pyvast = pkgs.pyvast;
+              pyvast-latest = pkgs.pyvast-latest;
               # zeek-vast = pkgs.zeek-vast;
             };
 
@@ -70,36 +72,45 @@
         in
         {
           vast-sources = prev.callPackage ./nix/_sources/generated.nix { };
-
-          vast-src = final.vast-sources.vast-release.src;
-          zeek-vast = final.vast.overrideAttrs (old: rec {
-            preConfigure = (old.preConfigure or "") + ''
-              ln -s ${zeek-vast-src}/zeek-to-vast tools/.
-            '';
-            cmakeFlags = (old.cmakeFlags or [ ]) ++ [
-              "-DBROKER_ROOT_DIR=${final.broker}"
-            ];
-          });
+          # zeek-vast = final.vast.overrideAttrs (old: rec {
+          #   preConfigure = (old.preConfigure or "") + ''
+          #     ln -s ${zeek-vast-src}/zeek-to-vast tools/.
+          #   '';
+          #   cmakeFlags = (old.cmakeFlags or [ ]) ++ [
+          #     "-DBROKER_ROOT_DIR=${final.broker}"
+          #   ];
+          # });
 
           pyvast = with final;
             (python3Packages.buildPythonPackage {
               pname = "pyvast";
               version = versionOverride;
-              src = vast-src + "/pyvast";
+              src = final.vast-sources.vast-release.version + "/pyvast";
               doCheck = false;
               propagatedBuildInputs = with python3Packages; [
                 aiounittest
               ];
             });
 
-          vast-release = with final; (vast.override ({ inherit versionOverride stdenv; }));
-
-          cmake-format = prev.cmake-format.overrideAttrs
-            (old: {
-              buildInputs = (old.buildInputs or [ ]) ++ [
-                prev.python3Packages.six
+          pyvast-latest = with final;
+            (python3Packages.buildPythonPackage {
+              pname = "pyvast";
+              version = versionOverride;
+              src = final.vast-sources.vast-latest.version + "/pyvast";
+              doCheck = false;
+              propagatedBuildInputs = with python3Packages; [
+                aiounittest
               ];
             });
+
+          vast-release = with final; (vast.override
+            ({
+              versionOverride = final.vast-sources.vast-release.version;
+            }));
+
+          vast-latest = with final; (vast.override ({
+            versionOverride = final.vast-sources.vast-latest.version;
+          }));
         };
 
       nixosModules.vast = { lib, pkgs, config, ... }:
