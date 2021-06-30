@@ -32,12 +32,12 @@ jobs:
 
     - name: Build Release vast
       run: nix -Lv build .#vast-release
-    - name: Check vast Exec
+    - name: Check Release vast Exec
       run: nix run ./#vast-release -- --help
 
     - name: Build Latest vast
       run: nix -Lv build .#vast-latest
-    - name: Check vast Latest Exec
+    - name: Check Latest vast Exec
       run: nix run ./#vast-latest -- --help
 
     - name: Build Release pyvast

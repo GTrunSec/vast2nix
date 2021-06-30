@@ -108,6 +108,9 @@
             })).overrideAttrs (old: {
             #vast> 2021-06-30 04:44:38 WARNING  baseline comparison failed
             doInstallCheck = false;
+            buildInputs = old.buildInputs ++ [
+              ninja
+            ];
           });
 
           vast-latest = with final; (vast-release.overrideAttrs (old: {
