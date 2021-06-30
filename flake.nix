@@ -4,17 +4,13 @@
 
   inputs = {
     zeek-vast-src = { url = "github:tenzir/zeek-vast"; flake = false; };
-    nixpkgs.url = "nixpkgs/release-21.05";
-    caf = { url = "github:actor-framework/actor-framework/347917fee3420d5fa02220af861869d1728b7fc0"; flake = false; };
+    nixpkgs.url = "nixpkgs/449b698a0b554996ac099b4e3534514528019269";
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs-hardenedlinux = { url = "github:hardenedlinux/nixpkgs-hardenedlinux"; };
     devshell-flake.url = "github:numtide/devshell";
-    nvfetcher = {
-      url = "github:berberman/nvfetcher";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nvfetcher = { url = "github:berberman/nvfetcher"; };
     vast-overlay = {
-      url = "github:tenzir/vast";
+      url = "github:gtrunsec/vast/nix-overlay";
       flake = false;
     };
   };
@@ -42,20 +38,25 @@
         rec {
           packages = flake-utils.lib.flattenTree
             {
-              vast = pkgs.vast;
+              vast-release = pkgs.vast-release;
               vast-latest = pkgs.vast-latest;
               pyvast = pkgs.pyvast;
               pyvast-latest = pkgs.pyvast-latest;
               # zeek-vast = pkgs.zeek-vast;
             };
 
-          defaultPackage = pkgs.vast;
+          apps = {
+            vast-release = { type = "app"; program = "${pkgs.vast-release}/bin/vast"; };
+            vast-latest = { type = "app"; program = "${pkgs.vast-latest}/bin/vast"; };
+          };
+
+          defaultPackage = pkgs.vast-release;
 
           hydraJobs = {
             inherit packages;
           };
           devShell = with pkgs; devshell.mkShell {
-            #imports = [ (devshell.importTOML ./nix/commands.toml) ];
+            imports = [ (devshell.importTOML ./nix/devshell.toml) ];
             packages = [
               nixpkgs-fmt
             ];
@@ -63,7 +64,7 @@
               {
                 name = pkgs.nvfetcher-bin.pname;
                 help = pkgs.nvfetcher-bin.meta.description;
-                command = "cd $DEVSHELL_ROOT/nix; ${pkgs.nvfetcher-bin}/bin/nvfetcher -c ./sources.toml --no-output $@; nixpkgs-fmt _sources";
+                command = "cd $DEVSHELL_ROOT/nix; ${nvfetcher.defaultPackage.x86_64-linux}/bin/nvfetcher -c ./sources.toml --no-output $@; nixpkgs-fmt _sources";
               }
             ];
           };
@@ -100,12 +101,16 @@
             version = (builtins.substring 0 7 vast-sources.vast-latest.version) + "-latest-dirty";
           }));
 
-          vast = with final; (vast.override
+          vast-release = with final; (vast.override
             ({
-              version = vast-sources.vast-release.version;
-            }));
+              vast-source = vast-sources.vast-release.src;
+              versionOverride = vast-sources.vast-release.version;
+            })).overrideAttrs (old: {
+            #vast> 2021-06-30 04:44:38 WARNING  baseline comparison failed
+            doInstallCheck = false;
+          });
 
-          vast-latest = with final; (vast.overrideAttrs (old: {
+          vast-latest = with final; (vast-release.overrideAttrs (old: {
             src = vast-sources.vast-latest.src;
             version = (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-latest-dirty";
           }));
@@ -143,7 +148,7 @@
 
                 package = mkOption {
                   type = types.package;
-                  default = self.outputs.packages."${pkgs.system}".vast;
+                  default = self.outputs.packages."${pkgs.system}".vast-release;
                   description = "The vast package.";
                 };
 

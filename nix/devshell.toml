@@ -1,0 +1,5 @@
+[[commands]]
+name = "vast-example"
+category = "conf"
+command = "vast -c config.yaml"
+help = "launch vast with example.yaml"

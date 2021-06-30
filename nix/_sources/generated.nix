@@ -7,10 +7,10 @@
     src = fetchgit {
       url = "https://github.com/tenzir/vast";
       rev = "afcde8288ddf2de59f1a2faa046dcccc98b37804";
-      fetchSubmodules = false;
+      fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "12wrm2gx4yp77nxyfmvzbk0jl8shcx5lkfjb6f1qf1mji39xjbx5";
+      sha256 = "0gb10ppflys2hszqzqvqmlji9r6001b5q2z3msd1s1z9k7a6wba2";
     };
 
   };
@@ -20,10 +20,10 @@
     src = fetchgit {
       url = "https://github.com/tenzir/vast";
       rev = "2021.06.24";
-      fetchSubmodules = false;
+      fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "16wygx4ai4cj1zzq0gcvlycx56m4yqsxsr1qy64ypyikyy9mg8c0";
+      sha256 = "13a8mclvka995nyagdm6gncs6hyiqbg1iyyc74hgxal31l9908av";
     };
 
   };

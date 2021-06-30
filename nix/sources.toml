@@ -3,8 +3,10 @@
 src.github = "tenzir/vast"
 src.include_regex = "release/*"
 fetch.github = "tenzir/vast"
+git.fetchSubmodules = true
+
 
 [vast-latest]
 src.git = "https://github.com/tenzir/vast"
 fetch.github = "tenzir/vast"
-
+git.fetchSubmodules = true
