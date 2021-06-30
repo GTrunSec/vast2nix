@@ -1,4 +1,7 @@
 {
+  description = "🔮 Visibility Across Space and Time – The network telemetry engine for data-driven security investigations.";
+  #https://github.com/tenzir/vast
+
   inputs = {
     zeek-vast-src = { url = "github:tenzir/zeek-vast"; flake = false; };
     nixpkgs.url = "nixpkgs/release-21.05";
@@ -46,7 +49,7 @@
               # zeek-vast = pkgs.zeek-vast;
             };
 
-          defaultPackage = pkgs.vast-release;
+          defaultPackage = pkgs.vast;
 
           hydraJobs = {
             inherit packages;
@@ -84,32 +87,27 @@
           pyvast = with final;
             (python3Packages.buildPythonPackage {
               pname = "pyvast";
-              version = versionOverride;
-              src = final.vast-sources.vast-release.version + "/pyvast";
+              version = vast-sources.vast-release.version + "-release";
+              src = vast-sources.vast-release.src + "/pyvast";
               doCheck = false;
               propagatedBuildInputs = with python3Packages; [
                 aiounittest
               ];
             });
 
-          pyvast-latest = with final;
-            (python3Packages.buildPythonPackage {
-              pname = "pyvast";
-              version = versionOverride;
-              src = final.vast-sources.vast-latest.version + "/pyvast";
-              doCheck = false;
-              propagatedBuildInputs = with python3Packages; [
-                aiounittest
-              ];
-            });
+          pyvast-latest = with final; (pyvast.overridePythonAttrs (old: {
+            src = vast-sources.vast-latest.src + "/pyvast";
+            version = (builtins.substring 0 7 vast-sources.vast-latest.version) + "-latest-dirty";
+          }));
 
-          vast-release = with final; (vast.override
+          vast = with final; (vast.override
             ({
-              versionOverride = final.vast-sources.vast-release.version;
+              version = vast-sources.vast-release.version;
             }));
 
-          vast-latest = with final; (vast.override ({
-            versionOverride = final.vast-sources.vast-latest.version;
+          vast-latest = with final; (vast.overrideAttrs (old: {
+            src = vast-sources.vast-latest.src;
+            version = (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-latest-dirty";
           }));
         };
 
