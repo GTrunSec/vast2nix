@@ -64,7 +64,7 @@
               {
                 name = pkgs.nvfetcher-bin.pname;
                 help = pkgs.nvfetcher-bin.meta.description;
-                command = "cd $DEVSHELL_ROOT/nix; ${nvfetcher.defaultPackage.x86_64-linux}/bin/nvfetcher -c ./sources.toml --no-output $@; nixpkgs-fmt _sources";
+                command = "cd $DEVSHELL_ROOT/nix; ${nvfetcher.defaultPackage."${pkgs.system}"}/bin/nvfetcher -c ./sources.toml --no-output $@; nixpkgs-fmt _sources";
               }
             ];
           };
