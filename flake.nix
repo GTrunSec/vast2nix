@@ -4,13 +4,13 @@
 
   inputs = {
     zeek-vast-src = { url = "github:tenzir/zeek-vast"; flake = false; };
-    nixpkgs.url = "nixpkgs/449b698a0b554996ac099b4e3534514528019269";
+    nixpkgs.url = "nixpkgs/release-21.05";
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs-hardenedlinux = { url = "github:hardenedlinux/nixpkgs-hardenedlinux"; };
     devshell-flake.url = "github:numtide/devshell";
     nvfetcher = { url = "github:berberman/nvfetcher"; };
     vast-overlay = {
-      url = "github:gtrunsec/vast/nix-overlay";
+      url = "github:tenzir/vast";
       flake = false;
     };
   };
@@ -29,7 +29,6 @@
               nvfetcher.overlay
               devshell-flake.overlay
               (import (vast-overlay + "/nix/overlay.nix"))
-              #(import (vast-overlay + "/nix/overlay-dev.nix"))
             ];
             config = { allowBroken = true; };
           };
@@ -71,9 +70,6 @@
         }
       ) // {
       overlay = final: prev:
-        let
-          stdenv = if prev.stdenv.isDarwin then final.llvmPackages_latest.stdenv else final.stdenv;
-        in
         {
           vast-sources = prev.callPackage ./nix/_sources/generated.nix { };
           # zeek-vast = final.vast.overrideAttrs (old: rec {
@@ -106,8 +102,6 @@
               vast-source = vast-sources.vast-release.src;
               versionOverride = vast-sources.vast-release.version;
             })).overrideAttrs (old: {
-            #vast> 2021-06-30 04:44:38 WARNING  baseline comparison failed
-            doInstallCheck = false;
             buildInputs = old.buildInputs ++ [
               ninja
             ];

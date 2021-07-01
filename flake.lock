@@ -328,16 +328,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1612206459,
-        "narHash": "sha256-xzOl+2TAskbQaIKO9AUsXS+qiDmHFj54uzUW0nRnf2o=",
+        "lastModified": 1625154014,
+        "narHash": "sha256-Bl2Q3bb0eCqEPJ14s4p55Vp4aXess23UUhY9awK99/8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "449b698a0b554996ac099b4e3534514528019269",
+        "rev": "acc107f4be14608171c0a0d7e8d50ec2320d0318",
         "type": "github"
       },
       "original": {
         "id": "nixpkgs",
-        "rev": "449b698a0b554996ac099b4e3534514528019269",
+        "ref": "release-21.05",
         "type": "indirect"
       }
     },
@@ -575,16 +575,15 @@
     "vast-overlay": {
       "flake": false,
       "locked": {
-        "lastModified": 1625032308,
-        "narHash": "sha256-EtsUc3hsi8ZgoHM2f1Ox8JElLDnVIYilH/HZwYb3sIo=",
-        "owner": "gtrunsec",
+        "lastModified": 1625161366,
+        "narHash": "sha256-OceItEMkfyBF10MMIH/dOVF+3Rd+9/8TdNEQXnN2dtg=",
+        "owner": "tenzir",
         "repo": "vast",
-        "rev": "ca5df5421e3ea835b32e88bfdd524f0b9a5f3ba4",
+        "rev": "f479a22fd9bb24443ab88f711eb35c94261067f1",
         "type": "github"
       },
       "original": {
-        "owner": "gtrunsec",
-        "ref": "nix-overlay",
+        "owner": "tenzir",
         "repo": "vast",
         "type": "github"
       }
