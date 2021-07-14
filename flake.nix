@@ -96,21 +96,27 @@
             })).overrideAttrs (old: {
             #vast> 2021-06-30 04:44:38 WARNING  baseline comparison failed
             doInstallCheck = false;
+
             #TODO: will be removed in next release version
             patches = [ ./nix/gcc_11.patch ];
+
+            cmakeFlags = old.cmakeFlags ++ (lib.optional stdenv.isLinux [
+              "-DVAST_ENABLE_JOURNALD_LOGGING=true"
+            ]);
+
             buildInputs = old.buildInputs ++ [
               ninja
+            ] ++ lib.optionals stdenv.isLinux [
+              systemd
             ];
           });
 
-          vast-native = with final; (vast.override (old: {
+          vast-native = with final; (vast-release.override (old: {
             vast-source = vast-sources.vast-latest.src;
             versionOverride = (final.vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
-            withPlugins = [ "pcap" "broker" ];
+            #withPlugins = [ "pcap" "broker" ];
           })).overrideAttrs (old: {
-            buildInputs = old.buildInputs ++ [
-              ninja
-            ];
+            patches = [ ];
           });
 
           vast-latest = with final; (pkgsStatic.vast.override (old: {
@@ -118,12 +124,13 @@
             versionOverride = (final.vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
             withPlugins = [ "pcap" "broker" ];
           })).overrideAttrs (old: {
-            cmakeFlags = old.cmakeFlags ++ [
-              "-DVAST_ENABLE_JOURNALD_LOGGING=true"
-            ];
-            buildInputs = old.buildInputs ++ [
-              systemd
-            ];
+            # static issue with systemd
+            # cmakeFlags = old.cmakeFlags ++ (lib.optional stdenv.isLinux [
+            #   "-DVAST_ENABLE_JOURNALD_LOGGING=true"
+            # ]);
+            # buildInputs = old.buildInputs ++ (lib.optional stdenv.isLinux [
+            #   systemd
+            # ]);
           });
         };
 
