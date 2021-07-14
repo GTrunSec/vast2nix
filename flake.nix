@@ -46,6 +46,7 @@
           apps = {
             vast-release = { type = "app"; program = "${pkgs.vast-release}/bin/vast"; };
             vast-latest = { type = "app"; program = "${pkgs.vast-latest}/bin/vast"; };
+            vast-native = { type = "app"; program = "${pkgs.vast-native}/bin/vast"; };
           };
 
           defaultPackage = pkgs.vast-release;
@@ -100,9 +101,9 @@
             #TODO: will be removed in next release version
             patches = [ ./nix/gcc_11.patch ];
 
-            cmakeFlags = old.cmakeFlags ++ (lib.optional stdenv.isLinux [
+            cmakeFlags = old.cmakeFlags ++ lib.optionals stdenv.isLinux [
               "-DVAST_ENABLE_JOURNALD_LOGGING=true"
-            ]);
+            ] ++ lib.optional (!stdenv.hostPlatform.isStatic) [ "-DCMAKE_INSTALL_LIBDIR=lib" ];
 
             buildInputs = old.buildInputs ++ [
               ninja
@@ -114,7 +115,7 @@
           vast-native = with final; (vast-release.override (old: {
             vast-source = vast-sources.vast-latest.src;
             versionOverride = (final.vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
-            #withPlugins = [ "pcap" "broker" ];
+            withPlugins = [ "pcap" "broker" ];
           })).overrideAttrs (old: {
             patches = [ ];
           });
@@ -144,7 +145,7 @@
                 vast = {
                   endpoint = cfg.endpoint;
                   db-directory = cfg.dataDir;
-                } // cfg.settings;
+                } // cfg.extraConf;
               });
         in
         {
@@ -159,7 +160,15 @@
                   '';
                 };
 
-                settings = mkOption {
+                broker = mkOption {
+                  type = types.bool;
+                  default = false;
+                  description = ''
+                    Whether to enable broker to vast
+                  '';
+                };
+
+                extraConf = mkOption {
                   type = types.attrsOf types.anything;
                   default = { };
                 };

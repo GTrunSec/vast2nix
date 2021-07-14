@@ -35,10 +35,19 @@ jobs:
     - name: Check Release vast Exec
       run: nix run ./#vast-release -- --help
 
-    - name: Build Latest vast
+    - name: Build Native vast
+      run: nix -Lv build .#vast-release
+    - name: Check Native vast Exec
+      run: nix run ./#vast-native -- --help
+    - name: Check Native vast Plugins
+      run: nix run ./#vast-native -- import -h
+
+    - name: Build Latest Static vast
       run: nix -Lv build .#vast-latest
-    - name: Check Latest vast Exec
+    - name: Check Latest Static vast Exec
       run: nix run ./#vast-latest -- --help
+    - name: Check Static vast Plugins
+      run: nix run ./#vast-latest -- import -h
 
     - name: Build Release pyvast
       run: nix -Lv build .#pyvast
