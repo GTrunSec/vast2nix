@@ -105,7 +105,7 @@
 
           vast-native = with final; (vast.override (old: {
             vast-source = vast-sources.vast-latest.src;
-            versionOverride = (final.vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-latest-dirty";
+            versionOverride = (final.vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
             withPlugins = [ "pcap" "broker" ];
           })).overrideAttrs (old: {
             buildInputs = old.buildInputs ++ [
@@ -117,7 +117,14 @@
             vast-source = vast-sources.vast-latest.src;
             versionOverride = (final.vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
             withPlugins = [ "pcap" "broker" ];
-          })).overrideAttrs (old: { });
+          })).overrideAttrs (old: {
+            cmakeFlags = old.cmakeFlags ++ [
+              "-DVAST_ENABLE_JOURNALD_LOGGING=true"
+            ];
+            buildInputs = old.buildInputs ++ [
+              systemd
+            ];
+          });
         };
 
       nixosModules.vast = { lib, pkgs, config, ... }:
