@@ -6,11 +6,11 @@
     zeek-vast-src = { url = "github:tenzir/zeek-vast"; flake = false; };
     nixpkgs.url = "nixpkgs/release-21.05";
     flake-utils.url = "github:numtide/flake-utils";
-    nixpkgs-hardenedlinux = { url = "github:hardenedlinux/nixpkgs-hardenedlinux"; };
     devshell-flake.url = "github:numtide/devshell";
     nvfetcher = { url = "github:berberman/nvfetcher"; };
     vast-overlay = {
-      url = "github:tenzir/vast";
+      #url = "github:tenzir/vast";
+      url = "github:gtrunsec/vast/nix-withPlugin";
       flake = false;
     };
   };
@@ -25,8 +25,7 @@
             inherit system;
             overlays = [
               self.overlay
-              nixpkgs-hardenedlinux.overlay
-              nvfetcher.overlay
+              (final: prev: { nvfetcher-bin = nvfetcher.defaultPackage."${final.system}"; })
               devshell-flake.overlay
               (import (vast-overlay + "/nix/overlay.nix"))
             ];
@@ -39,9 +38,9 @@
             {
               vast-release = pkgs.vast-release;
               vast-latest = pkgs.vast-latest;
+              vast-native = pkgs.vast-native;
               pyvast = pkgs.pyvast;
               pyvast-latest = pkgs.pyvast-latest;
-              # zeek-vast = pkgs.zeek-vast;
             };
 
           apps = {
@@ -54,6 +53,7 @@
           hydraJobs = {
             inherit packages;
           };
+
           devShell = with pkgs; devshell.mkShell {
             imports = [ (devshell.importTOML ./nix/devshell.toml) ];
             packages = [
@@ -63,7 +63,7 @@
               {
                 name = pkgs.nvfetcher-bin.pname;
                 help = pkgs.nvfetcher-bin.meta.description;
-                command = "cd $DEVSHELL_ROOT/nix; ${nvfetcher.defaultPackage."${pkgs.system}"}/bin/nvfetcher -c ./sources.toml --no-output $@; nixpkgs-fmt _sources";
+                command = "cd $DEVSHELL_ROOT/nix; ${pkgs.nvfetcher-bin}/bin/nvfetcher -c ./sources.toml --no-output $@; nixpkgs-fmt _sources";
               }
             ];
           };
@@ -72,14 +72,6 @@
       overlay = final: prev:
         {
           vast-sources = prev.callPackage ./nix/_sources/generated.nix { };
-          # zeek-vast = final.vast.overrideAttrs (old: rec {
-          #   preConfigure = (old.preConfigure or "") + ''
-          #     ln -s ${zeek-vast-src}/zeek-to-vast tools/.
-          #   '';
-          #   cmakeFlags = (old.cmakeFlags or [ ]) ++ [
-          #     "-DBROKER_ROOT_DIR=${final.broker}"
-          #   ];
-          # });
 
           pyvast = with final;
             (python3Packages.buildPythonPackage {
@@ -111,11 +103,24 @@
             ];
           });
 
-          vast-latest = with final; (vast-release.overrideAttrs (old: {
+          vast-native = with final; (vast.override (old: {
+            withPlugins = [ "pcap" "broker" ];
+          })).overrideAttrs (old: {
+            src = vast-sources.vast-latest.src;
+            doInstallCheck = false;
+            version = (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-latest-dirty";
+            preConfigure = ''
+            '';
+            buildInputs = old.buildInputs ++ [
+              ninja
+            ];
+          });
+
+          vast-latest = with final; (pkgsStatic.vast.override (old: {
+            withPlugins = [ "pcap" "broker" ];
+          })).overrideAttrs (old: {
             src = vast-sources.vast-latest.src;
             version = (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-latest-dirty";
-          })).overrideAttrs (old: {
-            patches = [ ];
           });
         };
 
@@ -151,7 +156,7 @@
 
                 package = mkOption {
                   type = types.package;
-                  default = self.outputs.packages."${pkgs.system}".vast-release;
+                  default = self.outputs.packages."${pkgs.system}".vast-latest;
                   description = "The vast package.";
                 };
 
