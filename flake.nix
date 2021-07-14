@@ -103,7 +103,7 @@
 
             cmakeFlags = old.cmakeFlags ++ lib.optionals stdenv.isLinux [
               "-DVAST_ENABLE_JOURNALD_LOGGING=ON"
-            ];
+            ] ++ lib.optional (!stdenv.hostPlatform.isStatic) [ "-DCMAKE_INSTALL_LIBDIR=lib" ];
 
             buildInputs = old.buildInputs ++ lib.optionals stdenv.isLinux [
               systemd
