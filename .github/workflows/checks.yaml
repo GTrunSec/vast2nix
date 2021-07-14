@@ -35,8 +35,8 @@ jobs:
     - name: Check Release vast Exec
       run: nix run ./#vast-release -- --help
 
-    - name: Build Native vast
-      run: nix -Lv build .#vast-release
+    - name: Build Native vast (latest version)
+      run: nix -Lv build .#vast-native
     - name: Check Native vast Exec
       run: nix run ./#vast-native -- --help
     - name: Check Native vast Plugins
