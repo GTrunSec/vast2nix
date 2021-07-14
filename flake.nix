@@ -104,24 +104,20 @@
           });
 
           vast-native = with final; (vast.override (old: {
+            vast-source = vast-sources.vast-latest.src;
+            versionOverride = (final.vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-latest-dirty";
             withPlugins = [ "pcap" "broker" ];
           })).overrideAttrs (old: {
-            src = vast-sources.vast-latest.src;
-            doInstallCheck = false;
-            version = (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-latest-dirty";
-            preConfigure = ''
-            '';
             buildInputs = old.buildInputs ++ [
               ninja
             ];
           });
 
           vast-latest = with final; (pkgsStatic.vast.override (old: {
+            vast-source = vast-sources.vast-latest.src;
+            versionOverride = (final.vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
             withPlugins = [ "pcap" "broker" ];
-          })).overrideAttrs (old: {
-            src = vast-sources.vast-latest.src;
-            version = (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-latest-dirty";
-          });
+          })).overrideAttrs (old: { });
         };
 
       nixosModules.vast = { lib, pkgs, config, ... }:
