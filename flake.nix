@@ -102,12 +102,10 @@
             patches = [ ./nix/gcc_11.patch ];
 
             cmakeFlags = old.cmakeFlags ++ lib.optionals stdenv.isLinux [
-              "-DVAST_ENABLE_JOURNALD_LOGGING=true"
-            ] ++ lib.optional (!stdenv.hostPlatform.isStatic) [ "-DCMAKE_INSTALL_LIBDIR=lib" ];
+              "-DVAST_ENABLE_JOURNALD_LOGGING=ON"
+            ];
 
-            buildInputs = old.buildInputs ++ [
-              ninja
-            ] ++ lib.optionals stdenv.isLinux [
+            buildInputs = old.buildInputs ++ lib.optionals stdenv.isLinux [
               systemd
             ];
           });
@@ -127,7 +125,7 @@
           })).overrideAttrs (old: {
             # static issue with systemd
             # cmakeFlags = old.cmakeFlags ++ (lib.optional stdenv.isLinux [
-            #   "-DVAST_ENABLE_JOURNALD_LOGGING=true"
+            #   "-DVAST_ENABLE_JOURNALD_LOGGING=ON"
             # ]);
             # buildInputs = old.buildInputs ++ (lib.optional stdenv.isLinux [
             #   systemd
