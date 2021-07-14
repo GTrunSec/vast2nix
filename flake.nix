@@ -173,7 +173,7 @@
 
                 package = mkOption {
                   type = types.package;
-                  default = self.outputs.packages."${pkgs.system}".vast-latest;
+                  default = self.outputs.packages."${pkgs.system}".vast-native;
                   description = "The vast package.";
                 };
 
