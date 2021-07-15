@@ -8,7 +8,10 @@
           self.nixosModules.vast
         ];
 
-        virtualisation.memorySize = 2046;
+        virtualisation = {
+          memorySize = 2046;
+          cores = 4;
+        };
 
         services.vast = {
           enable = true;
