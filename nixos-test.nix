@@ -19,11 +19,10 @@
       };
       testScript = ''
         start_all()
-        machine.wait_for_unit("multi-user.target")
-        with subtest("test vast with systemd"):
-             machine.wait_for_unit("vast.service")
-             #machine.wait_for_open_port(4000)
-             machine.systemctl("start --wait vast.service")
+        machine.wait_for_unit("network.target")
+        machine.wait_for_unit("vast.service")
+        #machine.wait_for_open_port(4000)
+        machine.systemctl("start --wait vast.service")
       '';
     }
     {
