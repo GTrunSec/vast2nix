@@ -54,3 +54,6 @@ jobs:
 
     - name: Build Latest pyvast
       run: nix -Lv build .#pyvast-latest
+
+    - name: Check Vast with Systemd on NixOS-VM
+      run: nix -Lv build .#vast-vm-tests

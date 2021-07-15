@@ -41,7 +41,9 @@
               vast-native = pkgs.vast-native;
               pyvast = pkgs.pyvast;
               pyvast-latest = pkgs.pyvast-latest;
-            };
+            } // lib.optionalAttrs pkgs.stdenv.isLinux {
+            vast-vm-tests = pkgs.vast-vm-tests.vast-systemd;
+          };
 
           apps = {
             vast-release = { type = "app"; program = "${pkgs.vast-release}/bin/vast"; };
@@ -103,17 +105,24 @@
 
             cmakeFlags = old.cmakeFlags ++ lib.optionals stdenv.isLinux [
               "-DVAST_ENABLE_JOURNALD_LOGGING=ON"
-            ] ++ lib.optional (!stdenv.hostPlatform.isStatic) [ "-DCMAKE_INSTALL_LIBDIR=lib" ];
+            ]; #++ lib.optional (!stdenv.hostPlatform.isStatic) [ "-DCMAKE_INSTALL_LIBDIR=lib" ];
 
             buildInputs = old.buildInputs ++ lib.optionals stdenv.isLinux [
               systemd
             ];
           });
 
+          vast-vm-tests = prev.lib.optionalAttrs prev.stdenv.isLinux (import ./nixos-test.nix
+            {
+              makeTest = (import (prev.path + "/nixos/tests/make-test-python.nix"));
+              pkgs = final;
+              inherit self;
+            });
+
           vast-native = with final; (vast-release.override (old: {
             vast-source = vast-sources.vast-latest.src;
             versionOverride = (final.vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
-            withPlugins = [ "pcap" "broker" ];
+            #withPlugins = [ "pcap" "broker" ];
           })).overrideAttrs (old: {
             patches = [ ];
           });
@@ -143,7 +152,7 @@
                 vast = {
                   endpoint = cfg.endpoint;
                   db-directory = cfg.dataDir;
-                } // cfg.extraConf;
+                } // cfg.extraConfig;
               });
         in
         {
@@ -166,7 +175,7 @@
                   '';
                 };
 
-                extraConf = mkOption {
+                extraConfig = mkOption {
                   type = types.attrsOf types.anything;
                   default = { };
                 };
@@ -207,7 +216,7 @@
               wantedBy = [ "multi-user.target" ];
 
               after = [
-                "network-online.target"
+                "network.target"
                 #"zeek.service
               ];
 
@@ -221,7 +230,7 @@
               '';
 
               serviceConfig = {
-                Restart = "always";
+                Restart = "on-failure";
                 RestartSec = "10";
                 ExecReload = "${pkgs.coreutils}/bin/kill -HUP $MAINPID && ${pkgs.coreutils}/bin/rm ${cfg.dataDir}/vast.db/pid.lock";
                 User = "vast";
