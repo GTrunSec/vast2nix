@@ -1,6 +1,6 @@
 { makeTest, pkgs, self }:
 {
-  vast-systemd = makeTest
+  vast-vm-systemd = makeTest
     {
       name = "vast-systemd";
       machine = { config, pkgs, ... }: {
@@ -15,6 +15,7 @@
 
         services.vast = {
           enable = true;
+          broker = true;
           extraConfig = {
             log-file = "/var/lib/vast/server.log";
           };
@@ -25,6 +26,7 @@
         machine.wait_for_unit("network.target")
         machine.wait_for_unit("vast.service")
         machine.wait_for_open_port(4000)
+        machine.systemctl("start vast-broker.service")
       '';
     }
     {

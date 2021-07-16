@@ -125,11 +125,11 @@
     "vast-overlay": {
       "flake": false,
       "locked": {
-        "lastModified": 1626457878,
-        "narHash": "sha256-Om7vcjagJ1XkycRWJvongYl3gL6ZJ09gpQEUgaBPpkU=",
+        "lastModified": 1626466141,
+        "narHash": "sha256-j7VQPrEJADXm8iTHkK/d89pn5Lvy1Q4EKjegnciHulU=",
         "owner": "gtrunsec",
         "repo": "vast",
-        "rev": "04b81b88e23a86f9df00d4d26f528e689f321c40",
+        "rev": "9069f3b7b5ae10f3e15daf9ac11a4b42b80ef7ec",
         "type": "github"
       },
       "original": {

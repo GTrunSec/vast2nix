@@ -42,7 +42,8 @@
               pyvast = pkgs.pyvast;
               pyvast-latest = pkgs.pyvast-latest;
             } // lib.optionalAttrs pkgs.stdenv.isLinux {
-            vast-vm-systemd = pkgs.vast-vm-tests.vast-systemd;
+            inherit (pkgs.vast-vm-tests)
+              vast-vm-systemd;
           };
 
           apps = {
@@ -105,7 +106,7 @@
 
             cmakeFlags = old.cmakeFlags ++ lib.optionals stdenv.isLinux [
               "-DVAST_ENABLE_JOURNALD_LOGGING=ON"
-            ] ++ lib.optional (!stdenv.hostPlatform.isStatic) [ "-DCMAKE_INSTALL_LIBDIR=lib" ];
+            ];
 
             buildInputs = old.buildInputs ++ lib.optionals stdenv.isLinux [
               systemdMinimal
@@ -206,9 +207,37 @@
 
           config = mkIf cfg.enable {
             users.users.vast =
-              { isSystemUser = true; group = "vast"; };
+              {
+                isSystemUser = true;
+                group = "vast";
+                home = cfg.dataDir;
+              };
 
             users.groups.vast = { };
+
+            systemd.services.vast-broker = mkIf cfg.broker {
+              enable = true;
+              description = "Vast import broker Daemon";
+              wantedBy = [ "multi-user.target" ];
+              bindsTo = [ "vast.service" ];
+              after = [
+                "network.target"
+                "vast.service"
+              ];
+              path = [ cfg.package ];
+              script = ''
+                exec ${cfg.package}/bin/vast --config=${configFile} import broker
+              '';
+              serviceConfig = {
+                User = "vast";
+                WorkingDirectory = cfg.dataDir;
+                ReadWritePaths = cfg.dataDir;
+                RuntimeDirectory = "vast";
+                CacheDirectory = "vast";
+                StateDirectory = "vast";
+                SyslogIdentifier = "vast";
+              };
+            };
 
             systemd.services.vast = {
               enable = true;
