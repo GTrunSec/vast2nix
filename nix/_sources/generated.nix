@@ -3,16 +3,15 @@
 {
   vast-latest = {
     pname = "vast-latest";
-    version = "7a298624e5e66b32d406ee131eb29c545f601a87";
+    version = "c8c60305d7545716f2c9878ffc17a335aefb51ea";
     src = fetchgit {
       url = "https://github.com/tenzir/vast";
-      rev = "7a298624e5e66b32d406ee131eb29c545f601a87";
+      rev = "c8c60305d7545716f2c9878ffc17a335aefb51ea";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0x380r5bc4kyhllnsrwxlzlay19cjfq5vzkzp89f1q76sja3fmip";
+      sha256 = "0nb7rkvjfpj40c4pcl43w0aczjgw9gx5s17f00jp76k8w0hf1yh5";
     };
-
   };
   vast-release = {
     pname = "vast-release";
@@ -25,6 +24,5 @@
       leaveDotGit = false;
       sha256 = "13a8mclvka995nyagdm6gncs6hyiqbg1iyyc74hgxal31l9908av";
     };
-
   };
 }

@@ -2,7 +2,7 @@
 {
   vast-systemd = makeTest
     {
-      name = "vast-systemd-vm-test";
+      name = "vast-systemd";
       machine = { config, pkgs, ... }: {
         imports = [
           self.nixosModules.vast
@@ -24,8 +24,7 @@
         start_all()
         machine.wait_for_unit("network.target")
         machine.wait_for_unit("vast.service")
-        #machine.wait_for_open_port(4000)
-        machine.systemctl("start --wait vast.service")
+        machine.wait_for_open_port(4000)
       '';
     }
     {

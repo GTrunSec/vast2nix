@@ -42,7 +42,7 @@
               pyvast = pkgs.pyvast;
               pyvast-latest = pkgs.pyvast-latest;
             } // lib.optionalAttrs pkgs.stdenv.isLinux {
-            vast-vm-tests = pkgs.vast-vm-tests.vast-systemd;
+            vast-vm-systemd = pkgs.vast-vm-tests.vast-systemd;
           };
 
           apps = {
@@ -66,7 +66,7 @@
               {
                 name = pkgs.nvfetcher-bin.pname;
                 help = pkgs.nvfetcher-bin.meta.description;
-                command = "cd $DEVSHELL_ROOT/nix; ${pkgs.nvfetcher-bin}/bin/nvfetcher -c ./sources.toml --no-output $@; nixpkgs-fmt _sources";
+                command = "cd $DEVSHELL_ROOT/nix; ${pkgs.nvfetcher-bin}/bin/nvfetcher -c ./sources.toml --no-output $@; nixpkgs-fmt _sources/generated.nix";
               }
             ];
           };
@@ -105,10 +105,10 @@
 
             cmakeFlags = old.cmakeFlags ++ lib.optionals stdenv.isLinux [
               "-DVAST_ENABLE_JOURNALD_LOGGING=ON"
-            ]; #++ lib.optional (!stdenv.hostPlatform.isStatic) [ "-DCMAKE_INSTALL_LIBDIR=lib" ];
+            ] ++ lib.optional (!stdenv.hostPlatform.isStatic) [ "-DCMAKE_INSTALL_LIBDIR=lib" ];
 
             buildInputs = old.buildInputs ++ lib.optionals stdenv.isLinux [
-              systemd
+              systemdMinimal
             ];
           });
 
@@ -122,7 +122,7 @@
           vast-native = with final; (vast-release.override (old: {
             vast-source = vast-sources.vast-latest.src;
             versionOverride = (final.vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
-            #withPlugins = [ "pcap" "broker" ];
+            withPlugins = [ "pcap" "broker" ];
           })).overrideAttrs (old: {
             patches = [ ];
           });
@@ -132,12 +132,12 @@
             versionOverride = (final.vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
             withPlugins = [ "pcap" "broker" ];
           })).overrideAttrs (old: {
-            # static issue with systemd
+            #static issue with systemd
             # cmakeFlags = old.cmakeFlags ++ (lib.optional stdenv.isLinux [
             #   "-DVAST_ENABLE_JOURNALD_LOGGING=ON"
             # ]);
             # buildInputs = old.buildInputs ++ (lib.optional stdenv.isLinux [
-            #   systemd
+            #   (pkgsStatic.systemd)
             # ]);
           });
         };
