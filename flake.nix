@@ -229,8 +229,10 @@
                 exec ${cfg.package}/bin/vast --config=${configFile} import broker
               '';
               serviceConfig = {
-                Type = "notify";
                 User = "vast";
+                Group = "vast";
+                ExecReload = "/bin/kill -s HUP $MAINPID";
+                Restart = "on-failure";
                 WorkingDirectory = cfg.dataDir;
                 ReadWritePaths = cfg.dataDir;
                 RuntimeDirectory = "vast";
