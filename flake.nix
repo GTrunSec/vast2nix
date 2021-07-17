@@ -67,7 +67,7 @@
               {
                 name = pkgs.nvfetcher-bin.pname;
                 help = pkgs.nvfetcher-bin.meta.description;
-                command = "cd $DEVSHELL_ROOT/nix; ${pkgs.nvfetcher-bin}/bin/nvfetcher -c ./sources.toml --no-output $@; nixpkgs-fmt _sources/generated.nix";
+                command = "cd $DEVSHELL_ROOT/nix; ${pkgs.nvfetcher-bin}/bin/nvfetcher -c ./sources.toml --no-output $@; nixpkgs-fmt _sources";
               }
             ];
           };
@@ -221,7 +221,7 @@
               wantedBy = [ "multi-user.target" ];
               bindsTo = [ "vast.service" ];
               after = [
-                "network.target"
+                "network-online.target"
                 "vast.service"
               ];
               path = [ cfg.package ];
@@ -229,6 +229,7 @@
                 exec ${cfg.package}/bin/vast --config=${configFile} import broker
               '';
               serviceConfig = {
+                Type = "notify";
                 User = "vast";
                 WorkingDirectory = cfg.dataDir;
                 ReadWritePaths = cfg.dataDir;
@@ -245,7 +246,7 @@
               wantedBy = [ "multi-user.target" ];
 
               after = [
-                "network.target"
+                "network-online.target"
                 #"zeek.service
               ];
 

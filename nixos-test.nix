@@ -23,10 +23,9 @@
       };
       testScript = ''
         start_all()
-        machine.wait_for_unit("network.target")
+        machine.wait_for_unit("network-online.target")
         machine.wait_for_unit("vast.service")
         machine.wait_for_open_port(4000)
-        machine.systemctl("start vast-broker.service")
       '';
     }
     {
