@@ -9,7 +9,6 @@
     devshell-flake.url = "github:numtide/devshell";
     nvfetcher = { url = "github:berberman/nvfetcher"; };
     vast-overlay = {
-      #url = "github:tenzir/vast";
       url = "github:gtrunsec/vast/nix-withPlugin";
       #url = "/home/gtrun/src/vast";
       flake = false;
