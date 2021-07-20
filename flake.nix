@@ -11,6 +11,7 @@
     vast-overlay = {
       #url = "github:tenzir/vast";
       url = "github:gtrunsec/vast/nix-withPlugin";
+      #url = "/home/gtrun/src/vast";
       flake = false;
     };
   };
@@ -106,6 +107,7 @@
 
             cmakeFlags = old.cmakeFlags ++ lib.optionals stdenv.isLinux [
               "-DVAST_ENABLE_JOURNALD_LOGGING=ON"
+              "-DVAST_ENABLE_BUNDLED_CAF=OFF"
             ];
 
             buildInputs = old.buildInputs ++ lib.optionals stdenv.isLinux [
