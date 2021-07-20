@@ -38,7 +38,6 @@
             {
               vast-release = pkgs.vast-release;
               vast-latest = pkgs.vast-latest;
-              vast-native = pkgs.vast-native;
               pyvast = pkgs.pyvast;
               pyvast-latest = pkgs.pyvast-latest;
             } // lib.optionalAttrs pkgs.stdenv.isLinux {
@@ -49,7 +48,6 @@
           apps = {
             vast-release = { type = "app"; program = "${pkgs.vast-release}/bin/vast"; };
             vast-latest = { type = "app"; program = "${pkgs.vast-latest}/bin/vast"; };
-            vast-native = { type = "app"; program = "${pkgs.vast-native}/bin/vast"; };
           };
 
           defaultPackage = pkgs.vast-release;
@@ -121,29 +119,14 @@
               inherit self;
             });
 
-          vast-native = with final; (vast-release.override (old: {
+          vast-latest = with final; (vast-release.override (old: {
             vast-source = vast-sources.vast-latest.src;
             versionOverride = (final.vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
             withPlugins = [ "pcap" "broker" ];
           })).overrideAttrs (old: {
             patches = [ ];
           });
-
-          vast-latest = with final; (pkgsStatic.vast.override (old: {
-            vast-source = vast-sources.vast-latest.src;
-            versionOverride = (final.vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
-            withPlugins = [ "pcap" "broker" ];
-          })).overrideAttrs (old: {
-            #static issue with systemd
-            # cmakeFlags = old.cmakeFlags ++ (lib.optional stdenv.isLinux [
-            #   "-DVAST_ENABLE_JOURNALD_LOGGING=ON"
-            # ]);
-            # buildInputs = old.buildInputs ++ (lib.optional stdenv.isLinux [
-            #   (pkgsStatic.systemd)
-            # ]);
-          });
         };
-
       nixosModules.vast = { lib, pkgs, config, ... }:
         with lib;
         let
