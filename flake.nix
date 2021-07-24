@@ -95,12 +95,10 @@
             ({
               vast-source = vast-sources.vast-release.src;
               versionOverride = vast-sources.vast-release.version;
+              withPlugins = [ "pcap" "broker" ];
             })).overrideAttrs (old: {
             #vast> 2021-06-30 04:44:38 WARNING  baseline comparison failed
             doInstallCheck = false;
-
-            #TODO: will be removed in next release version
-            patches = [ ./nix/gcc_11.patch ];
 
             cmakeFlags = old.cmakeFlags ++ lib.optionals stdenv.isLinux [
               "-DVAST_ENABLE_JOURNALD_LOGGING=ON"
@@ -122,7 +120,6 @@
           vast-latest = with final; (vast-release.override (old: {
             vast-source = vast-sources.vast-latest.src;
             versionOverride = (final.vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
-            withPlugins = [ "pcap" "broker" ];
           })).overrideAttrs (old: {
             patches = [ ];
           });
