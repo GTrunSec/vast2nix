@@ -119,7 +119,7 @@
 
           vast-latest = with final; (vast-release.override (old: {
             vast-source = vast-sources.vast-latest.src;
-            versionOverride = (final.vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
+            versionOverride = (lib.removeSuffix "-rc1" vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
           })).overrideAttrs (old: {
             patches = [ ];
           });
