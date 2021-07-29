@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 * 1 * *'
+    - cron: '0 7 * * *'
 jobs:
   nix-build:
     runs-on: ubuntu-latest
@@ -28,9 +28,6 @@ jobs:
         name: zeek
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
 
-    - name: Setup GIT user
-      uses: fregante/setup-git-user@v1
-
     - name: Run Flake Check
       run: nix -Lv flake check
 
@@ -39,7 +36,7 @@ jobs:
 
     - name: Run nvfetcher
       run: |
-        nix -Lv develop --command nvfetcher --commit-changes
+        nix -Lv develop --command nvfetcher -l changelog
 
     - name: Build Release vast
       run: nix -Lv build .#vast-release
@@ -62,5 +59,14 @@ jobs:
     - name: Check Vast with Systemd on NixOS-VM
       run: nix -Lv build .#vast-vm-systemd
 
-    - name: Git Push Bumpup
-      run: git push
+    - name: COMMIT_MSG
+      run: |
+        if [ ! -z "$(cat nix/changelog)" ]; then
+        echo "COMMIT_MSG="$(cat nix/changelog)"" >> $GITHUB_ENV
+        fi
+
+    - name: Commit changes
+      if: ${{ env.COMMIT_MSG != null }}
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: ${{ env.COMMIT_MSG }}

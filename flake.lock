@@ -99,11 +99,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1627126476,
-        "narHash": "sha256-WvUITmKad4aqtSgICVgwpasrCcAd5yrdCF+27Hz4+bw=",
+        "lastModified": 1627523399,
+        "narHash": "sha256-j9CgnUQpWcb8OB4LRzPW8BdxvmoROJptgptDlPA8Heo=",
         "owner": "berberman",
         "repo": "nvfetcher",
-        "rev": "5a44a2b0675108d1abd0c8c820b20593b65c9512",
+        "rev": "fb8f2cc770ad3dd3e29d7ba3004692d4d53fba9b",
         "type": "github"
       },
       "original": {
