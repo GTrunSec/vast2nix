@@ -1,11 +1,14 @@
 {
   description = "🔮 Visibility Across Space and Time – The network telemetry engine for data-driven security investigations.";
   #https://github.com/tenzir/vast
+  nixConfig.extra-substituters = "https://zeek.cachix.org";
+  nixConfig.extra-trusted-public-keys = "zeek.cachix.org-1:w590YE/k5sB26LSWvDCI3dccCXipBwyPenhBH2WNDWI=";
 
   inputs = {
     zeek-vast-src = { url = "github:tenzir/zeek-vast"; flake = false; };
     nixpkgs.url = "nixpkgs/release-21.05";
     flake-utils.url = "github:numtide/flake-utils";
+    flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
     devshell-flake.url = "github:numtide/devshell";
     nvfetcher = { url = "github:berberman/nvfetcher"; };
     vast-overlay = {
@@ -58,10 +61,12 @@
 
           devShell = with pkgs; devshell.mkShell {
             imports = [ (devshell.importTOML ./nix/devshell.toml) ];
-            packages = [
-              nixpkgs-fmt
-            ];
             commands = with pkgs; [
+              {
+                name = pkgs.vast-latest.pname;
+                help = pkgs.vast-latest.meta.description;
+                package = pkgs.vast-latest;
+              }
               {
                 name = pkgs.nvfetcher-bin.pname;
                 help = pkgs.nvfetcher-bin.meta.description;
@@ -72,6 +77,9 @@
         }
       ) // {
       overlay = final: prev:
+        let
+          kversion = v: builtins.elemAt (prev.lib.splitString "-" v) 0;
+        in
         {
           vast-sources = prev.callPackage ./nix/_sources/generated.nix { };
 
@@ -119,9 +127,9 @@
 
           vast-latest = with final; (vast-release.override (old: {
             vast-source = vast-sources.vast-latest.src;
-            #versionOverride = (lib.removeSuffix "-rc3" vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
-            versionOverride = "2021.07.29-" + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
-          })).overrideAttrs (old: {
+            versionOverride = (kversion vast-sources.vast-release.version + "-") + (builtins.substring 0 7 final.vast-sources.vast-latest.version) + "-dirty";
+          })
+          ).overrideAttrs (old: {
             patches = [ ];
           });
         };

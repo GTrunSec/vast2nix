@@ -5,70 +5,72 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 * 7 * *'
+    - cron: "0 * 7 * *"
 jobs:
   nix-build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2.3.4
-      with:
-        fetch-depth: 0
-    - uses: cachix/install-nix-action@v13
-      with:
-        install_url:
-          https://github.com/numtide/nix-flakes-installer/releases/download/nix-2.4pre20210604_8e6ee1b/install
-        extra_nix_config: |
-          experimental-features = nix-command flakes
-          system-features = nixos-test benchmark big-parallel kvm recursive-nix
-          substituters = https://zeek.cachix.org https://cache.nixos.org
-          trusted-public-keys = zeek.cachix.org-1:w590YE/k5sB26LSWvDCI3dccCXipBwyPenhBH2WNDWI= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+      - uses: actions/checkout@v2.3.4
+        with:
+          fetch-depth: 0
+      - uses: cachix/install-nix-action@v13
+        with:
+          install_url: https://github.com/numtide/nix-flakes-installer/releases/download/nix-2.4pre20210604_8e6ee1b/install
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            system-features = nixos-test benchmark big-parallel kvm recursive-nix
+            substituters = https://zeek.cachix.org https://cache.nixos.org
+            trusted-public-keys = zeek.cachix.org-1:w590YE/k5sB26LSWvDCI3dccCXipBwyPenhBH2WNDWI= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
 
-    - uses: cachix/cachix-action@v10
-      with:
-        name: zeek
-        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+      - uses: cachix/cachix-action@v10
+        with:
+          name: zeek
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
 
-    - name: Run Flake Check
-      run: nix -Lv flake check
+      - name: Run Flake Check
+        run: nix -Lv flake check
 
-    - name: Run Flake Show
-      run: nix -Lv flake show
+      - name: Run Flake Show
+        run: nix -Lv flake show
 
-    - name: Run nvfetcher
-      run: |
-        nix -Lv develop --command nvfetcher -l changelog
+      - name: Run nvfetcher
+        run: |
+          nix -Lv develop --command nvfetcher -l changelog
 
-    - name: Build Release vast
-      run: nix -Lv build .#vast-release
-    - name: Check Release vast Exec
-      run: nix run ./#vast-release -- --help
+      - name: Build Release vast
+        run: nix -Lv build .#vast-release
+      - name: Check Release vast Exec
+        run: nix run ./#vast-release -- --help
 
-    - name: Build Latest vast
-      run: nix -Lv build .#vast-latest
-    - name: Check Latest vast Exec
-      run: nix run ./#vast-latest -- --help
-    - name: Check Latest vast Plugins
-      run: nix run ./#vast-latest -- import -h
+      - name: Build Latest vast
+        run: nix -Lv build .#vast-latest
+      - name: Check Latest vast Exec
+        run: nix run ./#vast-latest -- --help
+      - name: Check Latest vast Plugins
+        run: nix run ./#vast-latest -- import -h
 
-    - name: Build Release pyvast
-      run: nix -Lv build .#pyvast
+      - name: Build Release pyvast
+        run: nix -Lv build .#pyvast
 
-    - name: Build Latest pyvast
-      run: nix -Lv build .#pyvast-latest
+      - name: Build Latest pyvast
+        run: nix -Lv build .#pyvast-latest
 
-    - name: Check Vast with Systemd on NixOS-VM
-      run: nix -Lv build .#vast-vm-systemd
+      - name: Check Vast with Systemd on NixOS-VM
+        run: nix -Lv build .#vast-vm-systemd
 
-    - name: COMMIT_MSG
-      run: |
-        if [ ! -z "$(cat nix/changelog)" ]; then
-        echo "COMMIT_MSG<<EOF" >> $GITHUB_ENV
-        echo "$(cat nix/changelog)" >> $GITHUB_ENV
-        echo "EOF" >> $GITHUB_ENV
-        fi
-
-    - name: Commit changes
-      if: ${{ env.COMMIT_MSG != null }}
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: ${{ env.COMMIT_MSG }}
+      - name: COMMIT_MSG
+        run: |
+          changlog=$(find . -type f -name "changelog")
+          if [[ ! -z "$(cat $changlog)" ]]; then
+          echo "COMMIT_MSG<<EOF" >>$GITHUB_ENV
+          echo "$(cat $changlog)" >>$GITHUB_ENV
+          echo "EOF" >>$GITHUB_ENV
+          rm -rf $changlog
+          else
+          rm -rf $changlog
+          fi
+      - name: Commit changes
+        if: ${{ env.COMMIT_MSG != null }}
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: ${{ env.COMMIT_MSG }}
