@@ -37,6 +37,9 @@
         in
         with pkgs;
         rec {
+          # for arion flake compat;
+          inherit pkgs;
+
           packages = flake-utils.lib.flattenTree
             {
               vast-release = pkgs.vast-release;
@@ -137,14 +140,7 @@
         with lib;
         let
           cfg = config.services.vast;
-          configFile = pkgs.writeText "vast.yaml"
-            (
-              builtins.toJSON {
-                vast = {
-                  endpoint = cfg.endpoint;
-                  db-directory = cfg.dataDir;
-                } // cfg.extraConfig;
-              });
+          configFile = pkgs.writeText "vast.yaml" cfg.extraConfig;
         in
         {
           options =
@@ -167,8 +163,10 @@
                 };
 
                 extraConfig = mkOption {
-                  type = types.attrsOf types.anything;
                   default = { };
+                  description = ''
+                    extraConfig = builtins.readFile ./config.vast.example.yaml;
+                  '';
                 };
 
                 package = mkOption {
@@ -248,6 +246,7 @@
               };
 
               script = ''
+                ln -sf ${configFile} ${cfg.dataDir}/vast.yaml
                 exec ${cfg.package}/bin/vast --config=${configFile} start
               '';
 

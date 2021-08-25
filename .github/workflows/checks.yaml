@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "* * 7 * *"
+    - cron: "* * 1,7,14,21,28 * *"
 jobs:
   nix-build:
     runs-on: ubuntu-latest
@@ -19,8 +19,6 @@ jobs:
           extra_nix_config: |
             experimental-features = nix-command flakes
             system-features = nixos-test benchmark big-parallel kvm recursive-nix
-            substituters = https://zeek.cachix.org https://cache.nixos.org
-            trusted-public-keys = zeek.cachix.org-1:w590YE/k5sB26LSWvDCI3dccCXipBwyPenhBH2WNDWI= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
 
       - uses: cachix/cachix-action@v10
         with:

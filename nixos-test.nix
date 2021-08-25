@@ -16,9 +16,7 @@
         services.vast = {
           enable = true;
           broker = true;
-          extraConfig = {
-            log-file = "/var/lib/vast/server.log";
-          };
+          extraConfig = builtins.readFile ./vast.yaml;
         };
       };
       testScript = ''
