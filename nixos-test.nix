@@ -9,8 +9,8 @@
         ];
 
         virtualisation = {
-          memorySize = 2046;
-          cores = 4;
+          memorySize = 4048;
+          cores = 2;
         };
 
         services.vast = {
