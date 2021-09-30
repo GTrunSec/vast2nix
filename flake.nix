@@ -9,7 +9,7 @@
     nixpkgs.url = "nixpkgs/release-21.05";
     flake-utils.url = "github:numtide/flake-utils";
     flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
-    devshell-flake.url = "github:numtide/devshell";
+    devshell.url = "github:numtide/devshell";
     nvfetcher = { url = "github:berberman/nvfetcher"; };
     vast-overlay = {
       url = "github:gtrunsec/vast/nix-withPlugin";
@@ -28,8 +28,7 @@
             inherit system;
             overlays = [
               self.overlay
-              (final: prev: { nvfetcher-bin = nvfetcher.defaultPackage."${final.system}"; })
-              devshell-flake.overlay
+              devshell.overlay
               (import (vast-overlay + "/nix/overlay.nix"))
             ];
             config = { allowBroken = true; };
@@ -71,9 +70,9 @@
                 package = pkgs.vast-latest;
               }
               {
-                name = pkgs.nvfetcher-bin.pname;
-                help = pkgs.nvfetcher-bin.meta.description;
-                command = "cd $PRJ_ROOT/nix; ${pkgs.nvfetcher-bin}/bin/nvfetcher -c ./sources.toml $@";
+                name = nvfetcher.defaultPackage.x86_64-linux.pname;
+                help = nvfetcher.defaultPackage.x86_64-linux.meta.description;
+                command = "cd $PRJ_ROOT/nix; ${nvfetcher.defaultPackage.x86_64-linux}/bin/nvfetcher -c ./sources.toml $@";
               }
             ];
           };

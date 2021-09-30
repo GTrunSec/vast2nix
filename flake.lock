@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "devshell-flake": {
+    "devshell": {
       "locked": {
         "lastModified": 1632436039,
         "narHash": "sha256-OtITeVWcKXn1SpVEnImpTGH91FycCskGBPqmlxiykv4=",
@@ -131,7 +131,7 @@
     },
     "root": {
       "inputs": {
-        "devshell-flake": "devshell-flake",
+        "devshell": "devshell",
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
