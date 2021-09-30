@@ -49,9 +49,9 @@ jobs:
 
       - name: Build Latest pyvast
         run: nix -Lv build .#pyvast-latest
-
-      - name: Check Vast with Systemd on NixOS-VM
-        run: nix -Lv build .#vast-vm-systemd
+      # limited host resoure on
+      # - name: Check Vast with Systemd on NixOS-VM
+      #   run: nix -Lv build .#vast-vm-systemd
 
       - name: COMMIT_MSG
         run: |
