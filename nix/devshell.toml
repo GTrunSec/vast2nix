@@ -1,3 +1,6 @@
+[devshell]
+packages = [ "navi" ]
+
 [[commands]]
 name = "vast-example"
 category = "conf"
