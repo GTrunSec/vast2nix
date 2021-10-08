@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "* * 1,7,14,21,28 * *"
+    - cron: "0 0 * * SUN" # every sunday
 jobs:
   nix-build:
     runs-on: ubuntu-latest
@@ -49,7 +49,7 @@ jobs:
 
       - name: Build Latest pyvast
         run: nix -Lv build .#pyvast-latest
-      # limited host resoure on
+      # limited host resoure on github CI
       # - name: Check Vast with Systemd on NixOS-VM
       #   run: nix -Lv build .#vast-vm-systemd
 
