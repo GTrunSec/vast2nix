@@ -6,11 +6,14 @@
 
   inputs = {
     zeek-vast-src = { url = "github:tenzir/zeek-vast"; flake = false; };
-    nixpkgs.url = "nixpkgs/release-21.05";
-    flake-utils.url = "github:numtide/flake-utils";
-    flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
-    devshell.url = "github:numtide/devshell";
-    nvfetcher = { url = "github:berberman/nvfetcher"; };
+    zeek2nix = { url = "github:hardenedlinux/zeek2nix"; };
+
+    flake-utils.follows = "zeek2nix/flake-utils";
+    nixpkgs.follows = "zeek2nix/nixpkgs";
+    nixpkgs-hardenedlinux.follows = "zeek2nix/nixpkgs-hardenedlinux";
+    nvfetcher.follows = "zeek2nix/nvfetcher";
+    devshell.follows = "zeek2nix/devshell";
+    flake-compat = { follows = "zeek2nix/flake-compat"; flake = false; };
     vast-overlay = {
       url = "github:gtrunsec/vast/nix-withPlugin";
       #url = "/home/gtrun/src/vast";
@@ -72,7 +75,7 @@
               {
                 name = nvfetcher.defaultPackage.x86_64-linux.pname;
                 help = nvfetcher.defaultPackage.x86_64-linux.meta.description;
-                command = "cd $PRJ_ROOT/nix; ${nvfetcher.defaultPackage.x86_64-linux}/bin/nvfetcher -c ./sources.toml $@";
+                command = "export NIX_PATH=nixpkgs=${pkgs.path}; cd $PRJ_ROOT/nix; ${nvfetcher.defaultPackage.x86_64-linux}/bin/nvfetcher -c ./sources.toml $@";
               }
             ];
           };
