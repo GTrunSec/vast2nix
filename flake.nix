@@ -67,11 +67,11 @@
           devShell = with pkgs; devshell.mkShell {
             imports = [ (devshell.importTOML ./nix/devshell.toml) ];
             commands = with pkgs; [
-              {
-                name = pkgs.vast-latest.pname;
-                help = pkgs.vast-latest.meta.description;
-                package = pkgs.vast-latest;
-              }
+              # {
+              #   name = pkgs.vast-latest.pname;
+              #   help = pkgs.vast-latest.meta.description;
+              #   package = pkgs.vast-latest;
+              # }
               {
                 name = nvfetcher.defaultPackage.x86_64-linux.pname;
                 help = nvfetcher.defaultPackage.x86_64-linux.meta.description;
