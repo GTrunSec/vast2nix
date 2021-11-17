@@ -16,7 +16,6 @@
     flake-compat = { follows = "zeek2nix/flake-compat"; flake = false; };
     vast-overlay = {
       url = "github:gtrunsec/vast/nix-withPlugin";
-      #url = "/home/gtrun/src/vast";
       flake = false;
     };
   };
@@ -34,13 +33,15 @@
               devshell.overlay
               (import (vast-overlay + "/nix/overlay.nix"))
             ];
-            config = { allowBroken = true; };
+            config = { };
           };
         in
         with pkgs;
         rec {
           # for arion flake compat;
           inherit pkgs;
+
+          checks = { } // (removeAttrs packages [ "vast-latest" "vast-release" "pyvast" "pyvast-latest" ]);
 
           packages = flake-utils.lib.flattenTree
             {
@@ -54,7 +55,10 @@
           };
 
           apps = {
-            vast-release = { type = "app"; program = "${pkgs.vast-release}/bin/vast"; };
+            vast-release = {
+              type = "app";
+              program = "${pkgs.vast-release}/bin/vast";
+            };
             vast-latest = { type = "app"; program = "${pkgs.vast-latest}/bin/vast"; };
           };
 
