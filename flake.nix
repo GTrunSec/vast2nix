@@ -11,7 +11,6 @@
     flake-utils.follows = "zeek2nix/flake-utils";
     nixpkgs.follows = "zeek2nix/nixpkgs";
     nixpkgs-hardenedlinux.follows = "zeek2nix/nixpkgs-hardenedlinux";
-    nvfetcher.follows = "zeek2nix/nvfetcher";
     devshell.follows = "zeek2nix/devshell";
     flake-compat = { follows = "zeek2nix/flake-compat"; flake = false; };
     vast-overlay = {
@@ -76,11 +75,6 @@
               #   help = pkgs.vast-latest.meta.description;
               #   package = pkgs.vast-latest;
               # }
-              {
-                name = nvfetcher.defaultPackage.x86_64-linux.pname;
-                help = nvfetcher.defaultPackage.x86_64-linux.meta.description;
-                command = "export NIX_PATH=nixpkgs=${pkgs.path}; cd $PRJ_ROOT/nix; ${nvfetcher.defaultPackage.x86_64-linux}/bin/nvfetcher -c ./sources.toml $@";
-              }
             ];
           };
         }
