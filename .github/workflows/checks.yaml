@@ -30,7 +30,7 @@ jobs:
 
       - name: Run Updates
         run: |
-          nix -Lv develop github:hardenedlinux/nixpkgs-hardenedlinux -c -- update nvfetcher
+          nix -Lv develop github:hardenedlinux/nixpkgs-hardenedlinux -c -- update nvfetcher -l changelog
           nix -Lv develop github:hardenedlinux/nixpkgs-hardenedlinux -c -- nixpkgs-hardenedlinux gh-nix-update
 
       - name: Build Release vast
