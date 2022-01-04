@@ -11,6 +11,9 @@
   inputs = {
     flake-compat.flake = false;
     zeek-vast-src = { url = "github:tenzir/zeek-vast"; flake = false; };
+    #FIXME: broker linking issue
+    # nixpkgs.follows = "zeek2nix/nixpkgs_21_05";
+    nixpkgs.url = "github:NixOS/nixpkgs/4789953e5c1ef6d10e3ff437e5b7ab8eed526942";
     vast-overlay = {
       url = "github:gtrunsec/vast/nix-withPlugin";
       flake = false;
@@ -22,6 +25,7 @@
     , flake-utils
     , flake-compat
     , devshell
+    , zeek2nix
     , nixpkgs-hardenedlinux
     , vast-overlay
     , ...
