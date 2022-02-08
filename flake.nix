@@ -7,13 +7,15 @@
     flake-registry = "https://github.com/hardenedlinux/flake-registry/raw/main/flake-registry.json";
   };
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/4789953e5c1ef6d10e3ff437e5b7ab8eed526942";
     flake-compat.flake = false;
     zeek-vast-src = {
       url = "github:tenzir/zeek-vast";
       flake = false;
     };
-    vast-overlay = { url = "github:gtrunsec/vast/module-client"; };
+    vast-overlay = {
+      url = "github:gtrunsec/vast/module-client";
+      inputs.nixpkgs.follows = "vast-overlay/pinned";
+    };
   };
   outputs =
     { self
