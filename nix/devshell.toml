@@ -10,5 +10,5 @@ help = "launch vast with example.yaml"
 [[commands]]
 name = "nvfetcher"
 category = "Update"
-command = "nix -Lv develop github:hardenedlinux/nixpkgs-hardenedlinux --no-update-lock-file --no-write-lock-file -c update nvfetcher"
+command = "nix -Lv develop github:hardenedlinux/nixpkgs-hardenedlinux -c update nvfetcher ./nix/sources.toml"
 help = "run nvfetcher for updating"

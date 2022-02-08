@@ -6,10 +6,10 @@
 vast:
 
   # The host and port to listen at and connect to.
-  endpoint: "127.0.0.1:4000"
+  endpoint: "127.0.0.1:42000"
 
   # The file system path used for persistent state.
-  db-directory: "/var/lib/vast/vast.db"
+  db-directory: "/var/lib/vast/"
 
   # The file system path used for log files.
   log-file: "/var/lib/vast/server.log"
@@ -17,7 +17,7 @@ vast:
   # The file system path used for client log files relative to the current
   # working directory of the client. Note that this is disabled by default.
   # If not specified no log files are written for clients at all.
-  client-log-file: "client.log"
+  client-log-file: "/var/lib/vast/client.log"
 
   # Format for printing individual log entries to the log-file.
   # For a list of valid format specifiers, see spdlog format specification
