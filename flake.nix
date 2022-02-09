@@ -38,8 +38,8 @@
       in
         with pkgs;
         rec {
-          # for arion flake compat;
-          inherit pkgs;
+          inherit overlay;
+
           packages = flake-utils.lib.flattenTree { inherit (pkgs) vast-release vast-latest pyvast pyvast-latest; };
           apps = {
             vast-release = {
@@ -53,18 +53,7 @@
           };
           defaultPackage = pkgs.vast-release;
           hydraJobs = { inherit packages; };
-          devShell = devshell.mkShell {
-            imports = [ (devshell.importTOML ./nix/devshell.toml) ];
-            commands =
-              with pkgs;
-              [
-                # {
-                #   name = pkgs.vast-latest.pname;
-                #   help = pkgs.vast-latest.meta.description;
-                #   package = pkgs.vast-latest;
-                # }
-              ];
-          };
+          devShell = import ./shell { inherit inputs devshell pkgs; };
         }
     )
     // {

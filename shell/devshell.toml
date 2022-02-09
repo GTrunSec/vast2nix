@@ -4,7 +4,7 @@ packages = [ "navi" ]
 [[commands]]
 name = "vast-example"
 category = "conf"
-command = "vast -c config.yaml"
+command = "vast --config=$PRJ_ROOT/conf/config.vast.example.yaml start"
 help = "launch vast with example.yaml"
 
 [[commands]]

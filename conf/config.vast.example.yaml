@@ -1,8 +1,8 @@
 vast:
   # The file system path used for persistent state.
-  db-directory: /var/lib/vast
+  db-directory: ./.cache/vast
   # The file system path used for log files.
-  log-file: /var/log/vast/server.log
+  log-file: ./.cache/server.log
   # Load all installed plugins.
   plugins:
     - all
