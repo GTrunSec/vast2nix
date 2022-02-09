@@ -2333,11 +2333,11 @@
         "pinned": "pinned"
       },
       "locked": {
-        "lastModified": 1644269712,
-        "narHash": "sha256-YAVxKt0qCzcCohrwj+09ZBaK8Q+bpMEfDQEq78b3Uvc=",
+        "lastModified": 1644395587,
+        "narHash": "sha256-Fm6zVgkRgw2FhW5rouwU/QhG9de5HECwakQhEycBasc=",
         "owner": "gtrunsec",
         "repo": "vast",
-        "rev": "a405e2881cdf80a808128b31c0ece69edd52037f",
+        "rev": "1c87c38bceece9a59b53774e215058225976b4ba",
         "type": "github"
       },
       "original": {
