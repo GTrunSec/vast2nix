@@ -1,4 +1,6 @@
-{ inputs }:
+{ inputs
+, system
+}:
 final: prev: let
   kversion = v: builtins.elemAt (prev.lib.splitString "-" v) 0;
 in
@@ -30,7 +32,7 @@ in
     vast-release =
       with final;
       (
-        pkgsStatic.vast.override {
+        inputs.vast-overlay.pinned."${system}".pkgsStatic.vast.override {
           vast-source = vast-sources.vast-release.src;
           versionOverride = vast-sources.vast-release.version;
           withPlugins = [

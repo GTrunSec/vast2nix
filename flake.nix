@@ -32,15 +32,8 @@
     with inputs;
     flake-utils.lib.eachDefaultSystem (
       system: let
-        overlay = import ./nix/overlay.nix { inherit inputs; };
-        pkgs = inputs.nixpkgs.legacyPackages."${system}".appendOverlays [
-          overlay
-          (
-            final: prev: {
-              inherit (inputs.vast-overlay.packages."${system}") vast;
-            }
-          )
-        ];
+        overlay = import ./nix/overlay.nix { inherit inputs system; };
+        pkgs = inputs.nixpkgs.legacyPackages."${system}".appendOverlays [ overlay ];
         devshell = inputs.devshell.legacyPackages."${system}";
       in
         with pkgs;
