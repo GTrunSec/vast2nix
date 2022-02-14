@@ -12,10 +12,7 @@
       url = "github:tenzir/zeek-vast";
       flake = false;
     };
-    vast-overlay = {
-      url = "github:gtrunsec/vast/module-client";
-      inputs.nixpkgs.follows = "vast-overlay/pinned";
-    };
+    vast-overlay = { url = "github:gtrunsec/vast/module-client"; };
   };
   outputs =
     { self
@@ -29,35 +26,35 @@
     , ...
     }
     @ inputs:
-    with inputs;
-    flake-utils.lib.eachDefaultSystem (
-      system: let
-        overlay = import ./nix/overlay.nix { inherit inputs system; };
-        pkgs = inputs.nixpkgs.legacyPackages."${system}".appendOverlays [ overlay ];
-        devshell = inputs.devshell.legacyPackages."${system}";
-      in
-        with pkgs;
-        rec {
-          inherit overlay;
+      with inputs;
+      flake-utils.lib.eachDefaultSystem (
+        system: let
+          overlay = import ./nix/overlay.nix { inherit inputs system; };
+          pkgs = inputs.nixpkgs.legacyPackages."${system}".appendOverlays [ overlay ];
+          devshell = inputs.devshell.legacyPackages."${system}";
+        in
+          with pkgs;
+          rec {
+            inherit overlay;
 
-          packages = flake-utils.lib.flattenTree { inherit (pkgs) vast-release vast-latest pyvast pyvast-latest; };
-          apps = {
-            vast-release = {
-              type = "app";
-              program = "${pkgs.vast-release}/bin/vast";
+            packages = flake-utils.lib.flattenTree { inherit (pkgs) vast-release vast-latest pyvast pyvast-latest; };
+            apps = {
+              vast-release = {
+                type = "app";
+                program = "${pkgs.vast-release}/bin/vast";
+              };
+              vast-latest = {
+                type = "app";
+                program = "${pkgs.vast-latest}/bin/vast";
+              };
             };
-            vast-latest = {
-              type = "app";
-              program = "${pkgs.vast-latest}/bin/vast";
-            };
-          };
-          defaultPackage = pkgs.vast-release;
-          hydraJobs = { inherit packages; };
-          devShell = import ./shell { inherit inputs devshell pkgs; };
-        }
-    )
-    // {
-      nixosModules.vast = inputs.vast-overlay.nixosModules.vast;
-      nixosModules.vast-client = inputs.vast-overlay.nixosModules.vast-client;
-    };
+            defaultPackage = pkgs.vast-release;
+            hydraJobs = { inherit packages; };
+            devShell = import ./shell { inherit inputs devshell pkgs; };
+          }
+      )
+      // {
+        nixosModules.vast = inputs.vast-overlay.nixosModules.vast;
+        nixosModules.vast-client = inputs.vast-overlay.nixosModules.vast-client;
+      };
 }

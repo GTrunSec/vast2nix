@@ -32,12 +32,12 @@ in
     vast-release =
       with final;
       (
-        inputs.vast-overlay.pinned."${system}".pkgsStatic.vast.override {
+        inputs.vast-overlay.pkgs."${system}".pkgsStatic.vast.override {
           vast-source = vast-sources.vast-release.src;
           versionOverride = vast-sources.vast-release.version;
           withPlugins = [
-            "${vast-sources.vast-release.src}/plugins/pcap"
-            "${vast-sources.vast-release.src}/plugins/broker"
+            "${inputs.vast-overlay}/plugins/pcap"
+            "${inputs.vast-overlay}/plugins/broker"
           ];
         }
       )
@@ -63,11 +63,12 @@ in
               + (builtins.substring 0 7 final.vast-sources.vast-latest.version)
               + "-dirty";
             withPlugins = [
+              "${inputs.vast-overlay}/plugins/broker"
               "${vast-sources.vast-latest.src}/plugins/pcap"
-              "${vast-sources.vast-latest.src}/plugins/broker"
+              #"${vast-sources.vast-latest.src}/plugins/broker"
             ];
           }
         )
       )
-      .overrideAttrs (old: { patches = [ ]; });
+      .overrideAttrs (old: { });
   }
