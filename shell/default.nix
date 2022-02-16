@@ -1,9 +1,15 @@
 { inputs
 , devshell
 , pkgs
+, system
 }:
+let
+  cellsProfiles = inputs.cells.devshellProfiles.${system};
+in
 devshell.mkShell {
-  imports = [ (devshell.importTOML ./devshell.toml) ];
+  imports = [ (devshell.importTOML ./devshell.toml)
+              cellsProfiles.common
+            ];
   commands =
     with pkgs;
     [

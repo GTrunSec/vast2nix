@@ -12,6 +12,7 @@
       url = "github:tenzir/zeek-vast";
       flake = false;
     };
+    cells = { url = "github:gtrunsec/devsecops-cells"; };
     vast-overlay = { url = "github:gtrunsec/vast/module-client"; };
   };
   outputs =
@@ -21,6 +22,7 @@
     , flake-compat
     , devshell
     , zeek2nix
+    , cells
     , nixpkgs-hardenedlinux
     , vast-overlay
     , ...
@@ -50,7 +52,7 @@
             };
             defaultPackage = pkgs.vast-release;
             hydraJobs = { inherit packages; };
-            devShell = import ./shell { inherit inputs devshell pkgs; };
+            devShell = import ./shell { inherit inputs devshell pkgs system; };
           }
       )
       // {
