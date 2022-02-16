@@ -1,9 +1,9 @@
 name: "CI"
 on:
-  pull_request:
   push:
-    branches:
-      - main
+    branches: [main, staging, trying]
+  pull_request:
+    branches: [main]
   schedule:
     - cron: "0 0 * * SUN" # every sunday
 jobs:
