@@ -27,8 +27,7 @@ jobs:
         run: nix -Lv flake show
 
       - name: Run Updates
-        run: |
-          nix -Lv develop -c -- nvfetcher-update ./nix/sources.toml
+        run: nix -Lv develop ./devshell -c run-nvfetcher
 
       - name: Build Release vast
         run: nix -Lv build .#vast-release

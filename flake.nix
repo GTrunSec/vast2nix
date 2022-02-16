@@ -12,20 +12,18 @@
       url = "github:tenzir/zeek-vast";
       flake = false;
     };
-    cells = { url = "github:gtrunsec/devsecops-cells"; };
     vast-overlay = { url = "github:gtrunsec/vast/module-client"; };
   };
   outputs =
-    { self
-    , nixpkgs
-    , flake-utils
-    , flake-compat
-    , devshell
-    , zeek2nix
-    , cells
-    , nixpkgs-hardenedlinux
-    , vast-overlay
-    , ...
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      flake-compat,
+      zeek2nix,
+      nixpkgs-hardenedlinux,
+      vast-overlay,
+      ...
     }
     @ inputs:
       with inputs;
@@ -33,10 +31,8 @@
         system: let
           overlay = import ./nix/overlay.nix { inherit inputs system; };
           pkgs = inputs.nixpkgs.legacyPackages."${system}".appendOverlays [ overlay ];
-          devshell = inputs.devshell.legacyPackages."${system}";
         in
-          with pkgs;
-          rec {
+          with pkgs; rec {
             inherit overlay;
 
             packages = flake-utils.lib.flattenTree { inherit (pkgs) vast-release vast-latest pyvast pyvast-latest; };
@@ -52,7 +48,6 @@
             };
             defaultPackage = pkgs.vast-release;
             hydraJobs = { inherit packages; };
-            devShell = import ./devshell { inherit inputs devshell pkgs system; };
           }
       )
       // {

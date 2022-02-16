@@ -1,5 +1,6 @@
-{ inputs
-, system
+{
+  inputs,
+  system,
 }:
 final: prev: let
   kversion = v: builtins.elemAt (prev.lib.splitString "-" v) 0;
@@ -7,8 +8,7 @@ in
   {
     vast-sources = prev.callPackage ./_sources/generated.nix { };
     pyvast =
-      with final;
-      (
+      with final; (
         python3Packages.buildPythonPackage {
           pname = "pyvast";
           version = vast-sources.vast-release.version + "-release";
@@ -18,8 +18,7 @@ in
         }
       );
     pyvast-latest =
-      with final;
-      (
+      with final; (
         pyvast.overridePythonAttrs (
           old: {
             src = vast-sources.vast-latest.src + "/pyvast";

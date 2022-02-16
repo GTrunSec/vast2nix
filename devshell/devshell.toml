@@ -1,5 +1,5 @@
 [devshell]
-packages = [ "navi" ]
+packages = [ ]
 
 [[commands]]
 name = "vast-example"
