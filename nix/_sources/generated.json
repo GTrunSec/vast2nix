@@ -1,0 +1,42 @@
+{
+    "vast-release": {
+        "pinned": false,
+        "cargoLock": null,
+        "name": "vast-release",
+        "version": "v1.0.0",
+        "passthru": null,
+        "src": {
+            "deepClone": false,
+            "leaveDotGit": false,
+            "owner": "tenzir",
+            "fetchSubmodules": true,
+            "name": null,
+            "repo": "vast",
+            "type": "github",
+            "sha256": "sha256-7ZLudaPngR35rc6iBvuous+e5nb4cKKm19autLh4ick=",
+            "rev": "v1.0.0"
+        },
+        "extract": null,
+        "rustGitDeps": null
+    },
+    "vast-latest": {
+        "pinned": false,
+        "cargoLock": null,
+        "name": "vast-latest",
+        "version": "6739d464e4cbbbcceb3ba840fa1b417d39e7a537",
+        "passthru": null,
+        "src": {
+            "deepClone": false,
+            "leaveDotGit": false,
+            "owner": "tenzir",
+            "fetchSubmodules": true,
+            "name": null,
+            "repo": "vast",
+            "type": "github",
+            "sha256": "sha256-bPTBLgEDZtLcX3J9ABQW6Pdc1C2OK9/18yGccagxPgg=",
+            "rev": "6739d464e4cbbbcceb3ba840fa1b417d39e7a537"
+        },
+        "extract": null,
+        "rustGitDeps": null
+    }
+}
