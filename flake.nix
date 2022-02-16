@@ -52,7 +52,7 @@
             };
             defaultPackage = pkgs.vast-release;
             hydraJobs = { inherit packages; };
-            devShell = import ./shell { inherit inputs devshell pkgs system; };
+            devShell = import ./devshell { inherit inputs devshell pkgs system; };
           }
       )
       // {

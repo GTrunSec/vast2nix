@@ -4,7 +4,7 @@
 , system
 }:
 let
-  cellsProfiles = inputs.cells.devshellProfiles.${system};
+  cellsProfiles = inputs.cells.devshellProfiles."x86_64-linux";
 in
 devshell.mkShell {
   imports = [ (devshell.importTOML ./devshell.toml)
