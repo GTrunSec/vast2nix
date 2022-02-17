@@ -35,8 +35,8 @@ in
           vast-source = vast-sources.vast-release.src;
           versionOverride = vast-sources.vast-release.version;
           withPlugins = [
-            "${inputs.vast-overlay}/plugins/pcap"
             "${inputs.vast-overlay}/plugins/broker"
+            "${vast-sources.vast-release.src}/plugins/pcap"
           ];
         }
       )
@@ -62,9 +62,8 @@ in
               + (builtins.substring 0 7 final.vast-sources.vast-latest.version)
               + "-dirty";
             withPlugins = [
-              "${inputs.vast-overlay}/plugins/broker"
               "${vast-sources.vast-latest.src}/plugins/pcap"
-              #"${vast-sources.vast-latest.src}/plugins/broker"
+              "${vast-sources.vast-latest.src}/plugins/broker"
             ];
           }
         )
