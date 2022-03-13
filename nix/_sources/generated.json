@@ -23,7 +23,7 @@
         "pinned": false,
         "cargoLock": null,
         "name": "vast-latest",
-        "version": "f07fa41acaca46986db9bf8d56afe7c77a32dbdb",
+        "version": "ddb9169b66cab9d37a7f71569dc97551f724d2c5",
         "passthru": null,
         "src": {
             "deepClone": false,
@@ -33,8 +33,8 @@
             "name": null,
             "repo": "vast",
             "type": "github",
-            "sha256": "sha256-U7lYXqJQ0cu0ZLc64SZdSKDbcQnBjbd2IX6fwhtcBNg=",
-            "rev": "f07fa41acaca46986db9bf8d56afe7c77a32dbdb"
+            "sha256": "sha256-Axw33R4ycD8GKK9IZ6qy8t+r1FRx20ghDuh+WNv/2ko=",
+            "rev": "ddb9169b66cab9d37a7f71569dc97551f724d2c5"
         },
         "extract": null,
         "rustGitDeps": null
