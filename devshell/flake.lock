@@ -15712,12 +15712,12 @@
         "zeek2nix": "zeek2nix_9"
       },
       "locked": {
-        "narHash": "sha256-xQSAAYctfQgXWdZrSOE7HKAq2xv4xRlPlM12ZkZg8nY=",
-        "path": "/nix/store/ww080hd9c5yrjmpa1jp53qf495v6m8am-source",
+        "narHash": "sha256-y5WaC07QZOuz2oe/eUJiAtniGRsHb8LLPzpxdPj7Ugo=",
+        "path": "/nix/store/mcqpm6g342bvxh433nl0m1mdyb8d8fll-source",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/ww080hd9c5yrjmpa1jp53qf495v6m8am-source",
+        "path": "/nix/store/mcqpm6g342bvxh433nl0m1mdyb8d8fll-source",
         "type": "path"
       }
     },
