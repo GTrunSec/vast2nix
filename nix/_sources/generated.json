@@ -3,7 +3,7 @@
         "pinned": false,
         "cargoLock": null,
         "name": "vast-release",
-        "version": "v1.1.0",
+        "version": "v1.1.1",
         "passthru": null,
         "src": {
             "deepClone": false,
@@ -13,8 +13,8 @@
             "name": null,
             "repo": "vast",
             "type": "github",
-            "sha256": "sha256-sM5A7sNNXKFnP6jgSSXUD4egQNUEACxcpur+tB7am6Y=",
-            "rev": "v1.1.0"
+            "sha256": "sha256-m0EbkFHK5zOhoaHpHtOSG8LepuSsiqedWh+iXGzV/7U=",
+            "rev": "v1.1.1"
         },
         "extract": null,
         "rustGitDeps": null
@@ -23,7 +23,7 @@
         "pinned": false,
         "cargoLock": null,
         "name": "vast-latest",
-        "version": "cfd717651d86683dcd81a0805cce578af3ec514d",
+        "version": "23c4b7d2f42fa65fb30418ac007d581c9425baac",
         "passthru": null,
         "src": {
             "deepClone": false,
@@ -33,8 +33,8 @@
             "name": null,
             "repo": "vast",
             "type": "github",
-            "sha256": "sha256-oArsGK08K9KAd65l9mw1P49KCx0zCtfJ6W7up4irmRo=",
-            "rev": "cfd717651d86683dcd81a0805cce578af3ec514d"
+            "sha256": "sha256-/D7wBbnCzqw+ttTde0ktxArfk+G1nVQbl6S0LbMABEM=",
+            "rev": "23c4b7d2f42fa65fb30418ac007d581c9425baac"
         },
         "extract": null,
         "rustGitDeps": null
