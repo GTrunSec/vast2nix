@@ -30,6 +30,7 @@ in {
         withPlugins = [
           "${inputs.vast-overlay}/plugins/broker"
           "${vast-sources.vast-release.src}/plugins/pcap"
+          "${vast-sources.vast-release.src}/plugins/summarize"
         ];
       }
     )
@@ -56,6 +57,7 @@ in {
           withPlugins = [
             "${vast-sources.vast-latest.src}/plugins/pcap"
             "${vast-sources.vast-latest.src}/plugins/broker"
+            "${vast-sources.vast-latest.src}/plugins/summarize"
           ];
         }
       )
