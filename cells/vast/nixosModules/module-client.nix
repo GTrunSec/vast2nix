@@ -2,9 +2,9 @@
   config,
   lib,
   pkgs,
+  options,
   ...
 }: let
-  vast = import ./module.nix {inherit config lib pkgs;};
   name = "vast";
   cfg = config.services.vast-client;
   format = pkgs.formats.yaml {};
@@ -24,7 +24,7 @@
   port = lib.toInt (lib.last (lib.splitString ":" cfg.settings.vast.endpoint));
 in {
   options.services.vast-client =
-    vast.options.services.vast
+    options.services.vast
     // {
       integrations = lib.mkOption {
         default = {};
