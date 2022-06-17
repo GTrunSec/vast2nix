@@ -10,9 +10,6 @@
     data-merge.follows = "cells-lab/data-merge";
   };
 
-  inputs = {
-  };
-
   outputs = {std, ...} @ inputs:
     std.growOn {
       inherit inputs;

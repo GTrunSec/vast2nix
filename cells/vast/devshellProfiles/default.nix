@@ -13,9 +13,9 @@
       {
         name = "nvfetcher-update";
         command = ''
-        nix develop github:GTrunSec/cells-lab#devShells.x86_64-linux.update \
-        --refresh --command \
-        nvfetcher-update cells/vast/packages/sources.toml
+          nix develop github:GTrunSec/cells-lab#devShells.x86_64-linux.update \
+          --refresh --command \
+          nvfetcher-update cells/vast/packages/sources.toml
         '';
       }
     ];

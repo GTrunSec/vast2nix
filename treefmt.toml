@@ -1,18 +1,13 @@
 [formatter.nix]
 command = "alejandra"
 includes = ["*.nix"]
-excludes = [""]
+excludes = ["./cells/vast/packages/*"]
 
 [formatter.prettier]
 command = "prettier"
 options = ["--plugin", "prettier-plugin-toml", "--write"]
 includes = ["*.md", "*.yaml", "*.toml", "*.json"]
-excludes = [
-  "./cells/_templates/_packages/*",
-  "Manifest.toml",
-  "Project.toml",
-  "./cells/secrets/*"
-]
+excludes = ["./cells/vast/packages/*"]
 
 [formatter.black]
 command = "black"
