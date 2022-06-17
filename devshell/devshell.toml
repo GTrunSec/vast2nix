@@ -1,8 +1,0 @@
-[devshell]
-packages = [ ]
-
-[[commands]]
-name = "vast-example"
-category = "conf"
-command = "vast --config=$PRJ_ROOT/conf/config.vast.example.yaml start"
-help = "launch vast with example.yaml"

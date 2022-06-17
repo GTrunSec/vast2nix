@@ -1,10 +1,9 @@
 # nvfetcher.toml
 [vast-release]
 src.github_tag = "tenzir/vast"
-src.include_regex = "v1.*"
+src.include_regex = "v2.*"
 fetch.github = "tenzir/vast"
 git.fetchSubmodules = true
-
 
 [vast-latest]
 src.git = "https://github.com/tenzir/vast"

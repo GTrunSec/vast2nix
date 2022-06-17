@@ -5,3 +5,4 @@ tmp/
 result
 nix/changelog
 .cache
+.std
