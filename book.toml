@@ -8,4 +8,4 @@ title = "Documentation"
 build-dir = "docs/book"
 
 [preprocessor.kroki-preprocessor]
-command = "/nix/store/j1xg7sqqa8mcyinb13xq42k3znqg5jkj-mdbook-kroki-preprocessor-0.1.0"
+command = "/nix/store/j1xg7sqqa8mcyinb13xq42k3znqg5jkj-mdbook-kroki-preprocessor-0.1.0/bin/mdbook-kroki-preprocessor"

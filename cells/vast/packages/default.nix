@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  nixpkgs = inputs.vast-nixpkgs.appendOverlays [
+  nixpkgs = inputs.vast-nixpkgs.legacyPackages.appendOverlays [
     cell.overlays.default
     cell.overlays.vast
   ];
