@@ -6,6 +6,7 @@
     cell.overlays.default
     cell.overlays.vast
   ];
+  vast-bin = nixpkgs.callPackage ./bin.nix {};
 in {
   inherit
     (nixpkgs)
@@ -14,4 +15,5 @@ in {
     pyvast
     pyvast-latest
     ;
+   inherit vast-bin;
 }
