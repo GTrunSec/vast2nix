@@ -1,4 +1,18 @@
 {
+    "vast-bin": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "vast-bin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-KhnDQC6H+CiVDj8ORUV1aLAVP+Cww5fLw/W2IrQv4Zk=",
+            "type": "url",
+            "url": "https://github.com/tenzir/vast/releases/download/v2.0.0/vast-linux-static.tar.gz"
+        },
+        "version": "v2.0.0"
+    },
     "vast-latest": {
         "cargoLocks": null,
         "extract": null,
