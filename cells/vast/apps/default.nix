@@ -15,5 +15,5 @@ in {
     pyvast
     pyvast-latest
     ;
-   inherit vast-bin;
+  inherit vast-bin;
 }

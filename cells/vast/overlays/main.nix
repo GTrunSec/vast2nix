@@ -1,7 +1,7 @@
 {inputs}: final: prev: let
   kversion = v: builtins.elemAt (prev.lib.splitString "-" v) 0;
 in {
-  vast-sources = prev.callPackage ../packages/_sources/generated.nix {};
+  vast-sources = prev.callPackage ../apps/_sources/generated.nix {};
 
   pyvast = with final; (
     python3Packages.buildPythonPackage {

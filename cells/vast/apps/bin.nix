@@ -1,7 +1,7 @@
 {
   stdenv,
   lib,
-  vast-sources
+  vast-sources,
 }:
 stdenv.mkDerivation {
   inherit (vast-sources.vast-bin) src pname version;
