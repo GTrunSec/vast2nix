@@ -57,7 +57,7 @@ in {
 
   # Configures the minimum severity of messages written to the console.
   # For a list of valid log levels, see file-verbosity.
-  # console-verbosity = "info";
+  console-verbosity = "info";
 
   # List of directories to look for schema files in ascending order of
   # priority.

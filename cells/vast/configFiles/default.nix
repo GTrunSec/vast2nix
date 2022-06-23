@@ -19,17 +19,17 @@ in {
     file-verbosity = "info";
   });
 
-  custom =
-    data-merge.merge (cell.config.default {
+  custom = toYaml (data-merge.merge (cell.config.default {
       # coustom arguments with Yants type check;
-      db-directory = "/var/lib/vast";
+      db-directory = ".cache/vast";
       file-verbosity = "info";
       endpoint = "127.0.0.1:4000";
     }) {
       vast = {
         # coustom settings; freeType merge
         max-resident-partitions = 8;
+        plguins = ["all"];
         # file-verbosity = "sss";
       };
-    };
+    });
 }
