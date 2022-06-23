@@ -24,7 +24,7 @@
       inherit inputs;
       cellsFrom = ./cells;
       organelles = [
-        (cells-lab.installables "apps")
+        (cells-lab.installables "packages")
 
         (std.functions "devshellProfiles")
         (std.devshells "devshells")
@@ -44,7 +44,7 @@
       overlays = inputs.std.deSystemize "x86_64-linux" (inputs.std.harvest inputs.self ["vast" "overlays"]);
       devShells = inputs.std.harvest inputs.self ["vast" "devshells"];
       nixosModules = inputs.std.deSystemize "x86_64-linux" (inputs.std.harvest inputs.self ["vast" "nixosModules"]);
-      packages = inputs.std.harvest inputs.self ["vast" "apps"];
+      packages = inputs.std.harvest inputs.self ["vast" "packages"];
     };
 
   nixConfig.extra-substituters = ["https://zeek.cachix.org" "https://vast.cachix.org"];

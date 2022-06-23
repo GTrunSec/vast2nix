@@ -7,7 +7,7 @@
 in {
   config-check = writeShellApplication {
     name = "mkdoc";
-    runtimeInputs = [cell.apps.vast-bin];
+    runtimeInputs = [cell.packages.vast-bin];
     text = ''
       vast --config=${cell.configFiles.custom} "$@"
     '';
