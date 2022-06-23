@@ -3,7 +3,7 @@
   cell,
 }: {
   db-directory ? "vast.db",
-  file-verbosity ? ["quiet" "error" "warning" "info" "verbose" "debug" "trace"],
+  file-verbosity ? [],
   endpoint ? "localhost:42000",
   ...
 }: let
@@ -23,7 +23,9 @@ in {
   # File logging is only available for commands that start a node (e.g., vast
   # start). The levels above 'verbose' are usually not available in release
   # builds.
-  file-verbosity = (yants.enum file-verbosity ["quiet" "error" "warning" "info" "verbose" "debug" "trace"]) file-verbosity;
+  file-verbosity = (yants.enum file-verbosity
+    ["quiet" "error" "warning" "info" "verbose" "debug" "trace"])
+  file-verbosity;
 
   # Whether to enable automatic log rotation. If set to false, a new log file
   # will be created when the size of the current log file exceeds 10 MiB.
@@ -55,7 +57,7 @@ in {
 
   # Configures the minimum severity of messages written to the console.
   # For a list of valid log levels, see file-verbosity.
-  console-verbosity = "info";
+  # console-verbosity = "info";
 
   # List of directories to look for schema files in ascending order of
   # priority.

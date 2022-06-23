@@ -2,18 +2,34 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) nixpkgs;
+  inherit (inputs) nixpkgs data-merge;
   inherit (inputs.cells-lab._writers.library) writeConfiguration;
-in {
-  default =
+
+  toYaml = source:
     (writeConfiguration {
       name = "vast";
       format = "yaml";
       language = "nix";
-      source = cell.config.default {
-        db-directory = "/var/lib/vast";
-        file-verbosity = "info";
-      };
+      inherit source;
     })
     .data;
+in {
+  default = toYaml (cell.config.default {
+    db-directory = "/var/lib/vast";
+    file-verbosity = "info";
+  });
+
+  custom =
+    data-merge.merge (cell.config.default {
+      # coustom arguments with Yants type check;
+      db-directory = "/var/lib/vast";
+      file-verbosity = "info";
+      endpoint = "127.0.0.1:4000";
+    }) {
+      vast = {
+        # coustom settings; freeType merge
+        max-resident-partitions = 8;
+        # file-verbosity = "sss";
+      };
+    };
 }

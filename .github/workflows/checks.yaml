@@ -57,3 +57,12 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: ${{ env.COMMIT_MSG }}
+
+      - name: Build Doc
+        run: nix -Lv develop --command mdbook build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: ./docs/book
