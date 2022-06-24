@@ -1,0 +1,45 @@
+[Unit]
+Description=VAST - Visibility Across Space and Time
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=notify
+
+# user + privileges
+# We explicitly don't use DynamicUser because that can lead to recursive `chown`s.
+# Doing that is pretty slow on some file systems (e.g., xfs).
+User=vast
+Group=vast
+NoNewPrivileges=yes
+
+# capabilities
+RestrictNamespaces=yes
+RestrictAddressFamilies=
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictSUIDSGID=yes
+
+# system access
+ProtectSystem=strict
+ReadWritePaths=__argDir__
+ReadWritePaths=__argDir__
+PrivateTmp=yes
+ProtectHome=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+
+# service specifics
+TimeoutStopSec=600
+WorkingDirectory=__argDir__
+ExecStop=__argPath__bin/vast stop
+ExecStart=__argPath__/bin/vast start --config __argConfig__
+
+[Install]
+WantedBy=multi-user.target
