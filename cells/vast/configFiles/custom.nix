@@ -1,8 +1,10 @@
 {
   inputs,
   cell,
-}: {
-  config = cell.library.toYaml (inputs.data-merge.merge (cell.config.default {
+}: let
+  inherit (inputs) data-merge;
+in {
+  config = cell.library.toYaml (data-merge.merge (cell.config.default {
       # coustom arguments with Yants type check;
       db-directory = ".cache/vast";
       file-verbosity = "info";
@@ -11,7 +13,7 @@
       vast = {
         # coustom settings; freeType merge
         max-resident-partitions = 8;
-        plguins = ["all"];
+        plugins = data-merge.append ["all"];
         # file-verbosity = "sss";
       };
     });
