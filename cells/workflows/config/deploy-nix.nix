@@ -1,5 +1,6 @@
-{ env ? "vast-env",
-  args ? []
+{
+  env ? "vast-env",
+  args ? [],
 }: {
   bundle = {
     command = "nix";

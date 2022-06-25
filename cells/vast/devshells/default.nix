@@ -17,4 +17,13 @@ in
         inputs.cells.workflows.devshellProfiles.default
       ];
     };
+    user = {lib, ...}: {
+      name = "User: Vast2nix";
+
+      std.docs.enable = lib.mkForce true;
+
+      imports = [
+        inputs.cells-lab.main.devshellProfiles.default
+      ];
+    };
   }
