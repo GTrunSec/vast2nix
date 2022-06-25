@@ -6,3 +6,4 @@ result
 nix/changelog
 .cache
 .std
+*-deploy

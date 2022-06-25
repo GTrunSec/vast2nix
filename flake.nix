@@ -14,6 +14,7 @@
   inputs = {
     vast-overlay.url = "github:tenzir/vast";
     vast-nixpkgs.follows = "vast-overlay/nixpkgs";
+    lock.url = "path:./lock";
   };
   outputs = {
     std,

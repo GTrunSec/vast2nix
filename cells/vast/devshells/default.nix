@@ -14,6 +14,7 @@ in
       imports = [
         inputs.cells-lab.main.devshellProfiles.default
         cell.devshellProfiles.default
+        inputs.cells.workflows.devshellProfiles.default
       ];
     };
   }

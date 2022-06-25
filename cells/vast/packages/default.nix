@@ -19,10 +19,10 @@ in {
   inherit vast-bin;
 
   custom = cells-lab._builder.library.mkPaths {
-    name = "vast-custom";
+    name = "custom";
     paths = [
       # release latest bin
-      nixpkgs.vast-bin
+      vast-bin
       # systemd.service
       cell.configFiles.customSystemd
       # config file -> vast.yaml
