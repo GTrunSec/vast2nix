@@ -12,7 +12,7 @@ in {
       cargo make --makefile ${cell.configFiles.default} "$@"
     '';
   };
-  deploy = let
+  deploy-user = let
     doc = nixpkgs.writeText "md" (nixpkgs.lib.fileContents ./deploy.md);
   in
     writeShellApplication {
