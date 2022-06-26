@@ -10,14 +10,14 @@ in {
         package = nixpkgs.cargo-make;
       }
       {
-        name = "vast-deploy-nix";
-        command = "nix run $PRJ_ROOT#${nixpkgs.system}.workflows.entrypoints.deploy-nix $@";
+        name = "deploy";
+        command = "nix run $PRJ_ROOT#${nixpkgs.system}.workflows.entrypoints.deploy $@";
         help = "deploy the vast-env with nix expr";
       }
       {
-        name = "vast-deploy";
-        command = "nix run $PRJ_ROOT#${nixpkgs.system}.workflows.entrypoints.deploy $@";
-        help = "deploy the vast-env with --env-file=<env.file>";
+        name = "config";
+        command = "nix run $PRJ_ROOT#${nixpkgs.system}.vast.configFiles.deploy-user $@";
+        help = "deploy the vast-env with nix expr";
       }
     ];
   };
@@ -32,8 +32,8 @@ in {
         help = "deploy the vast-env";
       }
       {
-        name = "review-deploy-config";
-        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.workflows.configFile.deploy-user --refresh $@";
+        name = "config";
+        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.workflows.entrypoints.deploy-user-config --refresh $@";
         help = "deploy the vast-env";
       }
     ];

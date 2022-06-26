@@ -3,6 +3,7 @@
   cell,
 }: let
   inherit (inputs.nixpkgs) lib;
+  inherit (inputs) nixpkgs;
   inherit (inputs.lock) deploy;
   inherit (inputs.cells-lab.main.library) inputs';
 
@@ -14,23 +15,24 @@
         "--bundler"
         "github:Ninlives/relocatable.nix"
         "--refresh"
-        "github:gtrunsec/vast2nix#\${SYSTEM}.workflows.packages.user"
+        "/home/gtrun/ghq/github.com/GTrunSec/vast2nix#${nixpkgs.system}.workflows.packages.user"
+        #"github:gtrunsec/vast2nix#\${SYSTEM}.workflows.packages.user"
       ];
     };
     all = {
-      dependencies = map (f: "deploy-${toString f}") (lib.range 1 deploy.nodes.config.info.machines);
+      dependencies = map (f: "deploy-${toString f}") (lib.range 1 deploy.config.info.machines);
     };
   };
   nodes.tasks = builtins.listToAttrs (
     map (name: {
       value = {
         command = "./user-deploy/bin/user.deploy";
-        args = ["-s" "\${HOST${toString name}}" "-o" "\${SSH_OPT${toString name}" "-d" "\${DIR${toString name}" "-u"];
+        args = ["-s" "\${HOST${toString name}}" "-o" "\${SSH_OPT${toString name}}" "-d" "\${DIR${toString name}}" "-u"];
       };
       name = "deploy-${toString name}";
     })
     # how many machines ?
-    (lib.range 1 deploy.nodes.config.info.machines)
+    (lib.range 1 deploy.config.info.machines)
   );
 in
   inputs'.xnlib.lib.recursiveMerge [

@@ -1,7 +1,4 @@
 {
-  env ? "vast-env",
-  args ? [],
-}: {
   bundle = {
     command = "nix";
     args = [
@@ -9,11 +6,11 @@
       "--bundler"
       "github:Ninlives/relocatable.nix"
       "--refresh"
-      ".#x86_64-linux.vast.packages.${env}"
+      ".#x86_64-linux.vast.packages.vast-bin"
     ];
   };
   deploy = {
-    command = "./${env}-deploy/bin/${env}.deploy";
-    inherit args;
+    command = "./vast-bin-deploy/bin/vast-bin.deploy";
+    args = ["-s" "root@192.168.122.126" "-o" "-p 22" "-d" "/opt/vast" "-u"];
   };
 }

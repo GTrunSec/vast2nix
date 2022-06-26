@@ -316,7 +316,7 @@
     "lock": {
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-P6WDmCHf+FScVkwTvCRxvA5OrSaHL+/nUCxmqoTERcQ=",
+        "narHash": "sha256-NUQbpW/ygG+e0acaPjU5PhdzAA2sjiU4cSSeJ73ELio=",
         "path": "./lock/user",
         "type": "path"
       },
