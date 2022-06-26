@@ -13,7 +13,7 @@ in {
     '';
   };
   deploy-user = let
-    doc = nixpkgs.writeText "md" (nixpkgs.lib.fileContents ./deploy.md);
+    doc = nixpkgs.writeText "md" (nixpkgs.lib.fileContents ./deploy-user.md);
   in
     writeShellApplication {
       name = "deploy-vast";
