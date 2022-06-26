@@ -24,7 +24,7 @@ in
 
       imports = [
         inputs.cells-lab.main.devshellProfiles.default
-        inputs.cells-lab.workflows.devshellProfiles.user
+        inputs.cells.workflows.devshellProfiles.user
       ];
     };
   }
