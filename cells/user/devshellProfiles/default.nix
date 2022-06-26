@@ -41,7 +41,7 @@ in {
       }
       {
         name = "just-dev";
-        command = "just -f $PRJ_ROOT/justfile";
+        command = "just -f $PRJ_ROOT/devshell/justfile $@";
         help = "run just with dev-justfile";
       }
     ];
