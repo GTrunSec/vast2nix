@@ -3,7 +3,6 @@
   cell,
 }: let
   inherit (inputs) cells-lab;
-  inherit (inputs.cell) vast;
   inherit (inputs) lock;
   inherit (inputs.nixpkgs) lib;
 in {
@@ -12,7 +11,7 @@ in {
     paths =
       [
         # release latest bin
-        vast.packages.${lock.deploy.nodes.config.vast.version}
+        cell.packages.${lock.deploy.nodes.config.vast.version}
         # systemd.service
         cell.configFiles.customSystemd
         # config file -> vast.yaml

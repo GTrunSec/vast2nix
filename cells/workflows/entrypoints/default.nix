@@ -22,7 +22,7 @@ in {
         if [ "$1" == "doc" ]; then
           glow ${doc}
         else
-          cargo make --makefile ${cell.configFiles.default} "$@"
+          cargo make --makefile ${cell.configFiles.deploy-user} "$@"
         fi
       '';
     };
