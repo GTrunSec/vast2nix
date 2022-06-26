@@ -1,20 +1,16 @@
 {
   inputs,
   cell,
-}: {
-  db-directory ? "vast.db",
-  file-verbosity ? [],
-  endpoint ? "localhost:42000",
-  ...
-}: let
+}: {...}: let
   inherit (inputs) yants;
 in {
-  inherit endpoint;
+  endpoint = "127.0.0.1:42000";
   # The file system path used for persistent state.
-  db-directory = "${db-directory}";
+
+  db-directory = "vast.db";
 
   # The file system path used for log files.
-  log-file = "${db-directory}/server.log";
+  log-file = ".cache/server.log";
 
   file-format = "[%Y-%m-%dT%T.%e%z] [%n] [%l] [%s=%#] %v";
 
@@ -23,9 +19,7 @@ in {
   # File logging is only available for commands that start a node (e.g., vast
   # start). The levels above 'verbose' are usually not available in release
   # builds.
-  file-verbosity = (yants.enum file-verbosity
-    ["quiet" "error" "warning" "info" "verbose" "debug" "trace"])
-  file-verbosity;
+  file-verbosity = "info";
 
   # Whether to enable automatic log rotation. If set to false, a new log file
   # will be created when the size of the current log file exceeds 10 MiB.

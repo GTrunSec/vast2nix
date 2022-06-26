@@ -1,7 +1,7 @@
 {
   inputs,
   cell,
-}: {db-directory, ...}: {
+}: {...}: {
   metrics = {
     self-sink = {
       enable = true;
@@ -11,13 +11,13 @@
     file-sink = {
       enable = false;
       real-time = false;
-      path = "${db-directory}/vast-metrics.log";
+      path = ".cache/vast-metrics.log";
     };
     # Configures if and where metrics should be written to a socket.
     uds-sink = {
       enable = false;
       real-time = false;
-      path = "${db-directory}/vast-metrics.sock";
+      path = "./cache/vast-metrics.sock";
       type = "datagram";
     };
   };

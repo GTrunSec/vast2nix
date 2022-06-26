@@ -18,4 +18,10 @@
 in {
   deploy = utils;
   deploy-user = inputs'.xnlib.lib.recursiveMerge [(import ./deploy-user.nix args) utils];
+  watchexec-systemd = env:
+    makeSubstitution {
+      name = "watchexec-systemd";
+      inherit env;
+      source = ../configFiles/watchexec/systemd.service;
+    };
 }
