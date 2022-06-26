@@ -10,7 +10,7 @@ in {
   in
     writeShellApplication {
       name = "deploy-user";
-      runtimeInputs = [nixpkgs.cargo-make nixpkgs.glow];
+      runtimeInputs = [nixpkgs.cargo-make nixpkgs.glow nixpkgs.cargo];
       text = ''
         if [ "$1" == "doc" ]; then
           glow ${doc}
