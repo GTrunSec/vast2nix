@@ -20,7 +20,7 @@ in rec {
     nixpkgs.writers.writeBash "watchexec.bash"
     (import ./watchexec/zeek.nix {
       watchexec = cell.packages.watchexec-simple;
-      endpoint = vast.vast.endpoint;
+      endpoint = (lib.importJSON (inputs.cells.vast.library.toJSON inputs.lock.deploy.vast.config)).vast.endpoint;
     });
 
   watchexec-systemd = cell.config.watchexec-systemd {
