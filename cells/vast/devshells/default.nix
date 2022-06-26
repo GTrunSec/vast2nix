@@ -14,7 +14,7 @@ in
       imports = [
         inputs.cells-lab.main.devshellProfiles.default
         cell.devshellProfiles.default
-        inputs.cells.workflows.devshellProfiles.default
+        inputs.cells.user.devshellProfiles.default
       ];
     };
     user = {lib, ...}: {
@@ -24,7 +24,7 @@ in
 
       imports = [
         inputs.cells-lab.main.devshellProfiles.default
-        inputs.cells.workflows.devshellProfiles.user
+        inputs.cells.user.devshellProfiles.user
       ];
     };
   }

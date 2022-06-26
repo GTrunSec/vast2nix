@@ -4,7 +4,7 @@
 }: let
   inherit (inputs) data-merge;
 in {
-  config = cell.library.toYaml (data-merge.merge (cell.config.default {
+  config = inputs.cells.vast.library.toYaml (data-merge.merge (inputs.cells.vast.config.default {
       # coustom arguments with Yants type check;
       db-directory = ".cache/vast";
       file-verbosity = "info";
@@ -18,7 +18,7 @@ in {
       };
     });
 
-  systemd = cell.config.systemd {
+  systemd = inputs.cells.vast.config.systemd {
     __argPath__ = "/opt/vast";
     __argConfig__ = "/opt/vast/vast.yaml";
     __argDir__ = "/var/lib/vast";

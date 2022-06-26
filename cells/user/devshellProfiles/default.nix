@@ -11,7 +11,7 @@ in {
       }
       {
         name = "deploy";
-        command = "nix run $PRJ_ROOT#${nixpkgs.system}.workflows.entrypoints.deploy $@";
+        command = "nix run $PRJ_ROOT#${nixpkgs.system}.user.entrypoints.deploy $@";
         help = "deploy the vast-env with nix expr";
       }
       {
@@ -28,12 +28,12 @@ in {
       }
       {
         name = "deploy";
-        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.workflows.entrypoints.deploy-user --refresh $@";
+        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.user.entrypoints.deploy-user --refresh $@";
         help = "deploy the vast-env";
       }
       {
         name = "config";
-        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.workflows.entrypoints.deploy-user-config --refresh $@";
+        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.user.entrypoints.deploy-user-config --refresh $@";
         help = "deploy the vast-env";
       }
     ];

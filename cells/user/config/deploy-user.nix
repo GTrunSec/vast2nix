@@ -15,19 +15,20 @@
         "--bundler"
         "github:Ninlives/relocatable.nix"
         "--refresh"
-        "/home/gtrun/ghq/github.com/GTrunSec/vast2nix#${nixpkgs.system}.workflows.packages.user"
-        #"github:gtrunsec/vast2nix#\${SYSTEM}.workflows.packages.user"
+        "/home/gtrun/ghq/github.com/GTrunSec/vast2nix#${nixpkgs.system}.user.packages.env"
+        #"github:gtrunsec/vast2nix#\${SYSTEM}.user.packages.user"
       ];
     };
     all = {
-      dependencies = map (f: "deploy-${toString f}") (lib.range 1 deploy.config.info.machines);
+      dependencies = (map (f: "deploy-${toString f}") (lib.range 1 deploy.config.info.machines)) ++ ["clean"];
     };
   };
   nodes.tasks = builtins.listToAttrs (
     map (name: {
       value = {
-        command = "./user-deploy/bin/user.deploy";
+        command = "./env-deploy/bin/env.deploy";
         args = ["-s" "\${HOST${toString name}}" "-o" "\${SSH_OPT${toString name}}" "-d" "\${DIR${toString name}}" "-u"];
+        dependencies = ["bundle"];
       };
       name = "deploy-${toString name}";
     })
