@@ -16,8 +16,8 @@
     };
   };
 in {
-  deploy = utils;
-  deploy-user = inputs'.xnlib.lib.recursiveMerge [(import ./deploy-user.nix args) utils];
+  #deploy = utils;
+  deploy = inputs'.xnlib.lib.recursiveMerge [(import ./deploy.nix args) utils];
   watchexec-systemd = env:
     makeSubstitution {
       name = "watchexec-systemd";

@@ -7,7 +7,7 @@
   inherit (inputs.cells-lab.main.library) inputs';
 in rec {
   #deploy = cell.library.toTOML cell.config.deploy;
-  deploy = cell.library.toTOML cell.config.deploy-user;
+  deploy = cell.library.toTOML cell.config.deploy;
 
   vast = inputs.cells.vast.library.toYaml (inputs'.xnlib.lib.recursiveMerge [
     (inputs.cells.vast.config.default {})
