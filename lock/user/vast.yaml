@@ -1,0 +1,3 @@
+vast:
+  # The host and port to listen at and connect to.
+  endpoint: "127.0.0.1:41000"

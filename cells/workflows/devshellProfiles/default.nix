@@ -21,4 +21,21 @@ in {
       }
     ];
   };
+  user = {...}: {
+    commands = [
+      {
+        package = nixpkgs.cargo-make;
+      }
+      {
+        name = "deploy";
+        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.workflows.entrypoints.deploy-user --refresh $@";
+        help = "deploy the vast-env";
+      }
+      {
+        name = "review-deploy-config";
+        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.workflows.configFile.deploy-user --refresh $@";
+        help = "deploy the vast-env";
+      }
+    ];
+  };
 }

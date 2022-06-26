@@ -175,22 +175,6 @@
     "flake-compat_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1650374568,
-        "narHash": "sha256-Z+s0J8/r907g149rllvwhb4pKi8Wam5ij0st8PwAh+E=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "b4a34015c698c7793d592d66adbab377907a2be8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "type": "github"
-      }
-    },
-    "flake-compat_3": {
-      "flake": false,
-      "locked": {
         "lastModified": 1641205782,
         "narHash": "sha256-4jY7RCWUoZ9cKD8co0/4tFARpWB+57+r1bLLvXNJliY=",
         "owner": "edolstra",
@@ -330,17 +314,14 @@
       }
     },
     "lock": {
-      "inputs": {
-        "flake-compat": "flake-compat_2"
-      },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-u85cr5Zs4a59oKSs+Z18vMsfU1ZYRIMl6qzWErA4l0s=",
-        "path": "./lock",
+        "narHash": "sha256-P6WDmCHf+FScVkwTvCRxvA5OrSaHL+/nUCxmqoTERcQ=",
+        "path": "./lock/user",
         "type": "path"
       },
       "original": {
-        "path": "./lock",
+        "path": "./lock/user",
         "type": "path"
       }
     },
@@ -652,7 +633,7 @@
     },
     "vast-overlay": {
       "inputs": {
-        "flake-compat": "flake-compat_3",
+        "flake-compat": "flake-compat_2",
         "flake-utils": "flake-utils_6",
         "nix-filter": "nix-filter_2",
         "nixpkgs": "nixpkgs_7"

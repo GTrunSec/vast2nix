@@ -1,0 +1,20 @@
+[info]
+# How many machines do you want to deploy?
+machines = 3
+
+[vast]
+enable = true
+system = "x86_64-linux"
+# which template do you want to base on
+template = "default"
+version = "vast-bin"
+
+[threatbus]
+enable = true
+system = "x86_64-linux"
+version = "threatbus-release"
+
+[zeek]
+enable = true
+system = "x86_64-linux"
+version = "zeek-release"
