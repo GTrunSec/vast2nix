@@ -11,7 +11,7 @@ in {
     paths =
       [
         # release latest bin
-        cell.packages.${lock.deploy.nodes.config.vast.version}
+        inputs.cells.vast.packages.${lock.deploy.nodes.config.vast.version}
         # systemd.service
         cell.configFiles.customSystemd
         # config file -> vast.yaml
