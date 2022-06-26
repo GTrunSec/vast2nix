@@ -9,7 +9,7 @@
   deploy-nix =
     nix-expr {
     };
-  utils = {
+  utils.tasks = {
     clean = {
       command = "find";
       args = ["." "-iname" "*-deploy" "-type" "l" "-delete"];
