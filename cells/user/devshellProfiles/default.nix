@@ -27,13 +27,16 @@ in {
         package = nixpkgs.cargo-make;
       }
       {
+        package = nixpkgs.just;
+      }
+      {
         name = "deploy";
-        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.user.entrypoints.deploy-user --refresh $@";
+        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.user.entrypoints.deploy --refresh $@";
         help = "deploy the vast-env";
       }
       {
         name = "config";
-        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.user.entrypoints.deploy-user-config --refresh $@";
+        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.user.entrypoints.config --refresh $@";
         help = "deploy the vast-env";
       }
     ];
