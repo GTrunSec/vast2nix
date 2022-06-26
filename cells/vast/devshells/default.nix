@@ -27,4 +27,10 @@ in
         inputs.cells.user.devshellProfiles.user
       ];
     };
+    just = {lib, ...}: {
+      name = "User: Vast2nix";
+      imports = [
+        inputs.cells.user.devshellProfiles.user
+      ];
+    };
   }
