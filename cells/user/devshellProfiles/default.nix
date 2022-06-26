@@ -39,6 +39,11 @@ in {
         command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.user.entrypoints.config --refresh $@";
         help = "deploy the vast-env";
       }
+      {
+        name = "just-dev";
+        command = "just -f $PRJ_ROOT/justfile";
+        help = "run just with dev-justfile";
+      }
     ];
   };
 }

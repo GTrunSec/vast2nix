@@ -27,8 +27,8 @@ in
         inputs.cells.user.devshellProfiles.user
       ];
     };
-    just = {lib, ...}: {
-      name = "User: Vast2nix";
+    template = {lib, ...}: {
+      name = "Template to Vast2nix";
       imports = [
         inputs.cells.user.devshellProfiles.user
       ];
