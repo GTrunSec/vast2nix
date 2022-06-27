@@ -5,8 +5,8 @@
     pname = "vast-bin";
     version = "v2.0.0";
     src = fetchurl {
-      url = "https://github.com/tenzir/vast/releases/download/v2.0.0/vast-linux-static.tar.gz";
-      sha256 = "sha256-KhnDQC6H+CiVDj8ORUV1aLAVP+Cww5fLw/W2IrQv4Zk=";
+      url = "https://github.com/tenzir/vast/releases/download/v2.1.0-rc3/vast-linux-static.tar.gz";
+      sha256 = "sha256-wY37OMDwvecirzAHxdUG3H31mPNZy25niUTlaU21UTw=";
     };
   };
   vast-latest = {

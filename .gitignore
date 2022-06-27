@@ -7,3 +7,4 @@ nix/changelog
 .cache
 .std
 *-deploy
+changelog
