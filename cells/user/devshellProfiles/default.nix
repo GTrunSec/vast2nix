@@ -25,29 +25,23 @@ in {
     commands = [
       {
         package = nixpkgs.cargo-make;
+        category = "workflow";
       }
       {
         package = nixpkgs.just;
-      }
-      {
-        name = "deploy";
-        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.user.entrypoints.deploy --refresh $@";
-        help = "deploy the vast-env";
-      }
-      {
-        name = "config";
-        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.user.entrypoints.config --refresh $@";
-        help = "deploy the vast-env";
+        category = "workflow";
       }
       {
         name = "just-dev";
         command = "just -f $PRJ_ROOT/devshell/justfile $@";
         help = "run just with dev-justfile";
+        category = "workflow";
       }
       {
         name = "cli-doc";
         command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.query.entrypoints.cli-doc --refresh $@";
         help = "show vast cli-doc";
+        category = "vast";
       }
     ];
   };

@@ -36,6 +36,8 @@
 
         (std.files "configFiles")
 
+        (std.files "templates")
+
         (std.functions "library")
 
         (std.functions "overlays")
