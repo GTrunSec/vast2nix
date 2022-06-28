@@ -7,7 +7,7 @@
   inherit (inputs.lock) deploy;
   inherit (inputs.cells-lab.main.library) inputs';
 
-  default .tasks = {
+  default.tasks = {
     bundle = {
       command = "nix";
       args = [
@@ -19,8 +19,12 @@
         "github:gtrunsec/vast2nix#${nixpkgs.system}.user.packages.env"
       ];
     };
+    deploy.run_task = {
+      name = map (f: "deploy-${toString f}") (lib.range 1 deploy.config.info.machines);
+      parallel = true;
+    };
     all = {
-      dependencies = (map (f: "deploy-${toString f}") (lib.range 1 deploy.config.info.machines)) ++ ["clean"];
+      dependencies = ["deploy" "clean"];
     };
   };
   nodes.tasks = builtins.listToAttrs (
