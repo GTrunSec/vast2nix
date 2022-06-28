@@ -8,7 +8,6 @@
   ];
   vast-bin = nixpkgs.callPackage ./bin.nix {};
 in {
-  inherit nixpkgs;
   inherit
     (nixpkgs)
     vast-release

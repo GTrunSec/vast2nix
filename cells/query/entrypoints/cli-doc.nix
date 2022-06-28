@@ -2,7 +2,10 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells.vast.packages) nixpkgs;
+  nixpkgs = inputs.vast-nixpkgs.legacyPackages.appendOverlays [
+    inputs.cells.vast.overlays.default
+    inputs.cells.vast.overlays.vast
+  ];
   inherit (inputs.cells-lab.main.library) inputs';
   inherit (nixpkgs) lib;
 
