@@ -46,7 +46,7 @@ in {
       }
       {
         name = "cli-doc";
-        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.user.entrypoints.cli-doc --refresh $@";
+        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.query.entrypoints.cli-doc --refresh $@";
         help = "show vast cli-doc";
       }
     ];
