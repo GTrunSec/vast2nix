@@ -25,7 +25,7 @@ in {
   in
     writeShellApplication {
       name = "config-user";
-      runtimeInputs = [nixpkgs.cargo-make nixpkgs.glow];
+      runtimeInputs = [nixpkgs.glow nixpkgs.bat];
       text = ''
         case "$@" in
         "doc") glow ${doc}
