@@ -25,7 +25,7 @@
       inherit inputs;
       cellsFrom = ./cells;
       organelles = [
-        (cells-lab.installables "packages")
+        (std.installables "packages")
 
         (std.functions "devshellProfiles")
         (std.devshells "devshells")
@@ -33,7 +33,8 @@
         (std.runnables "entrypoints")
 
         (std.data "config")
-        (cells-lab.files "configFiles")
+
+        (std.files "configFiles")
 
         (std.functions "library")
 

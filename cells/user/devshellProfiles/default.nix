@@ -44,6 +44,11 @@ in {
         command = "just -f $PRJ_ROOT/devshell/justfile $@";
         help = "run just with dev-justfile";
       }
+      {
+        name = "cli-doc";
+        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.user.entrypoints.cli-doc --refresh $@";
+        help = "show vast cli-doc";
+      }
     ];
   };
 }
