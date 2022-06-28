@@ -6,7 +6,7 @@
   inherit (inputs) nixpkgs;
 in {
   deploy = let
-    doc = nixpkgs.writeText "md" (nixpkgs.lib.fileContents ./deploy-user.md);
+    doc = nixpkgs.writeText "md" (nixpkgs.lib.fileContents ./deploy.md);
   in
     writeShellApplication {
       name = "deploy-user";
@@ -21,18 +21,20 @@ in {
     };
 
   config = let
-    doc = nixpkgs.writeText "md" (nixpkgs.lib.fileContents ./deploy-user.md);
+    doc = nixpkgs.writeText "md" (nixpkgs.lib.fileContents ./config.md);
   in
     writeShellApplication {
       name = "config-user";
       runtimeInputs = [nixpkgs.cargo-make nixpkgs.glow];
       text = ''
-        # shellcheck disable=all
-        if [ "$@" == "doc" ]; then
-          glow ${doc}
-        else
-        bat --paging=never ${cell.configFiles.vast}
-        fi
+        case "$@" in
+        "doc") glow ${doc}
+        ;;
+        "vast") bat --paging=never ${cell.configFiles.vast}
+        ;;
+        "deploy") bat --paging=never ${cell.configFiles.deploy}
+        ;;
+        esac
       '';
     };
 }
