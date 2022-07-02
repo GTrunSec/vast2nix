@@ -17,6 +17,9 @@
         "--refresh"
         #"/home/gtrun/ghq/github.com/GTrunSec/vast2nix#${nixpkgs.system}.user.packages.env"
         "github:gtrunsec/vast2nix#${nixpkgs.system}.user.packages.env"
+        "--override-input"
+        "lock"
+        "./profiles/demo"
       ];
     };
     deploy.run_task = {

@@ -32,12 +32,6 @@ in {
         category = "workflow";
       }
       {
-        name = "just-dev";
-        command = "just -f $PRJ_ROOT/devshell/justfile $@";
-        help = "run just with dev-justfile";
-        category = "workflow";
-      }
-      {
         name = "cli-doc";
         command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.query.entrypoints.cli-doc --refresh $@";
         help = "show vast cli-doc";
