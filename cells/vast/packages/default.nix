@@ -2,11 +2,10 @@
   inputs,
   cell,
 }: let
-  nixpkgs = inputs.vast-nixpkgs.legacyPackages.appendOverlays [
-    cell.overlays.default
-    cell.overlays.vast
-  ];
+  inherit (cell.library) nixpkgs;
+
   vast-bin = nixpkgs.callPackage ./bin.nix {};
+  vast-integration = nixpkgs.callPackage ./vast-integration.nix {};
 in {
   inherit
     (nixpkgs)
@@ -15,5 +14,7 @@ in {
     pyvast
     pyvast-latest
     ;
-  inherit vast-bin;
+    inherit
+      vast-bin
+      vast-integration;
 }

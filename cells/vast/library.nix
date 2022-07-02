@@ -27,4 +27,9 @@ in {
     nixpkgs.runCommand "toJSON.json" {preferLocalBuild = true;} ''
       ${nixpkgs.remarshal}/bin/yaml2json -i ${file} -o $out
     '';
+
+  nixpkgs = inputs.vast-nixpkgs.legacyPackages.appendOverlays [
+    cell.overlays.default
+    cell.overlays.vast
+  ];
 }

@@ -24,6 +24,7 @@ in {
       ]
       ++ lib.optionals lock.deploy.config.zeek.enable [
         inputs'.hunting-cells.zeek.packages.${lock.deploy.config.zeek.version}
+        inputs'.hunting-cells.zeek.configFiles.pre-zeekctl
       ]
       ++ lib.optionals lock.deploy.config.threatbus.enable [
         inputs'.hunting-cells.tenzir.packages.${lock.deploy.config.threatbus.version}
