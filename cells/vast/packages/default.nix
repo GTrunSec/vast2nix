@@ -14,7 +14,8 @@ in {
     pyvast
     pyvast-latest
     ;
-    inherit
-      vast-bin
-      vast-integration;
+  inherit
+    vast-bin
+    vast-integration
+    ;
 }
