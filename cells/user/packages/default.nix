@@ -3,7 +3,7 @@
   cell,
 }: let
   inherit (inputs) cells-lab;
-  inherit (inputs) lock;
+  inherit (inputs) lock nixpkgs;
   inherit (inputs.nixpkgs) lib;
   inherit (inputs.cells.vast.library) inputs';
 in {
@@ -21,6 +21,8 @@ in {
         inputs'.nixpkgs-hardenedlinux.packages.watchexec-simple
         cell.configFiles.watchexec-zeek
         cell.configFiles.watchexec-systemd
+        nixpkgs.sd
+        nixpkgs.file
       ]
       ++ lib.optionals lock.deploy.config.zeek.enable [
         inputs'.hunting-cells.zeek.packages.${lock.deploy.config.zeek.version}
