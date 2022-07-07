@@ -3,7 +3,7 @@
 {
   vast-bin = {
     pname = "vast-bin";
-    version = "v2.0.0";
+    version = "v2.1.0";
     src = fetchurl {
       url = "https://github.com/tenzir/vast/releases/download/v2.1.0-rc3/vast-linux-static.tar.gz";
       sha256 = "sha256-wY37OMDwvecirzAHxdUG3H31mPNZy25niUTlaU21UTw=";
@@ -11,24 +11,24 @@
   };
   vast-latest = {
     pname = "vast-latest";
-    version = "1e3c224bf0f66f982678e64577e932b08f56e625";
+    version = "876863aa7d94fb80c6a3c8439fc06ba03ee9d80e";
     src = fetchFromGitHub ({
       owner = "tenzir";
       repo = "vast";
-      rev = "1e3c224bf0f66f982678e64577e932b08f56e625";
+      rev = "876863aa7d94fb80c6a3c8439fc06ba03ee9d80e";
       fetchSubmodules = true;
-      sha256 = "sha256-8ET36UB2R1zlEThC5+LLlZJ+mXHHYwW5EkBESJd0lxw=";
+      sha256 = "sha256-gVNnH1gtusYSNV3v9bksoNindFh8Um6PXpwhD7ByFx8=";
     });
   };
   vast-release = {
     pname = "vast-release";
-    version = "v2.1.0-rc4";
+    version = "v2.1.0";
     src = fetchFromGitHub ({
       owner = "tenzir";
       repo = "vast";
-      rev = "v2.1.0-rc4";
+      rev = "v2.1.0";
       fetchSubmodules = true;
-      sha256 = "sha256-Qcy/J4ZOrSgAYx0H8pABj0XKVn/PMI7bCUsff6Z6w/A=";
+      sha256 = "sha256-gVNnH1gtusYSNV3v9bksoNindFh8Um6PXpwhD7ByFx8=";
     });
   };
 }
