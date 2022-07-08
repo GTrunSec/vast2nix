@@ -34,10 +34,48 @@
     map (name: {
       value = {
         command = "./env-deploy/bin/env.deploy";
-        args = ["-s" "\${HOST${toString name}}" "-o" "\${SSH_OPT${toString name}}" "-d" "\${DIR${toString name}}" "-u"];
+        args = [
+          "-s"
+          "\${HOST${toString name}}"
+          "-o"
+          "\${SSH_PORT${toString name}} \${SSH_OPT${toString name}}"
+          "-d"
+          "\${DIR${toString name}}"
+          "-u"
+        ];
         dependencies = ["bundle"];
       };
       name = "deploy-${toString name}";
+    })
+    # how many machines ?
+    (lib.range 1 deploy.config.info.machines)
+  );
+  init-nodes.tasks = builtins.listToAttrs (
+    map (name: let
+      init-bash = ''
+        <<'ENDSSH'
+        DIR=''${DIR${toString name}}
+        if [[ ! -d "''${DIR${toString name}}" ]]; then
+           mkdir -p ''${DIR${toString name}}
+        fi
+        if [[ -f "$DIR/root/bin/zeek-config" && ! -d "/var/lib/zeek" ]]; then
+           bash $DIR/root/pre-zeekctl.bash $DIR/root/bin
+        fi
+        ENDSSH
+      '';
+    in {
+      value = {
+        command = "ssh";
+        args = [
+          "\${HOST${toString name}}"
+          "\${SSH_PORT${toString name}}"
+          "\${SSH_OPT${toString name}}"
+          "bash -s"
+          "${init-bash}"
+        ];
+        # dependencies = ["deploy-${toString name}"];
+      };
+      name = "deploy-init-${toString name}";
     })
     # how many machines ?
     (lib.range 1 deploy.config.info.machines)
@@ -46,4 +84,5 @@ in
   inputs'.xnlib.lib.recursiveMerge [
     default
     nodes
+    init-nodes
   ]
