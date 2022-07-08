@@ -26,11 +26,11 @@
             "name": null,
             "owner": "tenzir",
             "repo": "vast",
-            "rev": "876863aa7d94fb80c6a3c8439fc06ba03ee9d80e",
-            "sha256": "sha256-gVNnH1gtusYSNV3v9bksoNindFh8Um6PXpwhD7ByFx8=",
+            "rev": "c28c7592120d5040efcb4ee376388e3c06ac711d",
+            "sha256": "sha256-bFa+Vm4S11/zkVfAxPPguTANYDRuDGLdBB36sX3/PF8=",
             "type": "github"
         },
-        "version": "876863aa7d94fb80c6a3c8439fc06ba03ee9d80e"
+        "version": "c28c7592120d5040efcb4ee376388e3c06ac711d"
     },
     "vast-release": {
         "cargoLocks": null,
