@@ -17,11 +17,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1656373543,
-        "narHash": "sha256-Q+k4vsxfebCEn0mL0jtZbodYo6f9t8TxDN0hUrYDDPc=",
+        "lastModified": 1657267884,
+        "narHash": "sha256-Ea6ujeXXMvaxHugY269qqQgMowO4cdRevCaCVGz3hdc=",
         "owner": "gtrunsec",
         "repo": "cells-lab",
-        "rev": "223ee89262d036a62cfbe35e5f468af34f7020db",
+        "rev": "72401eb1d267466b5fe8423c7d5cfe0362f443ab",
         "type": "github"
       },
       "original": {
@@ -2200,11 +2200,11 @@
         "zeek2nix": "zeek2nix_2"
       },
       "locked": {
-        "lastModified": 1656746075,
-        "narHash": "sha256-xALSyL1BEbIaj6NyVvKg40P1lst0lhiTw070vbpHf7k=",
+        "lastModified": 1657318469,
+        "narHash": "sha256-//AujVpFoWm0wbSBEypmW5ufuPs++NAHJ2ZxS+V/U/I=",
         "owner": "gtrunsec",
         "repo": "hunting-cells",
-        "rev": "a1e570f1d930d75c83b227f8315f4dfcb1b637db",
+        "rev": "6da6435b70b7fdedb2dd6818dd07c48b3387256f",
         "type": "github"
       },
       "original": {
@@ -4409,11 +4409,11 @@
         "yants": "yants_2"
       },
       "locked": {
-        "lastModified": 1656296008,
-        "narHash": "sha256-bm/OzLLY9SQqFkm/MFoUnGTFlPz78d5a/UXGkz8qXoE=",
+        "lastModified": 1656991367,
+        "narHash": "sha256-LiDOUBDYsR1cnPxdBgyENJYLwwZyovxvkGg/aUX7NXg=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "c421a6cd5e1851cf0c9b7a44c090ad9d133d6265",
+        "rev": "72e384ce8e22f04b63d3c5d9b02ba4a6704f96c5",
         "type": "github"
       },
       "original": {

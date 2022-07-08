@@ -17,16 +17,13 @@
       },
       "locked": {
         "lastModified": 1657226897,
-        "narHash": "sha256-2d2xAfA6bziW5laRselfhT8Gr4iB0ze5w9woLUPEaVM=",
-        "owner": "GTrunSec",
-        "repo": "cells-lab",
-        "rev": "5d7b00af02269a86455b2de99dabec8f1735d59a",
-        "type": "github"
+        "narHash": "sha256-nYUu3pGivAOcGDN9NvQtHaV/hJ8ibQjlSnMLhi1V+28=",
+        "type": "git",
+        "url": "file:///home/gtrun/ghq/github.com/GTrunSec/cells-lab"
       },
       "original": {
-        "owner": "GTrunSec",
-        "repo": "cells-lab",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/gtrun/ghq/github.com/GTrunSec/cells-lab"
       }
     },
     "cortex": {
