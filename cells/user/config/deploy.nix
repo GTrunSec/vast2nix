@@ -19,7 +19,7 @@
         "github:gtrunsec/vast2nix#${nixpkgs.system}.user.packages.env"
         "--override-input"
         "lock"
-        "./profiles/demo"
+        "./profiles/${deploy.dir}"
       ];
     };
     deploy.run_task = {

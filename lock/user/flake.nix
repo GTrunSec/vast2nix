@@ -3,6 +3,7 @@
     deploy = {
       vast.config = ./vast.yaml;
       config = builtins.fromTOML (builtins.readFile ./config.toml);
+      dir = builtins.baseNameOf ./.;
     };
   };
 }
