@@ -12,7 +12,16 @@
 
   query = lib.flatten (map (p: (map (x: p + x) (getDocs p))) understand-vast-md);
 
-  understand-vast-md = map (p: "understand-vast/query-language/" + p + "/") ["" "operators" "frontends"];
+  understand-vast-md =
+    map (p: "understand-vast/" + p + "/")
+    [
+      ""
+      "query-language/operators"
+      "query-language/frontends"
+      "data-model"
+      "architecture"
+      "architecture/cloud"
+    ];
 
   splitName = s: f:
     lib.concatStringsSep s (map (f: let
