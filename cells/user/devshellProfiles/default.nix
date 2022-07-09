@@ -33,7 +33,7 @@ in {
       }
       {
         name = "vast-doc";
-        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.query.entrypoints.doc --refresh $@";
+        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.vast.entrypoints.doc --refresh $@";
         help = "show vast vast-doc";
         category = "vast";
       }
