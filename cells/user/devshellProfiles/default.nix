@@ -32,9 +32,9 @@ in {
         category = "workflow";
       }
       {
-        name = "cli-doc";
-        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.query.entrypoints.cli-doc --refresh $@";
-        help = "show vast cli-doc";
+        name = "vast-doc";
+        command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.query.entrypoints.doc --refresh $@";
+        help = "show vast vast-doc";
         category = "vast";
       }
     ];
