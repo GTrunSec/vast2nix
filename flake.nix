@@ -5,7 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     cells-lab.url = "github:GTrunSec/cells-lab";
 
-
     std.url = "github:divnix/std";
     data-merge.follows = "cells-lab/data-merge";
     yants.follows = "std/yants";
@@ -15,7 +14,8 @@
   inputs = {
     vast-overlay.url = "github:tenzir/vast";
     vast-nixpkgs.follows = "vast-overlay/nixpkgs";
-    lock.url = "path:./lock/user";
+    # lock.url = "path:./lock/user";
+    lock.url = "/home/gtrun/ghq/github.com/GTrunSec/vast2nix/lock/user";
   };
   outputs = {
     std,

@@ -16,11 +16,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1657424122,
-        "narHash": "sha256-ZsYscA+DKdVU5ywWvHY/meMo9dgG1fqeb97C3pyZTmw=",
+        "lastModified": 1657442490,
+        "narHash": "sha256-EofX+TpeT6imyAaIjH1TNCF5gO5jAoQlplL6++TS+A0=",
         "owner": "GTrunSec",
         "repo": "cells-lab",
-        "rev": "c32f6be74797caffc686e5e7506cecba315ca5d6",
+        "rev": "51e5c81e7a5db3f8ef335fdd4fd2deb933664abe",
         "type": "github"
       },
       "original": {
@@ -315,14 +315,16 @@
     },
     "lock": {
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-vrLxTIGNJyBvPeKs7aWuOIAfefkNa3KlzBIelUY+cEY=",
-        "path": "./lock/user",
-        "type": "path"
+        "dir": "lock/user",
+        "lastModified": 1657424295,
+        "narHash": "sha256-CX0Xm9iQkk0tMonkQXxsewDu8H9HVoiNK2xYJhHHF8c=",
+        "type": "git",
+        "url": "file:///home/gtrun/ghq/github.com/GTrunSec/vast2nix?dir=lock%2fuser"
       },
       "original": {
-        "path": "./lock/user",
-        "type": "path"
+        "dir": "lock/user",
+        "type": "git",
+        "url": "file:///home/gtrun/ghq/github.com/GTrunSec/vast2nix?dir=lock%2fuser"
       }
     },
     "nix-filter": {
@@ -450,11 +452,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1655451545,
-        "narHash": "sha256-uLHNGkZbINBZ8Yz9z+/6xF77EVLPTasDyfE/sQpzZ4A=",
+        "lastModified": 1657292830,
+        "narHash": "sha256-ldfVSTveWceDCmW6gf3B4kR6vwmz/XS80y5wsLLHFJU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3802c98cffe636d54dc8f2812d143e50b4b07bb0",
+        "rev": "334ec8b503c3981e37a04b817a70e8d026ea9e84",
         "type": "github"
       },
       "original": {

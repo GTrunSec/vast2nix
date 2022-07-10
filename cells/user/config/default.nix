@@ -3,7 +3,7 @@
   cell,
 } @ args: let
   inherit (inputs.cells-lab.makes.library) makeSubstitution;
-  inherit (inputs.cells-lab.main.library) inputs';
+  inherit (inputs.cells-lab.main.library) __inputs__;
 
   nix-expr = _args: import ./deploy-nix.nix _args;
   deploy-nix =
@@ -17,7 +17,7 @@
   };
 in {
   #deploy = utils;
-  deploy = inputs'.xnlib.lib.recursiveMerge [(import ./deploy.nix args) utils];
+  deploy = __inputs__.xnlib.lib.recursiveMerge [(import ./deploy.nix args) utils];
   watchexec-systemd = env:
     makeSubstitution {
       name = "watchexec-systemd";

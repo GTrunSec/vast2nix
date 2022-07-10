@@ -5,7 +5,7 @@
   inherit (inputs) cells-lab;
   inherit (inputs) lock nixpkgs;
   inherit (inputs.nixpkgs) lib;
-  inherit (inputs.cells.vast.library) inputs';
+  inherit (inputs.cells.vast.library) __inputs__;
 in {
   env = cells-lab._builder.library.mkPaths {
     name = "env";
@@ -18,19 +18,19 @@ in {
         # # config file -> vast.yaml
         cell.configFiles.vast
         # cat the logs to vast importer
-        inputs'.nixpkgs-hardenedlinux.packages.watchexec-simple
+        __inputs__.nixpkgs-hardenedlinux.packages.watchexec-simple
         cell.configFiles.watchexec-zeek
         cell.configFiles.watchexec-systemd
         nixpkgs.sd
         nixpkgs.file
       ]
       ++ lib.optionals lock.deploy.config.zeek.enable [
-        inputs'.hunting-cells.zeek.packages.${lock.deploy.config.zeek.version}
-        inputs'.hunting-cells.zeek.configFiles.pre-zeekctl
+        __inputs__.hunting-cells.zeek.packages.${lock.deploy.config.zeek.version}
+        __inputs__.hunting-cells.zeek.configFiles.pre-zeekctl
       ]
       ++ lib.optionals lock.deploy.config.threatbus.enable [
-        inputs'.hunting-cells.tenzir.packages.${lock.deploy.config.threatbus.version}
+        __inputs__.hunting-cells.tenzir.packages.${lock.deploy.config.threatbus.version}
       ];
   };
-  inherit (inputs'.nixpkgs-hardenedlinux.packages) watchexec-simple;
+  inherit (__inputs__.nixpkgs-hardenedlinux.packages) watchexec-simple;
 }

@@ -4,13 +4,13 @@
 }: let
   inherit (inputs.cells-lab._writers.library) writeConfiguration;
   inherit (inputs) std nixpkgs self;
-  inputs' =
+  __inputs__ =
     (std.deSystemize nixpkgs.system
       (import "${(std.incl self [(self + /lock)])}/lock").inputs)
     // inputs;
 in {
-  inherit inputs';
-
+  inherit __inputs__;
+  # inherit __inputs__;
   toYaml = source:
     (writeConfiguration {
       name = "vast";

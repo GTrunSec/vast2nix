@@ -5,7 +5,7 @@
   inherit (inputs.nixpkgs) lib;
   inherit (inputs) nixpkgs;
   inherit (inputs.lock) deploy;
-  inherit (inputs.cells-lab.main.library) inputs';
+  inherit (inputs.cells-lab.main.library) __inputs__;
 
   default.tasks = {
     bundle = {
@@ -81,7 +81,7 @@
     (lib.range 1 deploy.config.info.machines)
   );
 in
-  inputs'.xnlib.lib.recursiveMerge [
+  __inputs__.xnlib.lib.recursiveMerge [
     default
     nodes
     init-nodes
