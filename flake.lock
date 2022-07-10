@@ -315,16 +315,14 @@
     },
     "lock": {
       "locked": {
-        "dir": "lock/user",
-        "lastModified": 1657424295,
-        "narHash": "sha256-CX0Xm9iQkk0tMonkQXxsewDu8H9HVoiNK2xYJhHHF8c=",
-        "type": "git",
-        "url": "file:///home/gtrun/ghq/github.com/GTrunSec/vast2nix?dir=lock%2fuser"
+        "lastModified": 1,
+        "narHash": "sha256-SlPH/Gc4/J/fx+xxVgQ2vpXKdce/F/xWzjD4VMngtDU=",
+        "path": "./lock/user",
+        "type": "path"
       },
       "original": {
-        "dir": "lock/user",
-        "type": "git",
-        "url": "file:///home/gtrun/ghq/github.com/GTrunSec/vast2nix?dir=lock%2fuser"
+        "path": "./lock/user",
+        "type": "path"
       }
     },
     "nix-filter": {

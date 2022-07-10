@@ -10,7 +10,7 @@
     // inputs;
 in {
   inherit __inputs__;
-  # inherit __inputs__;
+
   toYaml = source:
     (writeConfiguration {
       name = "vast";
