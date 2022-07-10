@@ -14,8 +14,7 @@
   inputs = {
     vast-overlay.url = "github:tenzir/vast";
     vast-nixpkgs.follows = "vast-overlay/nixpkgs";
-    # lock.url = "path:./lock/user";
-    lock.url = "/home/gtrun/ghq/github.com/GTrunSec/vast2nix/lock/user";
+    lock.url = "path:./lock/user";
   };
   outputs = {
     std,
