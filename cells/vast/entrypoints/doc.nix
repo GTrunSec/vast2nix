@@ -20,7 +20,7 @@
       "query-language/frontends"
       "data-model"
       "architecture"
-      "architecture/cloud"
+      "architecture/cloyd"
     ];
 
   splitName = s: f:
