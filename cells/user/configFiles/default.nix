@@ -5,12 +5,13 @@
   inherit (inputs) nixpkgs data-merge vast2nix;
   inherit (nixpkgs) lib;
   inherit (inputs.cells-lab.main.library) __inputs__;
-in rec {
-  #deploy = cell.library.toTOML cell.config.deploy;
+in {
   deploy = cell.library.toTOML cell.config.deploy;
 
   vast = inputs.cells.vast.library.toYaml (__inputs__.xnlib.lib.recursiveMerge [
-    (inputs.cells.vast.config.default {})
+    (inputs.cells.vast.config.default {
+      # catalog-fp-rate = 0.02;
+    })
     (lib.importJSON (inputs.cells.vast.library.toJSON inputs.lock.deploy.vast.config))
   ]);
 

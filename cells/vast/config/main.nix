@@ -1,7 +1,7 @@
 {
   inputs,
   cell,
-}: {...}: let
+}: let
   inherit (inputs) yants;
 in {
   endpoint = "127.0.0.1:42000";

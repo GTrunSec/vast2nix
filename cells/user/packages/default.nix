@@ -9,7 +9,8 @@
 in {
   env = cells-lab._builder.library.mkPaths {
     name = "env";
-    paths = lib.optionals lock.deploy.config.vast.enable [
+    paths =
+      lib.optionals lock.deploy.config.vast.enable [
         # release latest bin
         inputs.cells.vast.packages.${lock.deploy.config.vast.version}
         # systemd.service

@@ -18,6 +18,7 @@
 in {
   #deploy = utils;
   deploy = __inputs__.xnlib.lib.recursiveMerge [(import ./deploy.nix args) utils];
+
   watchexec-systemd = env:
     makeSubstitution {
       name = "watchexec-systemd";

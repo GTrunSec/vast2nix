@@ -1,7 +1,7 @@
 {
   inputs,
   cell,
-}: {...}: {
+}: {
   metrics = {
     self-sink = {
       enable = true;
