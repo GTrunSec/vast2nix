@@ -11,12 +11,11 @@
 in {
   inherit __inputs__;
 
-  toYaml = source:
+  toYaml = source: name:
     (writeConfiguration {
-      name = "vast";
       format = "yaml";
       language = "nix";
-      inherit source;
+      inherit source name;
     })
     .data;
 

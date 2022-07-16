@@ -7,7 +7,7 @@ excludes = ["generated.nix"]
 command = "prettier"
 options = ["--plugin", "prettier-plugin-toml", "--write"]
 includes = ["*.md", "*.yaml", "*.toml", "*.json"]
-excludes = ["generated.json"]
+excludes = ["generated.json", "./env/*"]
 
 [formatter.black]
 command = "black"

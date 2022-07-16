@@ -19,5 +19,8 @@
         '';
       }
     ];
+    packages = [
+      inputs.cells.vast.packages.vast-integration
+    ];
   };
 }

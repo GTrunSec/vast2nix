@@ -24,4 +24,6 @@ in {
       inherit env;
       source = ./systemd.service;
     };
+
+  integration = import ./vast-integration.nix;
 }

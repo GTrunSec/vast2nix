@@ -24,6 +24,9 @@ in {
   user = {...}: {
     commands = [
       {
+        package = inputs.cells.vast.packages.vast-integration;
+      }
+      {
         package = nixpkgs.cargo-make;
         category = "workflow";
       }
