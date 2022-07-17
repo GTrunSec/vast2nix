@@ -11,13 +11,13 @@
   };
   vast-latest = {
     pname = "vast-latest";
-    version = "c28c7592120d5040efcb4ee376388e3c06ac711d";
+    version = "2fbba66368752ea29b76fbc846935f8073255296";
     src = fetchFromGitHub ({
       owner = "tenzir";
       repo = "vast";
-      rev = "c28c7592120d5040efcb4ee376388e3c06ac711d";
+      rev = "2fbba66368752ea29b76fbc846935f8073255296";
       fetchSubmodules = true;
-      sha256 = "sha256-bFa+Vm4S11/zkVfAxPPguTANYDRuDGLdBB36sX3/PF8=";
+      sha256 = "sha256-ZjtOg6QpLzd8EBVUgiLKkYAiilHZZLw8Xiil5ua6z3w=";
     });
   };
   vast-release = {
