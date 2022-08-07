@@ -11,7 +11,7 @@
             "type": "url",
             "url": "https://github.com/tenzir/vast/releases/download/v2.1.0-rc3/vast-linux-static.tar.gz"
         },
-        "version": "v2.1.0"
+        "version": "v2.2.0"
     },
     "vast-latest": {
         "cargoLocks": null,
@@ -26,11 +26,11 @@
             "name": null,
             "owner": "tenzir",
             "repo": "vast",
-            "rev": "2514a998b392da34c3e4ab6e4cec3425adadc837",
-            "sha256": "sha256-cLAFQgLSw3qtLcIQVIyJBEcPLWqaBBJgT5Z9fNBrOWA=",
+            "rev": "1f93f22303af8e95d8b97c61cb0d291ac21e15fe",
+            "sha256": "sha256-moerMp7lZe7RL48MZushcz5slUOf93YqPlPL3QqiFgo=",
             "type": "github"
         },
-        "version": "2514a998b392da34c3e4ab6e4cec3425adadc837"
+        "version": "1f93f22303af8e95d8b97c61cb0d291ac21e15fe"
     },
     "vast-release": {
         "cargoLocks": null,
@@ -45,10 +45,10 @@
             "name": null,
             "owner": "tenzir",
             "repo": "vast",
-            "rev": "v2.2.0-rc2",
-            "sha256": "sha256-cLAFQgLSw3qtLcIQVIyJBEcPLWqaBBJgT5Z9fNBrOWA=",
+            "rev": "v2.2.0",
+            "sha256": "sha256-jraQcAvOJsA/exmyI/8YQufg5n5xrnqlCpLm6mRmsss=",
             "type": "github"
         },
-        "version": "v2.2.0-rc2"
+        "version": "v2.2.0"
     }
 }
