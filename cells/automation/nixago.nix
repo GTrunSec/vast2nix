@@ -18,4 +18,9 @@ in {
       excludes = ["generated.nix"];
     };
   };
+  mdbook = std.std.nixago.mdbook {
+    configData = {
+      book.title = "Vast2nix Doc";
+    };
+  };
 }
