@@ -8,7 +8,6 @@
     std.url = "github:divnix/std";
     data-merge.follows = "cells-lab/data-merge";
     yants.follows = "std/yants";
-    std.inputs.kroki-preprocessor.follows = "cells-lab/kroki-preprocessor";
   };
 
   inputs = {
@@ -26,6 +25,8 @@
       cellsFrom = ./cells;
       organelles = [
         (std.installables "packages")
+
+        (std.nixago "nixago")
 
         (std.functions "devshellProfiles")
         (std.devshells "devshells")

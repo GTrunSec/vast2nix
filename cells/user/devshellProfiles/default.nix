@@ -14,11 +14,11 @@ in {
         command = "nix run $PRJ_ROOT#${nixpkgs.system}.user.entrypoints.deploy $@";
         help = "deploy the vast-env with nix expr";
       }
-      {
-        name = "config";
-        command = "nix run $PRJ_ROOT#${nixpkgs.system}.vast.configFiles.deploy-user $@";
-        help = "deploy the vast-env with nix expr";
-      }
+      # {
+      #   name = "config";
+      #   command = "nix run $PRJ_ROOT#${nixpkgs.system}.vast.configFiles.deploy-user $@";
+      #   help = "deploy the vast-env with nix expr";
+      # }
     ];
   };
   user = {...}: {

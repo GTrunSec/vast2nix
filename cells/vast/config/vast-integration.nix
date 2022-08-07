@@ -1,5 +1,4 @@
-{ data ? "data" }:
-let
+{data ? "data"}: let
   zeek-command = "-N import zeek";
 in {
   config-file = ./vast-integration.yaml;

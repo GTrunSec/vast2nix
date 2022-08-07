@@ -8,3 +8,6 @@ nix/changelog
 .std
 *-deploy
 changelog
+
+# nixago: ignore-linked-files
+treefmt.toml

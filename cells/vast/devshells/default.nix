@@ -16,6 +16,7 @@ in
         cell.devshellProfiles.default
         inputs.cells.user.devshellProfiles.default
       ];
+      nixago = [cell.nixago.treefmt];
     };
     user = {lib, ...}: {
       name = "User: Vast2nix";
