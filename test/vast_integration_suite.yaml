@@ -1,0 +1,154 @@
+config-file: vast.yaml
+
+fixtures:
+  BiTopologyTester:
+    enter: | # python
+      node0 = "Server(self.cmd,
+                     ['-e', f'127.0.0.1:{VAST_PORT}', '-i', 'node0', 'start'],
+                     work_dir, name='node0', port=VAST_PORT,
+                     config_file=self.config_file)"
+      node1 = "Server(self.cmd,
+                     ['-e', '127.0.0.1:42124', '-i', 'node1', 'start'],
+                     work_dir, name='node1', port=42124,
+                     config_file=self.config_file)"
+      cmd += ['-e', f'127.0.0.1:{VAST_PORT}']
+
+    exit: | # python
+      node0.stop()
+      node1.stop()
+
+  ExampleConfigFileTester:
+    enter: | # python
+      node = Server(self.cmd,
+                    ['-e', f'127.0.0.1:{VAST_PORT}', '-i', 'node', 'start'],
+                    work_dir, name='node', port=VAST_PORT,
+                    config_file='vast.yaml.example')
+      cmd += ['-e', f'127.0.0.1:{VAST_PORT}']
+
+    exit: | # python
+      node.stop()
+
+  TransformsTester:
+    enter: | # python
+      node = Server(self.cmd,
+                    ['-e', f'127.0.0.1:{VAST_PORT}', '-i', 'node', 'start'],
+                    work_dir, name='node', port=VAST_PORT,
+                    config_file='vast-transforms.yaml')
+      cmd += ['-e', f'127.0.0.1:{VAST_PORT}']
+
+    exit: | # python
+      node.stop()
+
+  ServerTester:
+    enter: | # python
+      node = Server(self.cmd,
+                    ['-e', f'127.0.0.1:{VAST_PORT}', '-i', 'node', 'start'],
+                    work_dir, name='node', port=VAST_PORT,
+                    config_file=self.config_file)
+      cmd += ['-e', f'127.0.0.1:{VAST_PORT}']
+
+    exit: | # python
+      node.stop()
+
+  AgingTester:
+    enter: | # python
+      node = Server(self.cmd,
+                    ['-e', f'127.0.0.1:{VAST_PORT}',
+                     '-i', 'node',
+                     '--aging-frequency=2000min',
+                     '--aging-query=:addr == 192.168.1.104',
+                     '--active-partition-timeout=5s',
+                     'start'],
+                    work_dir, name='node', port=VAST_PORT,
+                    config_file=self.config_file)
+      cmd += ['-e', f'127.0.0.1:{VAST_PORT}']
+
+    exit: | # python
+      node.stop()
+
+  DiskMonitorTester:
+    enter: | # python
+      node = Server(self.cmd,
+                    ['-e', f'127.0.0.1:{VAST_PORT}',
+                     '-i', 'node',
+                     '--max-partition-size=8462',
+                     'start',
+                     '--disk-budget-check-interval=2',
+                     '--disk-budget-check-binary=' + os.path.dirname(os.path.abspath(__file__)) + '/misc/scripts/count_partitions_plus1.sh',
+                     '--disk-budget-high=1',
+                     '--disk-budget-low=0'],
+                    work_dir, name='node', port=VAST_PORT,
+                    config_file='vast-local-stores.yaml')
+      cmd += ['-e', f'127.0.0.1:{VAST_PORT}']
+
+    exit: | # python
+      node.stop()
+
+tests:
+  JSON schema inference:
+    tags: [schema, infer, json]
+    steps:
+      - command: infer
+        input: data/json/empty-object.json
+      - command: infer
+        input: data/json/basic-types.json
+      - command: infer
+        input: data/json/string-types.json
+      - command: infer
+        input: data/json/array-types.json
+      - command: infer
+        input: data/json/nested-object.json
+  Conn log counting:
+    tags: [node, counting, zeek]
+    steps:
+      - command: -N --max-partition-size=64 import -b zeek
+        input: data/zeek/conn.log.gz
+      - command: -N count ":addr == 192.168.1.104"
+      - command: -N count -e ":addr == 192.168.1.104"
+      - command: -N count "resp_p == 80"
+      - command: -N count "resp_p != 80"
+      - command: -N count 861237
+  Node Zeek conn log:
+    tags: [node, import-export, zeek]
+    steps:
+      - command: -N import zeek
+        input: data/zeek/conn.log.gz
+      - command: -N export ascii 'resp_h == 192.168.1.104'
+      - command: -N export ascii 'orig_bytes > 1k && orig_bytes < 1Ki'
+      - command: -N export ascii ':string == "OrfTtuI5G4e" || :port == 67 || :count == 67'
+      - command: -N export ascii '#type == "zeek.conn" && resp_h == 192.168.1.104'
+      - command: '-N export ascii "#type != \"zeek.conn\" && #type != \"vast.metrics\""'
+      - command: -N export ascii '#type != "foobar" && resp_h == 192.168.1.104'
+  Node Zeek multiple imports:
+    tags: [node, import-export, zeek]
+    steps:
+      - command: -N import zeek
+        input: data/zeek/conn.log.gz
+      - command: -N import zeek
+        input: data/zeek/dns.log.gz
+      - command: -N export ascii 'resp_h == 192.168.1.104'
+      - command: -N export ascii 'zeek.conn.id.resp_h == 192.168.1.104'
+      - command: '-N count ":timestamp >= 1970-01-01 && #type != \"vast.metrics\""'
+      - command: -N count '#type == "zeek.conn"'
+  Node Zeek dns log:
+    tags: [node, import-export, zeek]
+    steps:
+      - command: -N import zeek
+        input: data/zeek/dns.log.gz
+      - command: -N export ascii 'resp_h == 192.168.1.104'
+      - command: -N export zeek 'resp_h == 192.168.1.104'
+        transformation: awk '!/^#(open|close)/'
+      - command: -N count ':port == 53'
+      - command: '-N count ":count == 53 && #type == \"zeek.dns\""'
+  Node Zeek http log:
+    tags: [node, import-export, zeek]
+    steps:
+      - command: -N import zeek
+        input: data/zeek/http.log.gz
+      - command: -N export ascii 'resp_h == 216.240.189.196'
+  Node Zeek snmp log:
+    tags: [node, import-export, zeek]
+    steps:
+      - command: -N import zeek
+        input: data/zeek/snmp.log.gz
+      - command: -N export ascii 'duration >= 3s'

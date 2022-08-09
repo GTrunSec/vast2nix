@@ -11,3 +11,5 @@ changelog
 
 # nixago: ignore-linked-files
 treefmt.toml
+test/run*
+test/data

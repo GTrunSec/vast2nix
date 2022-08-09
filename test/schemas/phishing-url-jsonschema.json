@@ -1,0 +1,21 @@
+{
+  "$id": "phishing-url",
+  "$schema": "phishing-url-schema",
+  "description": "A phishing Url schema",
+  "properties": {
+    "Date": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "Having_Ip_Address": {
+      "type": "string"
+    },
+    "Url": {
+      "type": "string"
+    },
+    "Url_length": {
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
