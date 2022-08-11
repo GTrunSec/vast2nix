@@ -29,11 +29,13 @@
         (std.nixago "nixago")
 
         (std.functions "devshellProfiles")
+
         (std.devshells "devshells")
 
         (std.runnables "entrypoints")
 
         (std.data "config")
+        (std.data "cargoMakeJobs")
 
         (std.files "configFiles")
 

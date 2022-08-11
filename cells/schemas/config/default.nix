@@ -1,7 +1,7 @@
 {
   inputs,
   cell,
-}@args: let
+} @ args: let
   inherit (inputs) std nixpkgs data-merge;
   inherit (nixpkgs) lib;
   phishing-url-index = import ./phishing-url-index.nix args;
@@ -25,5 +25,14 @@ in {
           };
         }
       );
+  };
+  vast-integration.tests = {
+    phishing-url = {
+      tags = ["schema" "json"];
+      steps = {
+        command = "import -s -t json";
+        input = "data/json/empty-object.json";
+      };
+    };
   };
 }
