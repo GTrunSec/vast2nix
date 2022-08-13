@@ -18,7 +18,7 @@ in {
     config = json;
     fixConfig = {
       phishingUrl.type = "enum";
-      phishingUrl.values.url = "duration #unit=s";
+      phishingUrl.values = ["1" "2" "3"];
     };
   });
 }
