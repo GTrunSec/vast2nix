@@ -6,9 +6,11 @@
   json = {
     "1" = {
       url = "string";
+      add = "port";
     };
     "2" = {
       url = "string";
+      add = "port";
     };
     "3" = "port";
     "4" = "number";

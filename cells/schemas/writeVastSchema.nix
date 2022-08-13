@@ -30,20 +30,20 @@
     then jsonSchemaToVastSchema.${v}
     else v;
 
-  enumValues = v: lib.concatMapStrings (x: "${x},")
+  enumValues = v:
+    lib.concatMapStrings (x: "${x},")
     v;
 
   writeAttr = value: t: "${t}{${lib.concatStrings (lib.mapAttrsToList (
       name': value': "${
         if (t != "enum")
         then "
-              ${name'}: ${translator value' t},
-              "
+        ${name'}: ${translator value' t},"
         else "${enumValues value'}"
-      }
-        "
+      }"
     )
-    value)}}";
+    value)}
+    }";
 in
   with lib;
     lib.concatStrings (lib.mapAttrsToList (name: value: ''
