@@ -29,10 +29,7 @@ in {
   vast-integration.tests = {
     phishing-url = {
       tags = ["schema" "json"];
-      steps = {
-        command = "import -s -t json";
-        input = "data/json/empty-object.json";
-      };
+      steps =  [ { command = "-N import"; input = "data.json";} ];
     };
   };
 }

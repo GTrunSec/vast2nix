@@ -1,8 +1,8 @@
 tests:
   phishing-url:
     steps:
-      command: import -s -t json
-      input: data/json/empty-object.json
+    - command: -N import
+      input: data.json
     tags:
     - schema
     - json
