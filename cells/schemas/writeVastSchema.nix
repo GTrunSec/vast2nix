@@ -19,6 +19,7 @@
     number = "count";
     data-time = "timestamp";
     boolean = "bool";
+    array = "list<string>";
   };
 
   translator = v: t:

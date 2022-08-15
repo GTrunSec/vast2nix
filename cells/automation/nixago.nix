@@ -8,6 +8,7 @@ in {
     configData.formatter.prettier = {
       excludes = [
         "test/*"
+        "generated.json"
       ];
     };
     configData.formatter.nix = {

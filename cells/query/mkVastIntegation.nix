@@ -9,6 +9,6 @@ in
     name = "vast-integration";
     runtimeInputs = [inputs.cells.vast.packages.vast-integration];
     text = ''
-     vast-integration -s ${config} "$@"
+      vast-integration -s ${config} "$@"
     '';
   }
