@@ -99,31 +99,6 @@
         "type": "github"
       }
     },
-    "data-merge_3": {
-      "inputs": {
-        "nixlib": [
-          "std",
-          "nixpkgs"
-        ],
-        "yants": [
-          "std",
-          "yants"
-        ]
-      },
-      "locked": {
-        "lastModified": 1659548052,
-        "narHash": "sha256-fzI2gp1skGA8mQo/FBFrUAtY0GQkAIAaV/V127TJPyY=",
-        "owner": "divnix",
-        "repo": "data-merge",
-        "rev": "d160d18ce7b1a45b88344aa3f13ed1163954b497",
-        "type": "github"
-      },
-      "original": {
-        "owner": "divnix",
-        "repo": "data-merge",
-        "type": "github"
-      }
-    },
     "devshell": {
       "inputs": {
         "flake-utils": [
@@ -173,6 +148,31 @@
       "original": {
         "owner": "numtide",
         "repo": "devshell",
+        "type": "github"
+      }
+    },
+    "dmerge": {
+      "inputs": {
+        "nixlib": [
+          "std",
+          "nixpkgs"
+        ],
+        "yants": [
+          "std",
+          "yants"
+        ]
+      },
+      "locked": {
+        "lastModified": 1659548052,
+        "narHash": "sha256-fzI2gp1skGA8mQo/FBFrUAtY0GQkAIAaV/V127TJPyY=",
+        "owner": "divnix",
+        "repo": "data-merge",
+        "rev": "d160d18ce7b1a45b88344aa3f13ed1163954b497",
+        "type": "github"
+      },
+      "original": {
+        "owner": "divnix",
+        "repo": "data-merge",
         "type": "github"
       }
     },
@@ -631,10 +631,6 @@
     "root": {
       "inputs": {
         "cells-lab": "cells-lab",
-        "data-merge": [
-          "cells-lab",
-          "data-merge"
-        ],
         "lock": "lock",
         "nixpkgs": "nixpkgs_3",
         "std": "std_2",
@@ -642,11 +638,7 @@
           "vast-overlay",
           "nixpkgs"
         ],
-        "vast-overlay": "vast-overlay",
-        "yants": [
-          "std",
-          "yants"
-        ]
+        "vast-overlay": "vast-overlay"
       }
     },
     "std": {
@@ -678,8 +670,8 @@
     },
     "std_2": {
       "inputs": {
-        "data-merge": "data-merge_3",
         "devshell": "devshell_2",
+        "dmerge": "dmerge",
         "flake-utils": "flake-utils_4",
         "mdbook-kroki-preprocessor": "mdbook-kroki-preprocessor_2",
         "nixago": "nixago_2",
@@ -687,11 +679,11 @@
         "yants": "yants_2"
       },
       "locked": {
-        "lastModified": 1660368128,
-        "narHash": "sha256-UJb0ofnmHTE+RoE0OTeLWDSgeWwVI6fa3tmpK3OlvMY=",
+        "lastModified": 1660528631,
+        "narHash": "sha256-yPsLdMGSFGqUnsdBSfSCvhN6q5t54PMC94SW0CoYCyw=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "a1efa1a9009a5e0ae685b62593d98925807dde7e",
+        "rev": "b8a1db5f04e20b2e929572fe483dbd97dc23a9b8",
         "type": "github"
       },
       "original": {
