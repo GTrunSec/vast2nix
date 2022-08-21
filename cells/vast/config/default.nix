@@ -33,7 +33,7 @@ in {
       verbosity = "debug";
     }) {
       # validation: error
-      # vast.store-backend = "rocksdb";
+      # vast.store-backend = "archive";
     });
 
   mkConfig = config: (let
