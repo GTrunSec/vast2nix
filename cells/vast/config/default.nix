@@ -4,7 +4,7 @@
 } @ args: let
   inherit (inputs.std) dmerge;
   inherit (cell) library;
-  inherit (inputs) nixpkgs;
+  inherit (inputs) nixpkgs std;
   inherit (inputs.cells-lab.main.library) __inputs__;
   inherit (inputs.cells-lab.makes.library) makeSubstitution;
   l = nixpkgs.lib // builtins;
@@ -23,17 +23,29 @@
       (filterValue "value" (import ./vast.nix args _args))
       (filterValue "value" (import ./caf.nix args))
     ];
+
+  trace = t: l.trace t t;
 in {
   inherit default;
 
-  test-config = default {
-    dataDir = "/tmp/vast";
-    verbosity = "debug";
-  };
+  test-config = cell.config.mkConfig (dmerge.merge (default {
+      dataDir = "/tmp/vast";
+      verbosity = "debug";
+    }) {
+      # validation: error
+      # vast.store-backend = "rocksdb";
+    });
 
-  config-example = dmerge.merge (import ./vast.nix args {verbosity = "debug";}) {
-    log-rotation-threshold = "101MiB";
-  };
+  mkConfig = config: (let
+    y = inputs.cells-lab.yants.library;
+  in
+    l.recursiveUpdate config (l.mapAttrsRecursive (path: value: let
+      name = builtins.elemAt path ((builtins.length path) - 1);
+    in
+      value name (l.getAttrFromPath path config)) {
+      # add your validation config
+      vast.store-backend = y.enumCheck ["segment-store" "archive"];
+    }));
 
   systemd = env:
     makeSubstitution {
@@ -44,14 +56,3 @@ in {
 
   integration = import ./vast-integration.nix;
 }
-# {
-#   a = {
-#     b.c = { value = "hello"; des = "world"; };
-#     d.e.f = { value = "hello2"; des = "world2"; };
-#   };
-#   a2 = {
-#     b.c = "hello";
-#     d.e.f = "hello2";
-#   };
-# }
-
