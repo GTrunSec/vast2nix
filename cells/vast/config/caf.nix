@@ -37,7 +37,6 @@
 
       aggressive-steal-interval = {
         value = 10;
-
         description = ''
           Frequency of steal attempts during aggressive polling.
         '';
@@ -45,7 +44,7 @@
 
       moderate-poll-attempts = {
         value = 500;
-        description = ''Number of moderately aggressive polling attempts. '';
+        description = ''Number of moderately aggressive polling attempts.'';
       };
 
       moderate-steal-interval = {
@@ -77,8 +76,8 @@
       };
     };
 
+    # Options affecting the internal scheduler.
     scheduler = {
-      # Options affecting the internal scheduler.
       policy = {
         value = "stealing";
         description = ''
@@ -86,7 +85,6 @@
         '';
       };
 
-      # Configures whether the scheduler generates profiling output.
       enable-profiling = {
         value = false;
         description = ''

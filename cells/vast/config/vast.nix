@@ -1,8 +1,14 @@
 {
   inputs,
   cell,
+}: {
+  dataDir ? "/var/lib/vast",
+  verbosity ? "info",
 }: let
-  inherit (inputs) yants;
+  inherit (inputs) std nixpkgs cells-lab;
+  inherit (std) yants;
+  y = cells-lab.yants.library;
+  l = nixpkgs.lib // builtins;
 in {
   vast = {
     endpoint = {
@@ -16,18 +22,18 @@ in {
     };
 
     db-directory = {
-      value = "vast.db";
+      value = "${dataDir}/vast.db";
       description = "The directory for persistent state";
     };
 
     # The file system path used for log files.
     log-file = {
-      value = ".cache/server.log";
+      value = "${dataDir}/server.log";
       description = "The file system path used for log files.";
     };
 
     client-log-file = {
-      value = "client.log";
+      value = "${dataDir}/client.log";
       description = "The file system path used for client log files relative to the current
      working directory of the client. Note that this is disabled by default. If not specified
      no log files are written for clients at all.";
@@ -43,7 +49,7 @@ in {
     };
 
     file-verbosity = {
-      value = "info";
+      value = y.enumCheck ["quiet" "error" "warning" "info" "debug" "trace"] "file-verbosity" verbosity;
       declaration = ''
         Configures the minimum severity of messages written to the log file.
         Possible values= quiet, error, warning, info, verbose, debug, trace.
@@ -106,7 +112,7 @@ in {
     };
 
     console-verbosity = {
-      value = "info";
+      value = verbosity;
       description = ''
         Configures the minimum severity of messages written to the console.
         For a list of valid log levels, see file-verbosity.
@@ -187,7 +193,7 @@ in {
 
     # The directory to use for the partition synopses of the catalog.
     catalog-dir = {
-      value = "<dbdir>/index";
+      value = "${dataDir}/index";
       description = ''
         The directory to use for the partition synopses of the catalog.
       '';
@@ -276,7 +282,7 @@ in {
           {
             enable = false;
             real-time = false;
-            path = "/tmp/vast-metrics.log";
+            path = "${dataDir}/vast-metrics.log";
           }
         ];
         description = ''
@@ -290,7 +296,7 @@ in {
         {
           enable = false;
           real-time = false;
-          path = "tmp/vast-metrics.sock";
+          path = "${dataDir}/vast-metrics.sock";
           type = "datagram";
         }
       ];
@@ -354,7 +360,7 @@ in {
       };
 
       disk-budget-low = {
-        value = "0GiB";
+        value = "10GiB";
         description = ''
           When the budget was exceeded, data is erased until the
           disk space is below this value.
@@ -570,7 +576,7 @@ in {
 
       # FIXME: commented
       max-events = {
-        value = "<infinity>";
+        value = "";
         description = ''
           Maximum number of results.
         '';
@@ -595,7 +601,7 @@ in {
     import = {
       # The maximum number of events to import.
       max-events = {
-        value = "<infinity>";
+        value = "";
 
         description = ''
           The maximum number of events to import.
@@ -634,7 +640,7 @@ in {
       };
 
       listen = {
-        value = "<none>";
+        value = "";
         description = ''
           The endpoint to listen on ("[host]:port/type").
         '';

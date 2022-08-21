@@ -18,14 +18,22 @@
       else v)
     attrsSet;
 
-  default = attrs:
+  default = _args:
     __inputs__.xnlib.lib.recursiveMerge [
-      (filterValue "value" (import ./vast.nix args))
+      (filterValue "value" (import ./vast.nix args _args))
       (filterValue "value" (import ./caf.nix args))
-      attrs
     ];
 in {
   inherit default;
+
+  test-config = default {
+    dataDir = "/tmp/vast";
+    verbosity = "debug";
+  };
+
+  config-example = dmerge.merge (import ./vast.nix args {verbosity = "debug";}) {
+    log-rotation-threshold = "101MiB";
+  };
 
   systemd = env:
     makeSubstitution {
