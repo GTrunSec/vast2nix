@@ -729,7 +729,7 @@ in {
         };
 
         disable-community-id = {
-          valu = false;
+          value = false;
           description = ''
             Disable computation of community id for every packet.
           '';
