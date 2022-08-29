@@ -20,7 +20,7 @@
   } @ inputs:
     std.growOn {
       inherit inputs;
-      cellsFrom = ./cells;
+      cellsFrom = ./nix;
       organelles = [
         (std.installables "packages")
 
@@ -33,6 +33,9 @@
         (std.runnables "entrypoints")
 
         (std.data "config")
+
+        (std.data "models")
+
         (std.data "cargoMakeJobs")
 
         (std.files "configFiles")
