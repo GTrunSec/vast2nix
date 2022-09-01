@@ -3,13 +3,14 @@
   cell,
 }: let
   inherit (inputs.cells-lab._writers.library) writeConfiguration;
-  inherit (inputs) std nixpkgs self;
-  __inputs__ =
-    (std.deSystemize nixpkgs.system
-      (import "${(std.incl self [(self + /lock)])}/lock").inputs)
-    // inputs;
+  inherit (inputs) std nixpkgs self cells-lab;
+  l = nixpkgs.lib // builtins;
+  __inputs__ = cells-lab.main.library.callFlake "${(std.incl self [(self + /lock)])}/lock" {
+    nixpkgs.locked = inputs.nixpkgs-lock.sourceInfo;
+    nixpkgs-hardenedlinux.inputs.nixpkgs = "nixpkgs";
+  };
 in {
-  inherit __inputs__;
+  inherit __inputs__ l;
 
   toYaml = source: name:
     (writeConfiguration {
