@@ -35,7 +35,7 @@
 
         (std.data "config")
 
-        (std.data "models")
+        (std.files "models")
 
         (std.data "cargoMakeJobs")
 
