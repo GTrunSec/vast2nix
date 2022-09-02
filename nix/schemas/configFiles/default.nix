@@ -16,16 +16,16 @@
     "4" = "number";
   };
 in {
-  test = nixpkgs.writeText "test.schema" (cell.library.writeVastSchema {
+  test = cell.library.writeVastSchema "test.schema" {
     config = json;
     fixConfig = {
       phishingUrl.type = "enum";
       phishingUrl.values = ["1" "2" "3"];
       "2".values.add = "3";
     };
-  });
+  };
 
-  phishing-schema = nixpkgs.writeText "vast-phishing-url" (cell.library.writeVastSchema {
+  phishing-schema = cell.library.writeVastSchema "vast-phishing-url" {
     config = {
       phishing = {
         url = "string";
@@ -33,5 +33,5 @@ in {
     };
     fixConfig = {
     };
-  });
+  };
 }

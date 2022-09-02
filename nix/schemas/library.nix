@@ -5,5 +5,5 @@
   inherit (inputs) nixpkgs;
   inherit (inputs.nixpkgs) lib;
 in {
-  writeVastSchema = attr: import ./writeVastSchema.nix args attr;
+  writeVastSchema = name: attr: nixpkgs.writeText name (import ./writeVastSchema.nix args attr);
 }

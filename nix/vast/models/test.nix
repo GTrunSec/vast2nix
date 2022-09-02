@@ -39,31 +39,20 @@
   final = mapAttrs data;
 
   mapAttrs_ = attrsSet: let
-    checkValue = val: l.isAttrs val;
+    checkValue = val: l.isAttrs val && l.hasAttr "values" val;
   in
     l.mapAttrsRecursiveCond (as: (!checkValue as)) (p: v:
       if checkValue v
-      then writeAttr (mapAttrs_ v) (builtins.length v)
+      then writeAttr (mapAttrs_ v)
       else v)
     attrsSet;
 
-  tabs =
-    l.mapAttrsRecursive (
-      path: value: let
-        len = l.length (path ++ [value]) - 1;
-      in
-        if (len == 1)
-        then value
-        else {tabs = l.length (path ++ [value]) - 1;}
-    )
-    data;
-
-  writeAttr = value: t: "{${l.concatStrings (l.mapAttrsToList (
+  # tabs = l.genList (x: "\n") value.tabs;
+  writeAttr = value: "{${l.concatStrings (l.mapAttrsToList (
       name': value': "${"
-       ${(toString t)}
         ${name'}: ${value'},"}"
     )
-    value)}
+    value.values)}
     }";
 
   write = value:
@@ -81,7 +70,6 @@ in {
   };
   c = mapAttrs_ final;
   f = final;
-  g = l.mapAttrsRecursive (path: value: {tabs = l.length (path ++ [value]) - 1;}) data;
-  t = tabs;
-  done = inputs.nixpkgs.writeText "test.text" (write final);
+  g = l.mapAttrsRecursive (path: value: (l.length (path ++ [value]) - 1)) data;
+  done = inputs.nixpkgs.writeText "test.text" (write (mapAttrs_ final));
 }
