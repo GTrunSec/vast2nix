@@ -13,6 +13,11 @@
     })
     c);
 
+  mapValues = c: (builtins.mapAttrs (_: v: {
+      values = v;
+    })
+    c);
+
   jsonSchemaToVastSchema = {
     integer = "count";
     number = "count";
@@ -48,7 +53,9 @@
   final = c:
     lib.concatStrings (lib.mapAttrsToList (name: value: ''
         type ${name} = ${
-          if (lib.isAttrs value.values)
+          if (lib.isString value)
+          then "${translator value value.type}"
+          else if (lib.isAttrs value.values)
           then "${writeAttr value.values value.type}"
           else (translator value.values value.type)
         }
