@@ -7,12 +7,11 @@
 }: let
   inherit (inputs.nixpkgs) lib;
 
-  fixAttrs = lib.recursiveUpdate (builtins.mapAttrs (_: v: {
+  mapRecord = c: (builtins.mapAttrs (_: v: {
       type = "record";
       values = v;
     })
-    config)
-  fixConfig;
+    c);
 
   jsonSchemaToVastSchema = {
     integer = "count";
@@ -45,8 +44,8 @@
     )
     value)}
     }";
-in
-  with lib;
+
+  final = c:
     lib.concatStrings (lib.mapAttrsToList (name: value: ''
         type ${name} = ${
           if (lib.isAttrs value.values)
@@ -54,4 +53,6 @@ in
           else (translator value.values value.type)
         }
       '')
-      fixAttrs)
+      c);
+in
+  (final (mapRecord config)) + (final fixConfig)

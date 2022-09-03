@@ -21,7 +21,7 @@ in {
     fixConfig = {
       phishingUrl.type = "enum";
       phishingUrl.values = ["1" "2" "3"];
-      "2".values.add = "3";
+      a.values = "timestamp";
     };
   };
 
