@@ -3,7 +3,7 @@
   cell,
 }: {
   zeek = {
-    time = "timestamp";
+    timestamp = "time";
     port = "count";
   };
 }
