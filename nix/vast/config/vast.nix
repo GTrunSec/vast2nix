@@ -82,7 +82,7 @@ in {
     };
 
     console-sink = {
-      value = "stderr/journald";
+      value = "stderr";
       descpription = ''
         The sink type to use for console logging. Possible values= stderr,
         syslog, journald. Note that 'journald' can only be selected on linux

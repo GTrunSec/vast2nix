@@ -45,6 +45,7 @@ in {
       value name (l.getAttrFromPath path config)) {
       # add your validation config
       vast.store-backend = y.enumCheck ["segment-store" "archive"];
+      vast.console-sink = y.enumCheck ["stderr" "journald" "syslog"];
     }));
 
   systemd = env:
