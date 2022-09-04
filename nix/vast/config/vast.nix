@@ -351,21 +351,21 @@ in {
         '';
       };
 
-      disk-budget-high = {
-        value = "0GiB";
-        description = ''
-          Triggers removal of old data when the disk budget is
-          exceeded.
-        '';
-      };
+      # disk-budget-high = {
+      #   value = "0GiB";
+      #   description = ''
+      #     Triggers removal of old data when the disk budget is
+      #     exceeded.
+      #   '';
+      # };
 
-      disk-budget-low = {
-        value = "10GiB";
-        description = ''
-          When the budget was exceeded, data is erased until the
-          disk space is below this value.
-        '';
-      };
+      # disk-budget-low = {
+      #   value = "10GiB";
+      #   description = ''
+      #     When the budget was exceeded, data is erased until the
+      #     disk space is below this value.
+      #   '';
+      # };
 
       disk-budget-check-interval = {
         value = 90;
@@ -384,20 +384,20 @@ in {
       };
 
       # FIXME: Commented
-      disk-budget-check-binary = {
-        value = "";
-        description = ''
-          Binary to use for checking the size of the
-          database directory. If left unset, VAST will
-          recursively add up the size of all files in the
-          database directory to compute the size. Mainly
-          useful for e.g. compressed filesystem where raw
-          file size is not the correct metric. Must be the
-          absolute path to an executable file, which will
-          get passed the database directory as its first
-          and only argument.
-        '';
-      };
+      # disk-budget-check-binary = {
+      #   value = "";
+      #   description = ''
+      #     Binary to use for checking the size of the
+      #     database directory. If left unset, VAST will
+      #     recursively add up the size of all files in the
+      #     database directory to compute the size. Mainly
+      #     useful for e.g. compressed filesystem where raw
+      #     file size is not the correct metric. Must be the
+      #     absolute path to an executable file, which will
+      #     get passed the database directory as its first
+      #     and only argument.
+      #   '';
+      # };
     };
 
     # The `vast count` command counts hits for a query without exporting data.
