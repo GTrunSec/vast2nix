@@ -199,13 +199,6 @@ in {
       '';
     };
 
-    catalog-fp-rate = {
-      value = 0.01;
-      declaration = ''
-        The false positive rate for lossy structures in the catalog.
-      '';
-    };
-
     store-backend = {
       value = "segment-store";
       description = ''

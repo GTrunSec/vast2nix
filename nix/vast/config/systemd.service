@@ -38,8 +38,8 @@ SystemCallErrorNumber=EPERM
 # service specifics
 TimeoutStopSec=600
 WorkingDirectory=__argDir__
-ExecStop=__argPath__bin/vast stop
-ExecStart=__argPath__/bin/vast start --config __argConfig__
+ExecStop=__argPath__/bin/vast stop
+ExecStart=__argPath__/bin/vast --config=__argConfig__ start
 
 [Install]
 WantedBy=multi-user.target
