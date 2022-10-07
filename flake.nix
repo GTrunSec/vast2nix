@@ -43,7 +43,7 @@
 
         (std.blockTypes.files "templates")
 
-        (std.blockTypes.functions "library")
+        (std.blockTypes.functions "lib")
 
         (std.blockTypes.functions "overlays")
 

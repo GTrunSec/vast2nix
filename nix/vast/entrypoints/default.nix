@@ -2,12 +2,12 @@
   inputs,
   cell,
 } @ args: let
-  inherit (inputs.cells-lab._writers.library) writeShellApplication writeGlowDoc;
+  inherit (inputs.cells-lab._writers.lib) writeShellApplication writeGlowDoc;
   inherit (inputs) nixpkgs std self;
 in {
   doc = writeGlowDoc {
     name = "Vast Docs";
-    src = "${cell.library.nixpkgs.vast-sources.vast-latest.src}/web/docs";
+    src = "${cell.lib.nixpkgs.vast-sources.vast-latest.src}/web/docs";
     tip = ''
       example: vast-doc `flag`
     '';

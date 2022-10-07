@@ -2,10 +2,10 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells-lab._writers.library) writeConfiguration;
+  inherit (inputs.cells-lab._writers.lib) writeConfiguration;
   inherit (inputs) std nixpkgs self cells-lab;
   l = nixpkgs.lib // builtins;
-  __inputs__ = cells-lab.main.library.callFlake "${(std.incl self [(self + /lock)])}/lock" {
+  __inputs__ = cells-lab.main.lib.callFlake "${(std.incl self [(self + /lock)])}/lock" {
     nixpkgs.locked = inputs.nixpkgs-lock.sourceInfo;
     nixpkgs-hardenedlinux.inputs.nixpkgs = "nixpkgs";
   };

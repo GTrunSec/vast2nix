@@ -2,7 +2,7 @@
   inputs,
   cell,
 } @ args: let
-  inherit (inputs.cells-lab._writers.library) writeShellApplication;
+  inherit (inputs.cells-lab._writers.lib) writeShellApplication;
   inherit (inputs) nixpkgs;
   inherit (inputs.cells) vast;
   inherit (inputs) std data-merge;
@@ -28,5 +28,5 @@
     hook.mode = "copy";
   };
 in {
-  test = cell.library.mkVastIntegation vast-integation.configFile;
+  test = cell.lib.mkVastIntegation vast-integation.configFile;
 }

@@ -5,7 +5,7 @@
   inherit (inputs.nixpkgs) lib;
   inherit (inputs) nixpkgs;
   inherit (inputs.lock) deploy;
-  inherit (inputs.cells-lab.main.library) __inputs__;
+  inherit (inputs.cells-lab.main.lib) __inputs__;
 
   default.tasks = {
     bundle = {

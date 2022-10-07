@@ -5,9 +5,9 @@
   inherit (inputs) cells-lab;
   inherit (inputs) lock nixpkgs;
   inherit (inputs.nixpkgs) lib;
-  inherit (inputs.cells.vast.library) __inputs__;
+  inherit (inputs.cells.vast.lib) __inputs__;
 in {
-  env = cells-lab._builder.library.mkPaths {
+  env = cells-lab._builder.lib.mkPaths {
     name = "env";
     paths =
       lib.optionals lock.deploy.config.vast.enable [

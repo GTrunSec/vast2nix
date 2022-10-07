@@ -2,7 +2,7 @@
   inputs,
   cell,
 } @ args: let
-  inherit (cell.library) l;
+  inherit (cell.lib) l;
   args' = args // {inherit l;};
 in {
   mkModel = import ./mkModel.nix args';

@@ -16,7 +16,7 @@
     "4" = "number";
   };
 in {
-  test = cell.library.writeVastSchema "test.schema" {
+  test = cell.lib.writeVastSchema "test.schema" {
     config = json;
     fixConfig = {
       phishingUrl.type = "enum";
@@ -25,7 +25,7 @@ in {
     };
   };
 
-  phishing-schema = cell.library.writeVastSchema "vast-phishing-url" {
+  phishing-schema = cell.lib.writeVastSchema "vast-phishing-url" {
     config = {
       phishing = {
         url = "string";

@@ -7,7 +7,7 @@
 }: let
   inherit (inputs) std nixpkgs cells-lab;
   inherit (std) yants;
-  y = cells-lab.yants.library;
+  y = cells-lab.yants.lib;
   l = nixpkgs.lib // builtins;
 in {
   vast = {

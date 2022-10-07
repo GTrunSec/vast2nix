@@ -3,10 +3,10 @@
   cell,
 } @ args: let
   inherit (inputs.std) dmerge;
-  inherit (cell) library;
+  inherit (cell) lib;
   inherit (inputs) nixpkgs std;
-  inherit (inputs.cells-lab.main.library) __inputs__;
-  inherit (inputs.cells-lab.makes.library) makeSubstitution;
+  inherit (inputs.cells-lab.main.lib) __inputs__;
+  inherit (inputs.cells-lab.makes.lib) makeSubstitution;
   l = nixpkgs.lib // builtins;
 
   filterValue = v': attrsSet: let
@@ -37,7 +37,7 @@ in {
     });
 
   mkConfig = config: (let
-    y = inputs.cells-lab.yants.library;
+    y = inputs.cells-lab.yants.lib;
   in
     l.recursiveUpdate config (l.mapAttrsRecursive (path: value: let
       name = builtins.elemAt path ((builtins.length path) - 1);

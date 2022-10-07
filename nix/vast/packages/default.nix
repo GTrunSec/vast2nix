@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (cell.library) nixpkgs;
+  inherit (cell.lib) nixpkgs;
 
   vast-bin = nixpkgs.callPackage ./bin.nix {};
   vast-integration = nixpkgs.callPackage ./vast-integration.nix {inherit vast-bin;};

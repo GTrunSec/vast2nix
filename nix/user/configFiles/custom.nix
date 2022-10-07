@@ -4,7 +4,7 @@
 }: let
   inherit (inputs) data-merge;
 in {
-  config = inputs.cells.vast.library.toYaml (data-merge.merge (inputs.cells.vast.config.default {
+  config = inputs.cells.vast.lib.toYaml (data-merge.merge (inputs.cells.vast.config.default {
       # coustom arguments with Yants type check;
       db-directory = ".cache/vast";
     }) {
