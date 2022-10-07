@@ -4,7 +4,7 @@
 }: let
   inherit (inputs) std nixpkgs data-merge;
 in
-  builtins.mapAttrs (_: std.std.lib.mkNixago) {
+  builtins.mapAttrs (_: std.lib.dev.mkNixago) {
     phishing-url-jsonschema = {
       configData = cell.config.phishing-url;
       output = "test/schemas/phishing-url-jsonschema.json";

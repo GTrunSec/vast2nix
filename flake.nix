@@ -2,7 +2,7 @@
   description = "https://github.com/tenzir/vast: 🔮 Visibility Across Space and Time – The network telemetry engine for data-driven security investigations.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.follows = "cells-lab/nixpkgs";
     nixpkgs-lock.follows = "nixpkgs";
     cells-lab.url = "github:GTrunSec/cells-lab";
 

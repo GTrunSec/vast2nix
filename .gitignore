@@ -10,6 +10,9 @@ nix/changelog
 changelog
 
 # nixago: ignore-linked-files
+book.toml
 treefmt.toml
 test/run*
 test/data
+# nixago-auto-created: mdbook-build-folder
+docs/book/**

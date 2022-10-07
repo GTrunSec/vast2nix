@@ -6,7 +6,7 @@
   inherit (inputs) nixpkgs;
   inherit (inputs.cells) vast;
   inherit (inputs) std data-merge;
-  vast-integation = std.std.lib.mkNixago {
+  vast-integation = std.lib.dev.mkNixago {
     configData = {
       tests.phishing-url = {
         tags = ["schema" "json"];

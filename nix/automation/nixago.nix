@@ -4,7 +4,7 @@
 }: let
   inherit (inputs) std;
 in {
-  treefmt = std.std.nixago.treefmt {
+  treefmt = std.presets.nixago.treefmt {
     configData.formatter.prettier = {
       excludes = [
         "test/*"
@@ -15,7 +15,7 @@ in {
       excludes = ["generated.nix"];
     };
   };
-  mdbook = std.std.nixago.mdbook {
+  mdbook = std.presets.nixago.mdbook {
     configData = {
       book.title = "Vast2nix Doc";
     };
