@@ -6,9 +6,9 @@
   inherit (nixpkgs) lib;
   inherit (inputs.cells-lab.main.lib) __inputs__;
 in {
-  deploy = cell.lib.toTOML cell.config.deploy;
+  deploy = inputs.cells-lab._writers.lib.writeConfig "user-deploy" "yaml" cell.config.deploy;
 
-  vast = inputs.cells.vast.lib.toYaml (__inputs__.xnlib.lib.recursiveMerge [
+  vast = inputs.cells-lab._writers.lib.writeConfig "user-vast" "yaml" (__inputs__.xnlib.lib.recursiveMerge [
     (inputs.cells.vast.config.default {
       # catalog-fp-rate = 0.02;
     })

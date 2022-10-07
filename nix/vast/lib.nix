@@ -12,14 +12,6 @@
 in {
   inherit __inputs__ l;
 
-  toYaml = source: name:
-    (writeConfiguration {
-      format = "yaml";
-      language = "nix";
-      inherit source name;
-    })
-    .data;
-
   toJSON = file:
     nixpkgs.runCommand "toJSON.json" {preferLocalBuild = true;} ''
       ${nixpkgs.remarshal}/bin/yaml2json -i ${file} -o $out
