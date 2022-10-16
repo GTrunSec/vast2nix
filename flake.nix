@@ -50,9 +50,9 @@
         (std.blockTypes.functions "nixosModules")
       ];
     } {
-      overlays = inputs.std.deSystemize "x86_64-linux" (inputs.std.harvest inputs.self ["vast" "overlays"]);
+      overlays = builtins.getAttr "x86_64-linux" (inputs.std.harvest inputs.self ["vast" "overlays"]);
       devShells = inputs.std.harvest inputs.self ["vast" "devshells"];
-      nixosModules = inputs.std.deSystemize "x86_64-linux" (inputs.std.harvest inputs.self ["vast" "nixosModules"]);
+      nixosModules = builtins.getAttr "x86_64-linux" (inputs.std.harvest inputs.self ["vast" "nixosModules"]);
       packages = inputs.std.harvest inputs.self ["vast" "packages"];
     };
 
