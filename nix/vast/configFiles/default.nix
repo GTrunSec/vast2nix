@@ -2,13 +2,13 @@
   inputs,
   cell,
 } @ args: let
-  inherit (inputs) nixpkgs data-merge;
+  inherit (inputs) nixpkgs data-merge cells-lab;
   inherit (nixpkgs) lib;
 in {
-  default = cell.lib.toYaml (cell.config.default {
+  default = cells-lab._writers.lib.writeConfig "vast.yaml" (cell.config.default {
     db-directory = "/var/lib/vast";
     file-verbosity = "info";
-  }) "vast";
+  });
 
-  integration = cell.lib.toYaml (cell.config.integration {}) "integration";
+  integration = cells-lab._writers.lib.writeConfig "vast-integration.yaml" (cell.config.integration {});
 }

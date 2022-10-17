@@ -43,11 +43,11 @@
         "std": "std"
       },
       "locked": {
-        "lastModified": 1666016968,
-        "narHash": "sha256-K2I82/0sA/cI9/HqlDkTw7PK6hSLsjzEamz0pGj3YxA=",
+        "lastModified": 1666047748,
+        "narHash": "sha256-ZEJx4TnGLE419SapmX74qrOtxaUCn1UZ4zJ8zMfRKng=",
         "owner": "GTrunSec",
         "repo": "cells-lab",
-        "rev": "a1c91f83e113ba6a43dca86ecdfa12e32a5748b8",
+        "rev": "619d08d24094901ced4c830565a612761a1fd8c7",
         "type": "github"
       },
       "original": {
@@ -717,11 +717,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1665064067,
-        "narHash": "sha256-a722J3blKzSLNE0yFDpIjlls9o6rZIhOAnaBrLPl+X4=",
+        "lastModified": 1665990985,
+        "narHash": "sha256-Ci2KTGNkC2Y1j6okbEP0C5mzAjmjG69myOfyugoHG2Q=",
         "owner": "tenzir",
         "repo": "vast",
-        "rev": "bf1311e855ff9c8b8ebd56315ec28bd3fc9119b4",
+        "rev": "c0bc9d9b121ff208b9c79045ddbbc283b141df9d",
         "type": "github"
       },
       "original": {

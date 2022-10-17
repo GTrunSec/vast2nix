@@ -18,9 +18,9 @@ in {
         # # config file -> vast.yaml
         cell.configFiles.vast
         # cat the logs to vast importer
-        __inputs__.nixpkgs-hardenedlinux.packages.watchexec-simple
-        cell.configFiles.watchexec-zeek
-        cell.configFiles.watchexec-systemd
+        # __inputs__.nixpkgs-hardenedlinux.packages.watchexec-simple
+        # cell.configFiles.watchexec-zeek
+        # cell.configFiles.watchexec-systemd
         nixpkgs.sd
         nixpkgs.file
       ]
@@ -33,5 +33,4 @@ in {
         __inputs__.hunting-cells.tenzir.packages.${lock.deploy.config.threatbus.version}
       ];
   };
-  inherit (__inputs__.nixpkgs-hardenedlinux.packages) watchexec-simple;
 }
