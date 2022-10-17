@@ -18,8 +18,8 @@ in
       ];
       nixago =
         [
-          inputs.cells.automation.nixago.treefmt
-          inputs.cells.automation.nixago.mdbook
+          inputs.cells._automation.nixago.treefmt
+          inputs.cells._automation.nixago.mdbook
         ]
         ++ l.attrValues inputs.cells.schemas.nixago;
     };

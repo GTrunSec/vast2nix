@@ -12,7 +12,7 @@
   inputs = {
     vast-overlay.url = "github:tenzir/vast";
     vast-nixpkgs.follows = "vast-overlay/nixpkgs";
-    lock.url = "path:./lock/user";
+    users.follows = "std/blank";
   };
   outputs = {
     std,
@@ -48,6 +48,8 @@
         (std.blockTypes.functions "overlays")
 
         (std.blockTypes.functions "nixosModules")
+
+        (std.blockTypes.containers "containers")
       ];
     } {
       overlays = builtins.getAttr "x86_64-linux" (inputs.std.harvest inputs.self ["vast" "overlays"]);
