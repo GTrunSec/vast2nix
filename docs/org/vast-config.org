@@ -207,7 +207,7 @@ std //vast/config/default:explore
 :header-args:sh: :prologue "exec 2>&1" :epilogue ":"
 :END:
 
-Use yants for humanized validation output of the type-checker
+Use [[https://github.com/divnix/yants][yants]] for humanized validation output of the type-checker
 
 #+begin_src nix :exports both :results output
   validation-error =
