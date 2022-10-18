@@ -6,10 +6,8 @@
   inherit (inputs) nixpkgs std;
 in
   l.mapAttrs (_: std.lib.dev.mkShell) {
-
     default = {lib, ...}: {
-
-      name = "Develop: Vast2nix";
+      name = "Vast2nix DevShell";
 
       imports = [
         inputs.cells-lab.main.devshellProfiles.default
@@ -24,7 +22,6 @@ in
     };
 
     user = {lib, ...}: {
-
       name = "User: Vast2nix";
 
       std.docs.enable = lib.mkForce true;

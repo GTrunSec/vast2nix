@@ -7,7 +7,7 @@ in {
   treefmt = std.presets.nixago.treefmt {
     configData.formatter.prettier = {
       excludes = [
-        "test/*"
+        "data/*"
         "generated.json"
       ];
     };

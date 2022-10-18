@@ -17,6 +17,7 @@
           --refresh --command \
           nvfetcher-update nix/vast/packages/sources.toml
         '';
+        help = "update vast toolchain with nvfetcher";
       }
     ];
     packages = [

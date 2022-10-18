@@ -7,6 +7,7 @@
     cells-lab.url = "github:GTrunSec/cells-lab";
 
     std.url = "github:divnix/std?ref=refs/pull/164/head";
+    n2c.follows = "std/n2c";
   };
 
   inputs = {
@@ -22,35 +23,42 @@
     std.growOn {
       inherit inputs;
       cellsFrom = ./nix;
-      cellBlocks = [
-        (std.blockTypes.installables "packages")
+      cellBlocks =
+        [
+          (std.blockTypes.installables "packages")
 
-        (std.blockTypes.nixago "nixago")
+          (std.blockTypes.nixago "nixago")
 
-        (std.blockTypes.functions "devshellProfiles")
+          (std.blockTypes.functions "devshellProfiles")
 
-        (std.blockTypes.devshells "devshells")
+          (std.blockTypes.devshells "devshells")
 
-        (std.blockTypes.runnables "entrypoints")
+          (std.blockTypes.runnables "entrypoints")
 
-        (std.blockTypes.data "config")
+          (std.blockTypes.data "config")
 
-        (std.blockTypes.files "models")
+          (std.blockTypes.files "models")
 
-        (std.blockTypes.data "cargoMakeJobs")
+          (std.blockTypes.data "cargoMakeJobs")
 
-        (std.blockTypes.files "configFiles")
+          (std.blockTypes.files "configFiles")
 
-        (std.blockTypes.files "templates")
+          (std.blockTypes.files "templates")
 
-        (std.blockTypes.functions "lib")
+          (std.blockTypes.functions "lib")
 
-        (std.blockTypes.functions "overlays")
+          (std.blockTypes.functions "overlays")
 
-        (std.blockTypes.functions "nixosModules")
+          (std.blockTypes.functions "nixosModules")
+        ]
+        ++ [
+          # OCI soil
+          # four layers of packaging
+          (std.blockTypes.containers "containers")
 
-        (std.blockTypes.containers "containers")
-      ];
+          # second layer of packaging
+          (std.blockTypes.functions "operables")
+        ];
     } {
       overlays = (inputs.std.harvest inputs.self ["vast" "overlays"]).x86_64-linux;
       devShells = inputs.std.harvest inputs.self ["vast" "devshells"];
