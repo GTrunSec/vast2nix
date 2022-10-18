@@ -12,7 +12,7 @@ changelog
 # nixago: ignore-linked-files
 book.toml
 treefmt.toml
-test/run*
-test/data
+data/run*
+data/data
 # nixago-auto-created: mdbook-build-folder
 docs/book/**

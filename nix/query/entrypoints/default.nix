@@ -23,7 +23,7 @@
         ];
       };
     };
-    output = "test/schemas/phishing-url-jsonschema.yaml";
+    output = "data/schemas/phishing-url-jsonschema.yaml";
     format = "yaml";
     hook.mode = "copy";
   };

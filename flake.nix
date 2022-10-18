@@ -6,7 +6,7 @@
     nixpkgs-lock.follows = "nixpkgs";
     cells-lab.url = "github:GTrunSec/cells-lab";
 
-    std.url = "github:divnix/std";
+    std.url = "github:divnix/std?ref=refs/pull/164/head";
   };
 
   inputs = {
@@ -52,9 +52,9 @@
         (std.blockTypes.containers "containers")
       ];
     } {
-      overlays = builtins.getAttr "x86_64-linux" (inputs.std.harvest inputs.self ["vast" "overlays"]);
+      overlays = (inputs.std.harvest inputs.self ["vast" "overlays"]).x86_64-linux;
       devShells = inputs.std.harvest inputs.self ["vast" "devshells"];
-      nixosModules = builtins.getAttr "x86_64-linux" (inputs.std.harvest inputs.self ["vast" "nixosModules"]);
+      nixosModules = (inputs.std.harvest inputs.self ["vast" "nixosModules"]).x86_64-linux;
       packages = inputs.std.harvest inputs.self ["vast" "packages"];
     };
 

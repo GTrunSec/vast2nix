@@ -20,4 +20,9 @@ in {
       book.title = "Vast2nix Doc";
     };
   };
+  just = std.std.nixago.just {
+    configData = {
+      tasks = import ./tasks.nix;
+    };
+  };
 }
