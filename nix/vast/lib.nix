@@ -1,24 +1,35 @@
 {
   inputs,
   cell,
-}: let
+} @ args: let
   inherit (inputs.cells-lab._writers.lib) writeConfiguration;
-  inherit (inputs) std nixpkgs self cells-lab;
+  inherit (inputs) std self cells-lab;
+
   l = nixpkgs.lib // builtins;
   __inputs__ = cells-lab.main.lib.callFlake "${(std.incl self [(self + /lock)])}/lock" {
     nixpkgs.locked = inputs.nixpkgs-lock.sourceInfo;
     nixpkgs-hardenedlinux.inputs.nixpkgs = "nixpkgs";
   };
+
+  nixpkgs = inputs.vast-nixpkgs.legacyPackages.appendOverlays [
+    cell.overlays.default
+    cell.overlays.vast
+  ];
 in {
-  inherit __inputs__ l;
+  inherit
+    __inputs__
+    l
+    nixpkgs
+    ;
 
   toJSON = file:
     nixpkgs.runCommand "toJSON.json" {preferLocalBuild = true;} ''
       ${nixpkgs.remarshal}/bin/yaml2json -i ${file} -o $out
     '';
 
-  nixpkgs = inputs.vast-nixpkgs.legacyPackages.appendOverlays [
-    cell.overlays.default
-    cell.overlays.vast
-  ];
+  mkConfig = args': (import ./config/mkConfig.nix args args');
+
+  mkIntegration = import ./config/integration.nix;
+
+  writeSystemd = import ./configFiles/mkSystemd.nix args;
 }

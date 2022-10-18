@@ -16,3 +16,4 @@ data/run*
 data/data
 # nixago-auto-created: mdbook-build-folder
 docs/book/**
+docs/publish/**

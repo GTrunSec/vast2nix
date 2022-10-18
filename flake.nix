@@ -7,6 +7,7 @@
     cells-lab.url = "github:GTrunSec/cells-lab";
 
     std.url = "github:divnix/std?ref=refs/pull/164/head";
+    org-roam-book-template.follows = "cells-lab/org-roam-book-template";
     n2c.follows = "std/n2c";
   };
 

@@ -10,5 +10,13 @@ in {
     file-verbosity = "info";
   });
 
-  integration = cells-lab._writers.lib.writeConfig "vast-integration.yaml" (cell.config.integration {});
+  systemd = cell.lib.writeSystemd {
+    __argBinPath__ = "/opt/vast";
+    __argConfig__ = "/var/lib/vast/vast.yaml";
+    __argDir__ = "/var/lib/vast/";
+  };
+
+  validation-error = cells-lab._writers.lib.writeConfig "vast.yaml" cell.config.validation-error;
+
+  integration = cells-lab._writers.lib.writeConfig "vast-integration.yaml" (cell.lib.mkIntegration {});
 }

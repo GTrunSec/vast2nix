@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       903390a8-59ae-4fad-92a9-96dc23e3cd93
+:END:
+#+title: Quarto Config
+
+
+* mkEnv

@@ -1,0 +1,323 @@
+:PROPERTIES:
+:ID:       da3ba898-3ec1-4b90-b327-8e381da18385
+:END:
+#+title: Vast Config
+#+header-args:sh: :dir ../../
+
+- tags :: [[id:d2c4f21f-816a-415b-9731-c20989a1dec2][Vast Config Files]]
+
+* mkConfig
+:PROPERTIES:
+:ID:       99e10547-dd2a-418f-9df2-86c933fcb4b6
+:END:
+
+*mkConfig* is a function that helps you to write *vast.yaml* easily.
+
+** vast.yaml
+
+to write a *vast.yaml* with *mkConfig*
+
+#+begin_src nix :exports both :results output
+  default =
+    cell.lib.mkConfig {
+      # attributes flag for having a gloabl impact
+      dataDir = "/tmp/vast";
+      verbosity = "debug";
+    } {
+      # add your custom settings here
+      vast.store-backend = "archive";
+    };
+#+end_src
+
+
+*** std command
+
+#+begin_src sh :exports both :results output
+std //vast/config/default:explore
+#+end_src
+
+#+RESULTS:
+#+begin_example
+{
+  "caf": {
+    "scheduler": {
+      "enable-profiling": false,
+      "max-throughput": 500,
+      "policy": "stealing",
+      "profiling-resolution": "100ms"
+    },
+    "stream": {
+      "credit-round-interval": "10ms",
+      "desired-batch-complexity": "50us",
+      "max-batch-delay": "15ms"
+    },
+    "work-stealing": {
+      "aggressive-poll-attempts": 100,
+      "aggressive-steal-interval": 10,
+      "moderate-poll-attempts": 500,
+      "moderate-sleep-duration": "50us",
+      "moderate-steal-interval": 50,
+      "relaxed-sleep-duration": "10ms",
+      "relaxed-steal-interval": 1
+    }
+  },
+  "vast": {
+    "aging-frequency": "24h",
+    "aging-query": "",
+    "catalog-dir": "/tmp/vast/index",
+    "client-log-file": "/tmp/vast/client.log",
+    "connection-timeout": "10s",
+    "console": "automatic",
+    "console-format": "%^[%T.%e] %v%$",
+    "console-sink": "stderr",
+    "console-verbosity": "debug",
+    "count": {
+      "estimate": false
+    },
+    "db-directory": "/tmp/vast/vast.db",
+    "disable-log-rotation": false,
+    "dump": {
+      "yaml": false
+    },
+    "enable-metrics": false,
+    "endpoint": "127.0.0.1:42000",
+    "explore": {
+      "after": "",
+      "before": "",
+      "by": "",
+      "format": "json",
+      "max-events": "",
+      "max-events-context": 100,
+      "max-events-query": 100
+    },
+    "export": {
+      "continuous": false,
+      "disable-taxonomies": false,
+      "json": {
+        "flatten": false,
+        "numeric-durations": false,
+        "omit-nulls": false
+      },
+      "low-priority": false,
+      "max-events": "<infinity>",
+      "pcap": {
+        "flush-interval": 10000
+      },
+      "read": "-",
+      "timeout": "<infinite>",
+      "uds": false,
+      "unified": false,
+      "write": "-"
+    },
+    "file-format": "[%Y-%m-%dT%T.%e%z] [%n] [%l] [%s=%#] %v",
+    "file-verbosity": "debug",
+    "import": {
+      "batch-size": 65536,
+      "batch-timeout": "10s",
+      "blocking": false,
+      "csv": {
+        "separator": ","
+      },
+      "listen": "",
+      "max-events": "",
+      "pcap": {
+        "disable-community-id": false,
+        "flow-expiry": 10,
+        "max-flow-age": 60,
+        "max-flows": 1048576,
+        "pseudo-realtime-factor": 0,
+        "snaplen": 65535
+      },
+      "read": "-",
+      "read-timeout": "20ms",
+      "test": {
+        "seed": 0
+      },
+      "uds": false,
+      "zeek": {
+        "disable-timestamp-tags": false
+      }
+    },
+    "index": {
+      "default-fp-rate": 0.01
+    },
+    "infer": {
+      "buffer": 8192,
+      "read": "-"
+    },
+    "log-file": "/tmp/vast/server.log",
+    "log-queue-size": 1000000,
+    "log-rotation-threshold": "10MiB",
+    "max-partition-size": 1048576,
+    "max-queries": 10,
+    "max-resident-partitions": 10,
+    "max-segment-size": 1024,
+    "max-taste-partitions": 5,
+    "metrics": {
+      "file-sink": [
+        {
+          "enable": false,
+          "path": "/tmp/vast/vast-metrics.log",
+          "real-time": false
+        }
+      ],
+      "self-sink": [
+        {
+          "enable": true,
+          "slice-size": 128
+        }
+      ]
+    },
+    "node": false,
+    "node-id": "node",
+    "pivot": {
+      "format": "json"
+    },
+    "plugin-dirs": [],
+    "plugins": [],
+    "schema-dirs": [],
+    "segments": 10,
+    "shutdown-grace-period": "3m",
+    "start": {
+      "commands": [],
+      "disk-budget-check-interval": 90,
+      "disk-budget-step-size": 1,
+      "print-endpoint": false
+    },
+    "status": {
+      "debug": false,
+      "detailed": false
+    },
+    "store-backend": "archive",
+    "uds-sink": [
+      {
+        "enable": false,
+        "path": "/tmp/vast/vast-metrics.sock",
+        "real-time": false,
+        "type": "datagram"
+      }
+    ]
+  }
+}
+#+end_example
+
+** validation feature
+:PROPERTIES:
+:ID:       217afebd-d178-4b6d-891a-e220fc56cf28
+:header-args:sh: :prologue "exec 2>&1" :epilogue ":"
+:END:
+
+Use yants for humanized validation output of the type-checker
+
+#+begin_src nix :exports both :results output
+  validation-error =
+    cell.lib.mkConfig {
+      dataDir = "/tmp/vast";
+      verbosity = "debug";
+    } {
+      #  write your custom configuration here
+      # validation: error
+      vast.store-backend = "archivee";
+    };
+#+end_src
+
+*** std command:
+
+#+begin_src sh :async :exports both :results output
+std //vast/config/validation-error:explore
+#+end_src
+
+#+RESULTS:
+: path '/home/gtrun/ghq/github.com/GTrunSec/vast2nix/docs/org' does not contain a 'flake.nix', searching up
+: this derivation will be built:
+:   /nix/store/axmw9gcrqsi00zvn255mrw35ppqf38ji-explore.drv
+: building '/nix/store/axmw9gcrqsi00zvn255mrw35ppqf38ji-explore.drv'...
+: error: Invalid value for store-backend: "archivee"
+:        Valid values are: "segment-store, archive"
+: (use '--show-trace' to show detailed location information)
+: :
+
+
+*** nix command:
+
+#+begin_src sh :async :exports both :results output
+nix build .\#x86_64-linux.vast.configFiles.validation-error
+#+end_src
+
+#+RESULTS:
+: path '/home/gtrun/ghq/github.com/GTrunSec/vast2nix/docs/org' does not contain a 'flake.nix', searching up
+: warning: Git tree '/home/gtrun/ghq/github.com/GTrunSec/vast2nix' is dirty
+: error: Invalid value for store-backend: "archivee"
+:        Valid values are: "segment-store, archive"
+: (use '--show-trace' to show detailed location information)
+
+
+* mkIntegration
+
+** std command:
+
+#+begin_src sh :async :exports both :results output
+std //vast/configFiles/integration:explore
+#+end_src
+
+#+RESULTS:
+: tests:
+:   Node Zeek conn log:
+:     steps:
+:       command: -N import zeek
+:       input: data/zeek/conn.log.gz
+:     tags:
+:     - node
+:     - import-export
+:     - zeek
+** nix command:
+
+#+begin_src sh :async :exports both :results output
+cat $(nix build .\#x86_64-linux.vast.configFiles.integration --print-out-paths --no-link)
+#+end_src
+
+#+RESULTS:
+: tests:
+:   Node Zeek conn log:
+:     steps:
+:       command: -N import zeek
+:       input: data/zeek/conn.log.gz
+:     tags:
+:     - node
+:     - import-export
+:     - zeek
+
+
+* Code Location
+
+#+begin_src nix :exports both :results output :tangle "../../nix/vast/config/default.nix"
+{
+  inputs,
+  cell,
+} @ args: let
+  inherit (inputs.std) dmerge;
+  inherit (cell) lib;
+  inherit (inputs) nixpkgs std;
+  inherit (inputs.cells-lab.main.lib) __inputs__;
+  inherit (inputs.cells-lab.makes.lib) makeSubstitution;
+  l = nixpkgs.lib // builtins;
+in {
+  default =
+    cell.lib.mkConfig {
+      dataDir = "/tmp/vast";
+      verbosity = "debug";
+    } {
+      # add your custom settings here
+      vast.store-backend = "archive";
+    };
+
+  validation-error =
+    cell.lib.mkConfig {
+      dataDir = "/tmp/vast";
+      verbosity = "debug";
+    } {
+      # validation: error
+      vast.store-backend = "archivee";
+    };
+}
+#+end_src

@@ -59,10 +59,10 @@ jobs:
           commit_message: ${{ env.COMMIT_MSG }}
 
       - name: Build Doc
-        run: nix -Lv develop --command mdbook build
+        run: nix -Lv develop --command mkdoc
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: gh-pages
-          folder: ./docs/book
+          folder: ./docs/publish/public

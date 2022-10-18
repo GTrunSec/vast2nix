@@ -628,6 +628,10 @@
         "nixpkgs-lock": [
           "nixpkgs"
         ],
+        "org-roam-book-template": [
+          "cells-lab",
+          "org-roam-book-template"
+        ],
         "std": "std_2",
         "users": [
           "std",

@@ -19,6 +19,12 @@
         '';
         help = "update vast toolchain with nvfetcher";
       }
+      {
+        name = "mkdoc";
+        command = ''
+        nix run $PRJ_ROOT#x86_64-linux.vast.entrypoints.mkdoc "$@"
+        '';
+      }
     ];
     packages = [
       inputs.cells.vast.packages.vast-integration
