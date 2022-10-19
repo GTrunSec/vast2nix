@@ -21,7 +21,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://gtrunsec.github.io/vast2nix/posts/quarto-config/</guid>
-      <description>mkEnv </description>
+      <description></description>
     </item>
     
     <item>
@@ -30,9 +30,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://gtrunsec.github.io/vast2nix/posts/vast-config/</guid>
-      <description>tags Vast Config Files mkConfig mkConfig is a function that helps you to write vast.yaml easily.
-example validation feature Use yants for humanized validation output of the type-checker
-validation-error = cell.lib.mkConfig { dataDir = &amp;#34;/tmp/vast&amp;#34;; verbosity = &amp;#34;debug&amp;#34;; } { # write your custom configuration here # validation: error vast.store-backend = &amp;#34;archivee&amp;#34;; }; std command: std //vast/config/validation-error:explore path &amp;#39;/home/gtrun/ghq/github.com/GTrunSec/vast2nix/docs/org&amp;#39; does not contain a &amp;#39;flake.nix&amp;#39;, searching up this derivation will be built: /nix/store/axmw9gcrqsi00zvn255mrw35ppqf38ji-explore.</description>
+      <description>tags Vast Config Files, mkConfig vast.yaml example use mkConfig to write a vast.yaml
+default = cell.lib.mkConfig { # arguments flag for having a gloabl impact dataDir = &amp;#34;/tmp/vast&amp;#34;; verbosity = &amp;#34;debug&amp;#34;; } { # add your custom settings here vast.store-backend = &amp;#34;archive&amp;#34;; }; std command std //vast/config/default:explore { &amp;#34;caf&amp;#34;: { &amp;#34;scheduler&amp;#34;: { &amp;#34;enable-profiling&amp;#34;: false, &amp;#34;max-throughput&amp;#34;: 500, &amp;#34;policy&amp;#34;: &amp;#34;stealing&amp;#34;, &amp;#34;profiling-resolution&amp;#34;: &amp;#34;100ms&amp;#34; }, &amp;#34;stream&amp;#34;: { &amp;#34;credit-round-interval&amp;#34;: &amp;#34;10ms&amp;#34;, &amp;#34;desired-batch-complexity&amp;#34;: &amp;#34;50us&amp;#34;, &amp;#34;max-batch-delay&amp;#34;: &amp;#34;15ms&amp;#34; }, &amp;#34;work-stealing&amp;#34;: { &amp;#34;aggressive-poll-attempts&amp;#34;: 100, &amp;#34;aggressive-steal-interval&amp;#34;: 10, &amp;#34;moderate-poll-attempts&amp;#34;: 500, &amp;#34;moderate-sleep-duration&amp;#34;: &amp;#34;50us&amp;#34;, &amp;#34;moderate-steal-interval&amp;#34;: 50, &amp;#34;relaxed-sleep-duration&amp;#34;: &amp;#34;10ms&amp;#34;, &amp;#34;relaxed-steal-interval&amp;#34;: 1 } }, &amp;#34;vast&amp;#34;: { &amp;#34;aging-frequency&amp;#34;: &amp;#34;24h&amp;#34;, &amp;#34;aging-query&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;catalog-dir&amp;#34;: &amp;#34;/tmp/vast/index&amp;#34;, &amp;#34;client-log-file&amp;#34;: &amp;#34;/tmp/vast/client.</description>
     </item>
     
     <item>
@@ -43,6 +42,16 @@ validation-error = cell.lib.mkConfig { dataDir = &amp;#34;/tmp/vast&amp;#34;; ve
       <guid>https://gtrunsec.github.io/vast2nix/posts/vast-configfiles/</guid>
       <description>inherit functions writeConfig { cells-lab._writers.lib.writeConfig &amp;#34;vast.yaml&amp;#34; cell.config.default; } writeSystemd writeSystemd is a function that helps you to generate vast-systemd.service
 vast-systemd.service systemd = cell.lib.writeSystemd { __argBinPath__ = &amp;#34;/opt/vast&amp;#34;; __argConfig__ = &amp;#34;/var/lib/vast/vast.yaml&amp;#34;; __argDir__ = &amp;#34;/var/lib/vast/&amp;#34;; }; std command std //vast/configFiles/systemd:explore [Unit] Description=VAST - Visibility Across Space and Time Wants=network-online.target After=network-online.target [Service] Type=notify # user + privileges # We explicitly don&amp;#39;t use DynamicUser because that can lead to recursive `chown`s. # Doing that is pretty slow on some file systems (e.</description>
+    </item>
+    
+    <item>
+      <title>Vast Lib</title>
+      <link>https://gtrunsec.github.io/vast2nix/posts/vast-lib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gtrunsec.github.io/vast2nix/posts/vast-lib/</guid>
+      <description>mkConfig mkConfig is a function that helps you to write vast.yaml.
+example mkIntegration mkIntegration is a function that helps you to write vast-integration.yaml easily.</description>
     </item>
     
   </channel>
