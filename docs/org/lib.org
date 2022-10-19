@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       8b75403d-5f22-41da-ab4b-57be7c48eb2e
+:END:
+#+title: Lib
+
+
+
+* writeConfig
+:PROPERTIES:
+:ID:       07783e3d-1c45-4ad9-a78a-0b4ebcfcd1e1
+:END:
+
+ *inputs.cells-lab._writers.lib.writeConfig* is function that converts the nix attributes to a specific format file

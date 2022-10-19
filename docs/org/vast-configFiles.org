@@ -1,7 +1,19 @@
 :PROPERTIES:
 :ID:       d2c4f21f-816a-415b-9731-c20989a1dec2
 :END:
-#+title: Vast Config Files
+#+title: Vast ConfigFiles
+
+* inherit functions
+
+- [[id:07783e3d-1c45-4ad9-a78a-0b4ebcfcd1e1][writeConfig]]
+
+#+begin_src nix :async :exports both :results output
+{
+  cells-lab._writers.lib.writeConfig "vast.yaml" cell.config.default;
+}
+#+end_src
+
+
 
 * writeSystemd
 
@@ -22,6 +34,61 @@
 
 #+begin_src sh :async :exports both :results output
 std //vast/configFiles/systemd:explore
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[Unit]
+Description=VAST - Visibility Across Space and Time
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=notify
+
+# user + privileges
+# We explicitly don't use DynamicUser because that can lead to recursive `chown`s.
+# Doing that is pretty slow on some file systems (e.g., xfs).
+User=vast
+Group=vast
+NoNewPrivileges=yes
+
+# capabilities
+RestrictNamespaces=yes
+RestrictAddressFamilies=
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictSUIDSGID=yes
+
+# system access
+ProtectSystem=strict
+ReadWritePaths=/var/lib/vast/
+ReadWritePaths=/var/lib/vast/
+PrivateTmp=yes
+ProtectHome=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+
+# service specifics
+TimeoutStopSec=600
+WorkingDirectory=/var/lib/vast/
+ExecStop=/opt/vast/bin/vast stop
+ExecStart=/opt/vast/bin/vast --config=/var/lib/vast/vast.yaml start
+
+[Install]
+WantedBy=multi-user.target
+
+#+end_example
+
+** nix command
+#+begin_src sh :exports both :results output
+cat $(nix build .\#x86_64-linux.vast.configFiles.systemd --print-out-paths --no-link)
 #+end_src
 
 #+RESULTS:
