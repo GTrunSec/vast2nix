@@ -2,24 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gtrunsec.github.io/vast2nix/categories/</loc>
+    <loc>https://gtrunsec.github.io/categories/</loc>
   </url><url>
-    <loc>https://gtrunsec.github.io/vast2nix/posts/lib/</loc>
+    <loc>https://gtrunsec.github.io/posts/lib/</loc>
   </url><url>
-    <loc>https://gtrunsec.github.io/vast2nix/posts/</loc>
+    <loc>https://gtrunsec.github.io/posts/</loc>
   </url><url>
-    <loc>https://gtrunsec.github.io/vast2nix/posts/quarto-config/</loc>
+    <loc>https://gtrunsec.github.io/posts/quarto-config/</loc>
   </url><url>
-    <loc>https://gtrunsec.github.io/vast2nix/search/</loc>
+    <loc>https://gtrunsec.github.io/search/</loc>
   </url><url>
-    <loc>https://gtrunsec.github.io/vast2nix/tags/</loc>
+    <loc>https://gtrunsec.github.io/tags/</loc>
   </url><url>
-    <loc>https://gtrunsec.github.io/vast2nix/posts/vast-config/</loc>
+    <loc>https://gtrunsec.github.io/posts/vast-config/</loc>
   </url><url>
-    <loc>https://gtrunsec.github.io/vast2nix/posts/vast-configfiles/</loc>
+    <loc>https://gtrunsec.github.io/posts/vast-configfiles/</loc>
   </url><url>
-    <loc>https://gtrunsec.github.io/vast2nix/posts/vast-lib/</loc>
+    <loc>https://gtrunsec.github.io/posts/vast-lib/</loc>
   </url><url>
-    <loc>https://gtrunsec.github.io/vast2nix/</loc>
+    <loc>https://gtrunsec.github.io/</loc>
   </url>
 </urlset>
