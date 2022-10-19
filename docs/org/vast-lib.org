@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       33341490-8578-4759-99b2-8bac21ca9bc9
+:END:
+#+title: Vast Lib
+
+
+* mkConfig
+:PROPERTIES:
+:ID:       a1a78651-0050-45c9-aba9-084f230dd292
+:END:
+
+*mkConfig* is a function that helps you to write *vast.yaml*.
+
+- [[id:ac1e9423-edbd-4960-9393-4c7d5babfc59][example]]
+
+* mkIntegration
+
+*mkIntegration* is a function that helps you to write *vast-integration.yaml* easily.

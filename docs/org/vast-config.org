@@ -4,16 +4,204 @@
 #+title: Vast Config
 #+header-args:sh: :dir ../../
 
-- tags :: [[id:d2c4f21f-816a-415b-9731-c20989a1dec2][Vast Config Files]]
+- tags :: [[id:d2c4f21f-816a-415b-9731-c20989a1dec2][Vast Config Files]], [[id:a1a78651-0050-45c9-aba9-084f230dd292][mkConfig]]
 
-* mkConfig
+* vast.yaml
 :PROPERTIES:
 :ID:       99e10547-dd2a-418f-9df2-86c933fcb4b6
 :END:
 
-*mkConfig* is a function that helps you to write *vast.yaml* easily.
-
 ** example
+:PROPERTIES:
+:ID:       ac1e9423-edbd-4960-9393-4c7d5babfc59
+:END:
+
+ use [[id:a1a78651-0050-45c9-aba9-084f230dd292][mkConfig]] to write a *vast.yaml*
+
+#+begin_src nix :exports both :results output
+  default =
+    cell.lib.mkConfig {
+      # arguments flag for having a gloabl impact
+      dataDir = "/tmp/vast";
+      verbosity = "debug";
+    } {
+      # add your custom settings here
+      vast.store-backend = "archive";
+    };
+#+end_src
+
+*** std command
+
+#+begin_src sh :exports both :results output
+std //vast/config/default:explore
+#+end_src
+
+#+RESULTS:
+#+begin_example
+{
+  "caf": {
+    "scheduler": {
+      "enable-profiling": false,
+      "max-throughput": 500,
+      "policy": "stealing",
+      "profiling-resolution": "100ms"
+    },
+    "stream": {
+      "credit-round-interval": "10ms",
+      "desired-batch-complexity": "50us",
+      "max-batch-delay": "15ms"
+    },
+    "work-stealing": {
+      "aggressive-poll-attempts": 100,
+      "aggressive-steal-interval": 10,
+      "moderate-poll-attempts": 500,
+      "moderate-sleep-duration": "50us",
+      "moderate-steal-interval": 50,
+      "relaxed-sleep-duration": "10ms",
+      "relaxed-steal-interval": 1
+    }
+  },
+  "vast": {
+    "aging-frequency": "24h",
+    "aging-query": "",
+    "catalog-dir": "/tmp/vast/index",
+    "client-log-file": "/tmp/vast/client.log",
+    "connection-timeout": "10s",
+    "console": "automatic",
+    "console-format": "%^[%T.%e] %v%$",
+    "console-sink": "stderr",
+    "console-verbosity": "debug",
+    "count": {
+      "estimate": false
+    },
+    "db-directory": "/tmp/vast/vast.db",
+    "disable-log-rotation": false,
+    "dump": {
+      "yaml": false
+    },
+    "enable-metrics": false,
+    "endpoint": "127.0.0.1:42000",
+    "explore": {
+      "after": "",
+      "before": "",
+      "by": "",
+      "format": "json",
+      "max-events": "",
+      "max-events-context": 100,
+      "max-events-query": 100
+    },
+    "export": {
+      "continuous": false,
+      "disable-taxonomies": false,
+      "json": {
+        "flatten": false,
+        "numeric-durations": false,
+        "omit-nulls": false
+      },
+      "low-priority": false,
+      "max-events": "<infinity>",
+      "pcap": {
+        "flush-interval": 10000
+      },
+      "read": "-",
+      "timeout": "<infinite>",
+      "uds": false,
+      "unified": false,
+      "write": "-"
+    },
+    "file-format": "[%Y-%m-%dT%T.%e%z] [%n] [%l] [%s=%#] %v",
+    "file-verbosity": "debug",
+    "import": {
+      "batch-size": 65536,
+      "batch-timeout": "10s",
+      "blocking": false,
+      "csv": {
+        "separator": ","
+      },
+      "listen": "",
+      "max-events": "",
+      "pcap": {
+        "disable-community-id": false,
+        "flow-expiry": 10,
+        "max-flow-age": 60,
+        "max-flows": 1048576,
+        "pseudo-realtime-factor": 0,
+        "snaplen": 65535
+      },
+      "read": "-",
+      "read-timeout": "20ms",
+      "test": {
+        "seed": 0
+      },
+      "uds": false,
+      "zeek": {
+        "disable-timestamp-tags": false
+      }
+    },
+    "index": {
+      "default-fp-rate": 0.01
+    },
+    "infer": {
+      "buffer": 8192,
+      "read": "-"
+    },
+    "log-file": "/tmp/vast/server.log",
+    "log-queue-size": 1000000,
+    "log-rotation-threshold": "10MiB",
+    "max-partition-size": 1048576,
+    "max-queries": 10,
+    "max-resident-partitions": 10,
+    "max-segment-size": 1024,
+    "max-taste-partitions": 5,
+    "metrics": {
+      "file-sink": [
+        {
+          "enable": false,
+          "path": "/tmp/vast/vast-metrics.log",
+          "real-time": false
+        }
+      ],
+      "self-sink": [
+        {
+          "enable": true,
+          "slice-size": 128
+        }
+      ]
+    },
+    "node": false,
+    "node-id": "node",
+    "pivot": {
+      "format": "json"
+    },
+    "plugin-dirs": [],
+    "plugins": [],
+    "schema-dirs": [],
+    "segments": 10,
+    "shutdown-grace-period": "3m",
+    "start": {
+      "commands": [],
+      "disk-budget-check-interval": 90,
+      "disk-budget-step-size": 1,
+      "print-endpoint": false
+    },
+    "status": {
+      "debug": false,
+      "detailed": false
+    },
+    "store-backend": "archive",
+    "uds-sink": [
+      {
+        "enable": false,
+        "path": "/tmp/vast/vast-metrics.sock",
+        "real-time": false,
+        "type": "datagram"
+      }
+    ]
+  }
+}
+#+end_example
+
+
 ** validation feature
 :PROPERTIES:
 :ID:       217afebd-d178-4b6d-891a-e220fc56cf28
