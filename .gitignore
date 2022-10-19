@@ -17,4 +17,4 @@ data/data
 # nixago-auto-created: mdbook-build-folder
 docs/book/**
 docs/publish/**
-templates/**/flake.lock
+# templates/**/flake.lock

@@ -1,4 +1,4 @@
-baseURL = "https://gtrunsec.github.io/vast2nix"
+baseURL = "https://gtrunsec.github.io"
 languageCode = "en-us"
 title = "vast2nix"
 theme = "cortex"
