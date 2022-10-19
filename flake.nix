@@ -3,10 +3,10 @@
 
   inputs = {
     nixpkgs.follows = "cells-lab/nixpkgs";
-    nixpkgs-lock.follows = "nixpkgs";
     cells-lab.url = "github:GTrunSec/cells-lab";
 
-    std.url = "github:divnix/std?ref=refs/pull/164/head";
+    # std.url = "github:divnix/std?ref=refs/pull/164/head";
+    std.url = "github:divnix/std";
     org-roam-book-template.follows = "cells-lab/org-roam-book-template";
     n2c.follows = "std/n2c";
   };

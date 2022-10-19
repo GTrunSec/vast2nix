@@ -625,9 +625,6 @@
           "cells-lab",
           "nixpkgs"
         ],
-        "nixpkgs-lock": [
-          "nixpkgs"
-        ],
         "org-roam-book-template": [
           "cells-lab",
           "org-roam-book-template"
@@ -704,16 +701,15 @@
         "yants": "yants_2"
       },
       "locked": {
-        "lastModified": 1666043046,
-        "narHash": "sha256-AwI4EeO6FXqByvtVpYtk6vDf6TCg4gQ3C0VzH+fAJdI=",
+        "lastModified": 1666197254,
+        "narHash": "sha256-8uvoJoa4z8bSGxN9PgeHLRC4sb2wxeGuw+kW6Zpe0Ow=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "62e9452d2830f810be33f989116ea6801896b66b",
+        "rev": "12b3d2bcf7313e9ad790d575992fd69be3767a9f",
         "type": "github"
       },
       "original": {
         "owner": "divnix",
-        "ref": "refs/pull/164/head",
         "repo": "std",
         "type": "github"
       }

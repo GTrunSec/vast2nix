@@ -7,7 +7,7 @@
 
   l = nixpkgs.lib // builtins;
   __inputs__ = cells-lab.main.lib.callFlake "${(std.incl self [(self + /lock)])}/lock" {
-    nixpkgs.locked = inputs.nixpkgs-lock.sourceInfo;
+    nixpkgs.locked = inputs.nixpkgs.sourceInfo;
     nixpkgs-hardenedlinux.inputs.nixpkgs = "nixpkgs";
   };
 
