@@ -23,42 +23,44 @@
   } @ inputs:
     std.growOn {
       inherit inputs;
+
       cellsFrom = ./nix;
+
       cellBlocks =
-        [
-          (std.blockTypes.installables "packages")
+        with std.blockTypes;[
+          (installables "packages")
 
-          (std.blockTypes.nixago "nixago")
+          (nixago "nixago")
 
-          (std.blockTypes.functions "devshellProfiles")
+          (functions "devshellProfiles")
 
-          (std.blockTypes.devshells "devshells")
+          (devshells "devshells")
 
-          (std.blockTypes.runnables "entrypoints")
+          (runnables "entrypoints")
 
-          (std.blockTypes.data "config")
+          (data "config")
 
-          (std.blockTypes.files "models")
+          (files "models")
 
-          (std.blockTypes.data "cargoMakeJobs")
+          (data "cargoMakeJobs")
 
-          (std.blockTypes.files "configFiles")
+          (files "configFiles")
 
-          (std.blockTypes.files "templates")
+          (files "templates")
 
-          (std.blockTypes.functions "lib")
+          (functions "lib")
 
-          (std.blockTypes.functions "overlays")
+          (functions "overlays")
 
-          (std.blockTypes.functions "nixosModules")
+          (functions "nixosModules")
         ]
         ++ [
           # OCI soil
           # four layers of packaging
-          (std.blockTypes.containers "containers")
+          (containers "containers")
 
           # second layer of packaging
-          (std.blockTypes.functions "operables")
+          (functions "operables")
         ];
     } {
       overlays = (inputs.std.harvest inputs.self ["vast" "overlays"]).x86_64-linux;

@@ -12,13 +12,35 @@ in {
       propagatedBuildInputs = with python3Packages; [aiounittest];
     }
   );
-  pyvast-latest = with final; (
+  pyvast-latest = with final; let
+    dynaconf = with final;
+      python3Packages.buildPythonPackage rec {
+        inherit (final.vast-sources.dynaconf) src version pname;
+        doCheck = false;
+        propagatedBuildInputs = with python3Packages; [
+          setuptools
+        ];
+      };
+  in (
     pyvast.overridePythonAttrs (
       old: {
-        src = vast-sources.vast-latest.src + "/pyvast";
+        format = "pyproject";
+        src = vast-sources.vast-latest.src + "/python";
+        propagatedBuildInputs = with python3Packages; [
+          poetry
+          pandas
+          pyarrow
+          coloredlogs
+          dynaconf
+        ];
         version =
           (builtins.substring 0 7 vast-sources.vast-latest.version)
           + "-latest-dirty";
+        postPatch = ''
+          substituteInPlace pyproject.toml \
+            --replace 'pyarrow = "^10.0"' 'pyarrow = "*"' \
+            --replace 'pandas = "^1.5"' 'pandas = "*"'
+        '';
       }
     )
   );

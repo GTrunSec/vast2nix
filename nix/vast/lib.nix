@@ -27,9 +27,11 @@ in {
       ${nixpkgs.remarshal}/bin/yaml2json -i ${file} -o $out
     '';
 
-  mkConfig = args': (import ./config/mkConfig.nix args args');
+  mkConfig = import ./config/mkConfig.nix args;
 
   mkIntegration = import ./config/integration.nix;
 
   writeSystemd = import ./configFiles/mkSystemd.nix args;
+
+  mkComposes = import ./dockerComposes/mkComposes.nix args;
 }

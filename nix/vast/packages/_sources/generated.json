@@ -1,4 +1,19 @@
 {
+    "dynaconf": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "dynaconf",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-2c+1D9SnGlQ/0jhF1PWFtiC2/22dPMGCXGFPeyCXyzk=",
+            "type": "url",
+            "url": "https://pypi.io/packages/source/d/dynaconf/dynaconf-3.1.11.tar.gz"
+        },
+        "version": "3.1.11"
+    },
     "vast-bin": {
         "cargoLocks": null,
         "date": null,
@@ -16,7 +31,7 @@
     },
     "vast-latest": {
         "cargoLocks": null,
-        "date": "2022-10-21",
+        "date": "2022-11-01",
         "extract": null,
         "name": "vast-latest",
         "passthru": null,
@@ -28,11 +43,11 @@
             "name": null,
             "owner": "tenzir",
             "repo": "vast",
-            "rev": "e1eea55a6223f58b5d0c78f4b963688edf1af5a2",
-            "sha256": "sha256-sPOlprv/i6+3RKLglU6nwddGz2lPAFWS2Jlf3nyC3T0=",
+            "rev": "ab96db74bbcaa1977a632cc01e4387dd6fd6ab70",
+            "sha256": "sha256-tLquV+XhQbAbjk6L5NhZZY1qCR+hJRWixx85sYLZ7GY=",
             "type": "github"
         },
-        "version": "e1eea55a6223f58b5d0c78f4b963688edf1af5a2"
+        "version": "ab96db74bbcaa1977a632cc01e4387dd6fd6ab70"
     },
     "vast-release": {
         "cargoLocks": null,
