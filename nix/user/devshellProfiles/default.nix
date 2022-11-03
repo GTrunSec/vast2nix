@@ -34,6 +34,10 @@ in {
         package = nixpkgs.just;
         category = "workflow";
       }
+
+      {
+        package = inputs.cells.vast.packages.vast-release;
+      }
       {
         name = "vast-doc";
         command = "nix run github:gtrunsec/vast2nix#${nixpkgs.system}.vast.entrypoints.doc --refresh --no-write-lock-file $@";

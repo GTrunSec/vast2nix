@@ -33,5 +33,5 @@ in {
 
   writeSystemd = import ./configFiles/mkSystemd.nix args;
 
-  mkComposes = import ./dockerComposes/mkComposes.nix args;
+  mkCompose = import ./dockerComposes/mkCompose.nix args;
 }

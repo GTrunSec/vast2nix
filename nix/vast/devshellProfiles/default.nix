@@ -25,6 +25,9 @@
           nix run $PRJ_ROOT#x86_64-linux._automation.entrypoints.mkdoc "$@"
         '';
       }
+      {
+        package = inputs.n2c.packages.${inputs.nixpkgs.system}.skopeo-nix2container;
+      }
     ];
     packages = [
       inputs.cells.vast.packages.vast-integration

@@ -8,7 +8,9 @@
     # std.url = "github:divnix/std?ref=refs/pull/164/head";
     std.url = "github:divnix/std";
     org-roam-book-template.follows = "cells-lab/org-roam-book-template";
-    n2c.follows = "std/n2c";
+    std.inputs.n2c.follows = "n2c";
+
+    n2c.url = "github:nlewo/nix2container";
   };
 
   inputs = {
@@ -26,8 +28,8 @@
 
       cellsFrom = ./nix;
 
-      cellBlocks =
-        with std.blockTypes;[
+      cellBlocks = with std.blockTypes;
+        [
           (installables "packages")
 
           (nixago "nixago")
@@ -58,6 +60,7 @@
           # OCI soil
           # four layers of packaging
           (containers "containers")
+          (containers "oci-images")
 
           # second layer of packaging
           (functions "operables")
