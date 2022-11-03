@@ -14,8 +14,6 @@ in {
       text = ''
         if [ "$1" == "doc" ]; then
           glow ${doc}
-        else
-          cargo make --makefile ${cell.configFiles.deploy} "$@"
         fi
       '';
     };

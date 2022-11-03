@@ -63,7 +63,7 @@
           (containers "oci-images")
 
           # second layer of packaging
-          (functions "operables")
+          (runnables "operables")
         ];
     } {
       overlays = (inputs.std.harvest inputs.self ["vast" "overlays"]).x86_64-linux;
