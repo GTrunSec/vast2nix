@@ -7,7 +7,7 @@
 in {
   prod = std.lib.ops.mkStandardOCI rec {
     name = "vast-release";
-    operable = cell.entrypoints.dev;
+    operable = cell.entrypoints.prod;
     options = {
       config.ExposedPorts = {
         "42000/tcp" = {};

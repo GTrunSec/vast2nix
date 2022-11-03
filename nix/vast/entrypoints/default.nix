@@ -23,7 +23,7 @@ in {
     '';
   };
 
-  dev = std.lib.ops.mkOperable {
+  prod = std.lib.ops.mkOperable {
     package = cell.packages.vast-release;
     runtimeEnv = {
       VAST_DB_DIRECTORY = "/var/lib/vast";
