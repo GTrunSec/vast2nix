@@ -2,6 +2,7 @@
 
 The *vast2nix* repo is still in work-in-process. You could discover some methods and inspiration in different examples as follows. Also, it would help you to understand how *nix/nixos* helps us to build a SOC platform and accomplish some automation jobs.
 
+Getting started with [[https://incredible-haupia-862e63.netlify.app/][Online Document]]
 
 * [[https://github.com/input-output-hk/cardano-world/blob/master/docs/explain/packaging-principles.md][The 4 Layers of Packaging]]
 
@@ -18,7 +19,7 @@ Vast2nix is based on [[https://github.com/divnix/std/blob/main/docs/patterns/fou
 How is *vast2nix* genarated `configFiles/config`
 
 
-- [[file:nix/vast/config]] -> [[https://incredible-haupia-862e63.netlify.app/posts/vast-config/][online-doc]]
+- [[file:nix/vast/config]]
 - [[file:nix/vast/configFiles]]
 
 * Operations
@@ -28,3 +29,8 @@ How is *vast2nix* operated *task/platform/cloud/workflow/vast-intergation*
 - [[file:nix/query/entrypoints/default.nix::9]]
 
 * Render
+
+How is *vast2nix* rendered *vast-schemas/attack-models/dataTypes/*
+
+- converting Phishing-url *jsonSchema* -> vast-schemas
+  - [[file:nix/schemas/config/default.nix::9]]
