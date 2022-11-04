@@ -13,6 +13,7 @@ Vast2nix is based on [[https://github.com/divnix/std/blob/main/docs/patterns/fou
 
 - The entrypoint packaging [[file:nix/vast/entrypoints/default.nix]]
 - The binary packaging [[file:nix/vast/packages/default.nix]]
+- The Scheduler Chart packaging [[fn:https://github.com/GTrunSec/hunting-lab/blob/main/nix/vast/dockerComposes/vast-compose.nix][vast-compose]],[[https://github.com/GTrunSec/hunting-lab/blob/main/nix/opencti/nomadJobs/container.nix][OpenCTI-nomadJobs]],[[https://github.com/GTrunSec/lambda-microvm-lab/blob/main/profiles/tenzir/vast/default.nix][vast-nixos]]
 
 * Generator
 
