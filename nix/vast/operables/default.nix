@@ -24,7 +24,7 @@ in {
     # It shouldn't sit with more stable layers and thereby not exacerbate on unnecessary storage.
     # It's already pretty hungry.
     runtimeScript = ''
-      ${l.getExe cell.packages.vast-release} --endpoint=0.0.0.0:42000 --plugins="$VAST_PLUGINS" start
+      ${l.getExe cell.packages.vast-release} --endpoint=0.0.0.0:42000 --plugins="$VAST_PLUGINS" "$@"
     '';
   };
 }

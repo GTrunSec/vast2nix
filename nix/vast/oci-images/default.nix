@@ -8,13 +8,13 @@
   l = inputs.nixpkgs.lib // builtins;
 in {
   /*
-  docker run --user $(id -u):$(id -g) -it --rm -p 42000:42000 -v $(pwd)/test \
-  docker.io/library/vast-release
+  docker run --user vast -it --rm -p 42000:42000 \
+  -v $(pwd)/test docker.io/library/vast-release start
 
   # https://www.redhat.com/sysadmin/debug-rootless-podman-mounted-volumes
 
   podman run -it --rm --userns=keep-id --group-add keep-groups --user vast \
-  -p 42000:42000 -v $(pwd)/test:/var/lib/vast docker.io/library/vast-release
+  -p 42000:42000 -v $(pwd)/test:/var/lib/vast docker.io/library/vast-release start
   */
   prod = mkStandardOCI rec {
     name = "vast-release";
