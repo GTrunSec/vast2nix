@@ -9,20 +9,20 @@
 in {
   /*
   docker run --user vast -it --rm -p 42000:42000 \
-  -v $(pwd)/test docker.io/library/vast-release start
+  -v $(pwd)/test ghcr.io/gtrunsec/vast:latest start
 
   # https://www.redhat.com/sysadmin/debug-rootless-podman-mounted-volumes
 
   podman run -it --rm --userns=keep-id --group-add keep-groups --user vast \
-  -p 42000:42000 -v $(pwd)/test:/var/lib/vast docker.io/library/vast-release start
+  -p 42000:42000 -v $(pwd)/test:/var/lib/vast ghcr.io/gtrunsec/vast:latest start
   */
   prod = mkStandardOCI rec {
-    name = "vast-release";
+    name = "ghcr.io/gtrunsec/vast";
     operable = cell.operables.prod;
     options = {
-      # config.Volumes = {
-      #   "vast:/var/lib/vast" = {};
-      # };
+      config.Volumes = {
+        "/var/lib/vast" = {};
+      };
       config.WorkingDir = "/var/lib/vast";
       config.ExposedPorts = {
         "42000/tcp" = {};

@@ -7,7 +7,7 @@
   l = inputs.nixpkgs.lib // builtins;
 in {
   prod = mkOperable {
-    package = cell.packages.vast-release;
+    package = cell.packages.vast-latest;
     runtimeEnv = {
       VAST_PLUGINS = "all";
       VAST_DB_DIRECTORY = "/var/lib/vast";
