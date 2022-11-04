@@ -34,3 +34,25 @@ How is *vast2nix* rendered *vast-schemas/attack-models/dataTypes/*
 
 - converting Phishing-url *jsonSchema* -> vast-schemas
   - [[file:nix/schemas/config/default.nix::9]]
+
+* Devshell
+
+How is *vast2nix* hooked virtual shell with different environment profiles. -> *zeek(btest,zeekScript,zeek-language-server)/vast(vast-intergation,pyvast)/theHive/zed/etc/*
+
+** [[https://github.com/numtide/devshell][devshell]] Intergation
+
+- [[file:nix/vast/devshells/default.nix]]
+  + [[file:nix/vast/devshellProfiles/default.nix]]
+
+** devContainer OCI-image Intergation
+
+#+begin_src sh
+docker pull ghcr.io/gtrunsec/quarto-dev:latest
+docker run -it -v "$(pwd):/work" --entrypoint /bin/bash ghcr.io/gtrunsec/quarto-dev
+menu
+#+end_src
+
+
+* Real SOC Planet with Nix/Declarative EcoSystem
+
+- https://github.com/GTrunSec/hunting-lab
