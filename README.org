@@ -1,0 +1,30 @@
+#+title: Vast2nix
+
+The *vast2nix* repo is still in work-in-process. You could discover some methods and inspiration in different examples as follows. Also, it would help you to understand how *nix/nixos* helps us to build a SOC platform and accomplish some automation jobs.
+
+
+* [[https://github.com/input-output-hk/cardano-world/blob/master/docs/explain/packaging-principles.md][The 4 Layers of Packaging]]
+
+Vast2nix is based on [[https://github.com/divnix/std/blob/main/docs/patterns/four-packaging-layers.md][The 4 Layers of Packaging]] of std.
+
+- The OCI image packaging: [[file:nix/vast/oci-images/default.nix]]
+  + The entrypoint packaging [[file:nix/vast/operables/default.nix]]
+
+- The entrypoint packaging [[file:nix/vast/entrypoints/default.nix]]
+- The binary packaging [[file:nix/vast/packages/default.nix]]
+
+* Generator
+
+How is *vast2nix* genarated `configFiles/config`
+
+
+- [[file:nix/vast/config]] -> [[https://incredible-haupia-862e63.netlify.app/posts/vast-config/][online-doc]]
+- [[file:nix/vast/configFiles]]
+
+* Operations
+
+How is *vast2nix* operated *task/platform/cloud/workflow/vast-intergation*
+
+- [[file:nix/query/entrypoints/default.nix::9]]
+
+* Render
