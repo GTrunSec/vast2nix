@@ -1,6 +1,6 @@
 #+title: Vast2nix
 
-The *vast2nix* repo is still in work-in-process. You could discover some methods and inspiration in different examples as follows. Also, it would help you to understand how *nix/nixos* helps us to build a SOC platform and accomplish some automation jobs.
+The *vast2nix* repo is still in work-in-process. You could discover some methods and inspiration in different examples as follows. Also, it would help you to understand how *nix/nixos* leverages us to build a SOC platform and accomplish some automation jobs.
 
 Getting started with [[https://incredible-haupia-862e63.netlify.app/][Online Document]]
 
@@ -34,7 +34,10 @@ How is *vast2nix* operated *task/platform/cloud/workflow/vast-intergation*
 How is *vast2nix* rendered *vast-schemas/attack-models/dataTypes/*
 
 - converting Phishing-url *jsonSchema* -> vast-schemas
+
   - [[file:nix/schemas/config/default.nix::9]]
+
+- using *writeVastSchema* to your security dataTypes - https://github.com/GTrunSec/matrix-attack-data/tree/main/nix/vast/schemas
 
 * Devshell
 
