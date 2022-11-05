@@ -3,7 +3,7 @@
   cell,
 } @ args: attrsSet: mergeAttrs: let
   inherit (inputs) nixpkgs;
-  inherit (inputs.cells-lab.main.lib) __inputs__;
+  inherit (inputs.cells-lab.common.lib) __inputs__;
 
   l = nixpkgs.lib // builtins;
 

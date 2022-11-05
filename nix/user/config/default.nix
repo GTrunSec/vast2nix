@@ -3,7 +3,7 @@
   cell,
 } @ args: let
   inherit (inputs.cells-lab.makes.lib) makeSubstitution;
-  inherit (inputs.cells-lab.main.lib) __inputs__;
+  inherit (inputs.cells-lab.common.lib) __inputs__;
 
   nix-expr = _args: import ./deploy-nix.nix _args;
   deploy-nix =

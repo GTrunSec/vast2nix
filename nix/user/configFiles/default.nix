@@ -4,7 +4,7 @@
 } @ args: let
   inherit (inputs) nixpkgs data-merge vast2nix;
   inherit (nixpkgs) lib;
-  inherit (inputs.cells-lab.main.lib) __inputs__;
+  inherit (inputs.cells-lab.common.lib) __inputs__;
 in {
   deploy = inputs.cells-lab._writers.lib.writeConfig "user-deploy.yaml" cell.config.deploy;
 

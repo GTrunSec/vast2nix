@@ -6,7 +6,7 @@
   inherit (inputs) std self cells-lab;
 
   l = nixpkgs.lib // builtins;
-  __inputs__ = cells-lab.main.lib.callFlake "${(std.incl self [(self + /lock)])}/lock" {
+  __inputs__ = cells-lab.common.lib.callFlake "${(std.incl self [(self + /lock)])}/lock" {
     nixpkgs.locked = inputs.nixpkgs.sourceInfo;
     nixpkgs-hardenedlinux.inputs.nixpkgs = "nixpkgs";
   };

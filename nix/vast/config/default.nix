@@ -5,7 +5,7 @@
   inherit (inputs.std) dmerge;
   inherit (cell) lib;
   inherit (inputs) nixpkgs std;
-  inherit (inputs.cells-lab.main.lib) __inputs__;
+  inherit (inputs.cells-lab.common.lib) __inputs__;
   inherit (inputs.cells-lab.makes.lib) makeSubstitution;
   l = nixpkgs.lib // builtins;
 in {
