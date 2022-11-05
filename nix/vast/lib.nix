@@ -34,4 +34,6 @@ in {
   writeSystemd = import ./configFiles/mkSystemd.nix args;
 
   mkCompose = import ./dockerComposes/mkCompose.nix args;
+
+  mkOCI = import ./oci-images/mkOCI.nix args;
 }

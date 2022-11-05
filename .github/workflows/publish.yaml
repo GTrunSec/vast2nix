@@ -29,7 +29,7 @@ jobs:
 
       - name: Build Vast Image
         run: |
-          nix run .\#x86_64-linux.vast.oci-images.prod.copyToDockerDaemon
+          nix run .\#x86_64-linux.vast.oci-images.latest.copyToDockerDaemon
 
       - name: Build/Push the Vast Docker image
         run: |
