@@ -12,7 +12,7 @@ git.fetchSubmodules = true
 
 [vast-bin]
 src.github = "tenzir/vast"
-fetch.url = "https://github.com/tenzir/vast/releases/download/$ver/vast-linux-static.tar.gz"
+fetch.url = "https://github.com/tenzir/vast/releases/download/v2.4.0-rc2/vast-linux-static.tar.gz"
 
 [dynaconf]
 src.manual = "3.1.11"

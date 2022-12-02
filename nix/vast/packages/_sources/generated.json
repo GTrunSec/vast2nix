@@ -23,9 +23,9 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-8Esx4RAFDL7uZEG3xl6SaGNOS/E4Yu9Lhq5rijyyosc=",
+            "sha256": "sha256-2SsA25GBM3iaCaBXnxZphMv+XMR9A3MUMDIPk0ftvOw=",
             "type": "url",
-            "url": "https://github.com/tenzir/vast/releases/download/v2.3.1/vast-linux-static.tar.gz"
+            "url": "https://github.com/tenzir/vast/releases/download/v2.4.0-rc2/vast-linux-static.tar.gz"
         },
         "version": "v2.3.1"
     },
