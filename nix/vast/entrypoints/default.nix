@@ -2,7 +2,7 @@
   inputs,
   cell,
 } @ args: let
-  inherit (inputs.cells-lab._writers.lib) writeShellApplication writeGlowDoc;
+  inherit (inputs.cells-lab.writers.lib) writeShellApplication writeGlowDoc;
   inherit (inputs) nixpkgs std self;
 
   l = inputs.nixpkgs.lib // builtins;

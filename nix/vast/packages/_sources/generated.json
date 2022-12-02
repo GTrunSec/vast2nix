@@ -31,7 +31,7 @@
     },
     "vast-latest": {
         "cargoLocks": null,
-        "date": "2022-11-04",
+        "date": "2022-11-30",
         "extract": null,
         "name": "vast-latest",
         "passthru": null,
@@ -43,11 +43,11 @@
             "name": null,
             "owner": "tenzir",
             "repo": "vast",
-            "rev": "92a7daae88b11f63bddcbce354798fd0742311bb",
-            "sha256": "sha256-i+nkDl5FY4899q02MzgoVvVk4Y1Pr0yT5IimrhnfHaQ=",
+            "rev": "bf39674c8d3a21fa61168955d8180a6aca1c391a",
+            "sha256": "sha256-phPYNu6m5oPN7r0pZ/0YwEcZHSQQ6J5Hc7jlYF0TpGw=",
             "type": "github"
         },
-        "version": "92a7daae88b11f63bddcbce354798fd0742311bb"
+        "version": "bf39674c8d3a21fa61168955d8180a6aca1c391a"
     },
     "vast-release": {
         "cargoLocks": null,
@@ -63,10 +63,10 @@
             "name": null,
             "owner": "tenzir",
             "repo": "vast",
-            "rev": "v2.3.1",
-            "sha256": "sha256-e82F1PR9mRgpAsrBENsr6/ljq9P0zRUaieQKoo/MRwo=",
+            "rev": "v2.4.0-rc2",
+            "sha256": "sha256-i/88mnMBlDaaRX35IH2LVksuBZ/tDWyGFwh/7MWKhQE=",
             "type": "github"
         },
-        "version": "v2.3.1"
+        "version": "v2.4.0-rc2"
     }
 }

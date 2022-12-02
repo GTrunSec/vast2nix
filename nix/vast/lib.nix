@@ -2,7 +2,7 @@
   inputs,
   cell,
 } @ args: let
-  inherit (inputs.cells-lab._writers.lib) writeConfiguration;
+  inherit (inputs.cells-lab.writers.lib) writeConfiguration;
   inherit (inputs) std self cells-lab;
 
   l = nixpkgs.lib // builtins;

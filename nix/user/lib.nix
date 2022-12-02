@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells-lab._writers.lib) writeConfiguration;
+  inherit (inputs.cells-lab.writers.lib) writeConfiguration;
 in {
   toTOML = source:
     (writeConfiguration {

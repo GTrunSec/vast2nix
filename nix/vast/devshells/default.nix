@@ -10,7 +10,7 @@ in
       name = "Vast2nix DevShell";
 
       imports = [
-        inputs.cells-lab._automation.devshellProfiles.default
+        inputs.cells-lab.automation.devshellProfiles.default
 
         cell.devshellProfiles.default
         inputs.cells.user.devshellProfiles.default
@@ -19,13 +19,13 @@ in
       nixago =
         []
         # ++ l.attrValues inputs.cells.schemas.nixago
-        ++ l.attrValues inputs.cells._automation.nixago;
+        ++ l.attrValues inputs.cells.automation.nixago;
     };
 
     user = {lib, ...}: {
       name = "User: Vast2nix";
       imports = [
-        inputs.cells-lab._automation.devshellProfiles.default
+        inputs.cells-lab.automation.devshellProfiles.default
         inputs.cells.user.devshellProfiles.user
       ];
     };

@@ -22,7 +22,7 @@
       {
         name = "mkdoc";
         command = ''
-          nix run $PRJ_ROOT#x86_64-linux._automation.entrypoints.mkdoc "$@"
+          nix run $PRJ_ROOT#x86_64-linux.automation.entrypoints.mkdoc "$@"
         '';
       }
       {
