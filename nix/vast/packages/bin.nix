@@ -15,7 +15,7 @@ stdenv.mkDerivation {
     runHook preInstall
     mkdir -p $out
 
-    mv {bin,share} $out
+    mv opt/vast/{bin,share} $out
 
     runHook postInstall
   '';
