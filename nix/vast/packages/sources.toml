@@ -18,3 +18,11 @@ fetch.url = "https://github.com/tenzir/vast/releases/download/$ver/vast-linux-st
 [dynaconf]
 src.manual = "3.1.11"
 fetch.pypi = "dynaconf"
+
+[stix2]
+src.pypi = "stix2"
+fetch.pypi = "stix2"
+
+[stix2-patterns]
+src.pypi = "stix2-patterns"
+fetch.pypi = "stix2-patterns"

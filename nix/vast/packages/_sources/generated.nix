@@ -9,6 +9,22 @@
       sha256 = "sha256-2c+1D9SnGlQ/0jhF1PWFtiC2/22dPMGCXGFPeyCXyzk=";
     };
   };
+  stix2 = {
+    pname = "stix2";
+    version = "3.0.1";
+    src = fetchurl {
+      url = "https://pypi.io/packages/source/s/stix2/stix2-3.0.1.tar.gz";
+      sha256 = "sha256-KicY3DRRyExwmZCyyiIMw5x17SPghk1+jYGQqTZbDL8=";
+    };
+  };
+  stix2-patterns = {
+    pname = "stix2-patterns";
+    version = "2.0.0";
+    src = fetchurl {
+      url = "https://pypi.io/packages/source/s/stix2-patterns/stix2-patterns-2.0.0.tar.gz";
+      sha256 = "sha256-B3UMWlryx1jp0qpN3p2OBLzRYqwqmwtMTeRIHUQ++gg=";
+    };
+  };
   vast-bin = {
     pname = "vast-bin";
     version = "v2.4.0-rc2";
@@ -19,15 +35,15 @@
   };
   vast-latest = {
     pname = "vast-latest";
-    version = "bf39674c8d3a21fa61168955d8180a6aca1c391a";
+    version = "457655bb6e6851803ddfa7aefacd6e4c3a271fe6";
     src = fetchFromGitHub ({
       owner = "tenzir";
       repo = "vast";
-      rev = "bf39674c8d3a21fa61168955d8180a6aca1c391a";
+      rev = "457655bb6e6851803ddfa7aefacd6e4c3a271fe6";
       fetchSubmodules = true;
-      sha256 = "sha256-phPYNu6m5oPN7r0pZ/0YwEcZHSQQ6J5Hc7jlYF0TpGw=";
+      sha256 = "sha256-VneZZlgwg0CM4ky/wuaW9WgYKSoiwJsQv76SpeqVDjQ=";
     });
-    date = "2022-11-30";
+    date = "2022-12-02";
   };
   vast-release = {
     pname = "vast-release";
