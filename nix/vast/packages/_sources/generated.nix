@@ -35,15 +35,15 @@
   };
   vast-latest = {
     pname = "vast-latest";
-    version = "457655bb6e6851803ddfa7aefacd6e4c3a271fe6";
+    version = "18e506d84b19005a1dfe52979f0142e3211c2ba2";
     src = fetchFromGitHub ({
       owner = "tenzir";
       repo = "vast";
-      rev = "457655bb6e6851803ddfa7aefacd6e4c3a271fe6";
+      rev = "18e506d84b19005a1dfe52979f0142e3211c2ba2";
       fetchSubmodules = true;
-      sha256 = "sha256-VneZZlgwg0CM4ky/wuaW9WgYKSoiwJsQv76SpeqVDjQ=";
+      sha256 = "sha256-2oJz4r3++GULQF4as+0TLH4KrHdtdZ2TumDTXJN0E8g=";
     });
-    date = "2022-12-02";
+    date = "2022-12-05";
   };
   vast-release = {
     pname = "vast-release";
