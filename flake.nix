@@ -6,7 +6,7 @@
     cells-lab.url = "github:GTrunSec/cells-lab";
 
     # std.url = "github:divnix/std?ref=refs/pull/164/head";
-    std.url = "github:divnix/std";
+    std.follows = "cells-lab/std";
     org-roam-book-template.follows = "cells-lab/org-roam-book-template";
     std.inputs.n2c.follows = "n2c";
 
@@ -16,7 +16,7 @@
   inputs = {
     vast-overlay.url = "github:tenzir/vast";
     vast-nixpkgs.follows = "vast-overlay/nixpkgs";
-    users.follows = "std/blank";
+    users.follows = "cells-lab/std/blank";
   };
   outputs = {
     std,

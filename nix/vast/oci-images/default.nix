@@ -13,5 +13,5 @@ in {
   podman run -it --rm --userns=keep-id --group-add keep-groups --user vast \
   -p 42000:42000 -v $(pwd)/test:/var/lib/vast ghcr.io/gtrunsec/vast:latest start
   */
-  latest = cell.lib.mkOCI cell.packages.vast-latest "latest";
+  latest = cell.lib.mkOCI cell.packages.vast-latest "latest" {};
 }

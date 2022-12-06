@@ -16,7 +16,7 @@ in {
       };
     });
 
-  systemd = inputs.cells.vast.config.systemd {
+  systemd = inputs.cells.vast.lib.writeSystemd {
     __argPath__ = "/opt/vast";
     __argConfig__ = "/opt/vast/vast.yaml";
     __argDir__ = "/var/lib/vast";

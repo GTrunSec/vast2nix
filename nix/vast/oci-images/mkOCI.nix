@@ -1,7 +1,7 @@
 {
   inputs,
   cell,
-}: package: tag: let
+}: package: tag: attrs: let
   inherit (inputs) nixpkgs;
   inherit (inputs.std.lib.ops) mkOperable mkStandardOCI mkSetup mkUser;
 
@@ -25,11 +25,11 @@
     # It shouldn't sit with more stable layers and thereby not exacerbate on unnecessary storage.
     # It's already pretty hungry.
     runtimeScript = ''
-      ${l.getExe cell.packages.vast-release} --endpoint=0.0.0.0:42000 --plugins="$VAST_PLUGINS" "$@"
+      ${l.getExe package} --endpoint=0.0.0.0:42000 --plugins="$VAST_PLUGINS" "$@"
     '';
   };
 in
-  mkStandardOCI rec {
+  l.recursiveUpdate (mkStandardOCI rec {
     name = "ghcr.io/gtrunsec/vast";
     inherit tag operable;
     labels = {
@@ -46,7 +46,7 @@ in
     };
     setup = [
       # nixpkgs.coreutils
-      nixpkgs.bash
+      # nixpkgs.bash
       (mkUser {
         user = "vast";
         group = "vast";
@@ -67,4 +67,4 @@ in
         '')
     ];
     perms = [];
-  }
+  }) attrs
