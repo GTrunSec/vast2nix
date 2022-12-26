@@ -67,4 +67,5 @@ in
         '')
     ];
     perms = [];
-  }) attrs
+  })
+  attrs

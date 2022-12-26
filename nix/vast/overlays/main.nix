@@ -76,7 +76,6 @@ in {
   vast-release = with final;
     (
       final.pkgsStatic.vast.override {
-        caf = final.caf;
         vast-source = vast-sources.vast-release.src;
         versionOverride = vast-sources.vast-release.version;
         extraPlugins = [];
@@ -102,7 +101,6 @@ in {
             (kversion vast-sources.vast-release.version + "-")
             + (builtins.substring 0 7 final.vast-sources.vast-latest.version)
             + "-dirty";
-          extraPlugins = [];
         }
       )
     )
