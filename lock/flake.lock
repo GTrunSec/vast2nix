@@ -25,7 +25,7 @@
     "arion_2": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "nixpkgs"
@@ -48,7 +48,7 @@
     "arion_3": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "nixpkgs"
         ]
@@ -423,11 +423,11 @@
         "std": "std"
       },
       "locked": {
-        "lastModified": 1669263588,
-        "narHash": "sha256-Q7q9a7TmdbU+pmaztl0LcUtS8LIZ7VxIrxTqEhIsCDE=",
+        "lastModified": 1671012212,
+        "narHash": "sha256-4JIAFwyRwO5Q6/suflt6FwD7j1Qfk0/WOC6qXJW2hls=",
         "owner": "GTrunSec",
         "repo": "cells-lab",
-        "rev": "78485d76fb0914ed9be141c200e6030e63a2194d",
+        "rev": "a816f192c83d74d3085467e6740990dc166688cc",
         "type": "github"
       },
       "original": {
@@ -460,18 +460,17 @@
     },
     "cells-lab_11": {
       "inputs": {
-        "latest": "latest_5",
         "nixos": "nixos_12",
         "nixpkgs": "nixpkgs_42",
         "org-roam-book-template": "org-roam-book-template_11",
         "std": "std_22"
       },
       "locked": {
-        "lastModified": 1667248972,
-        "narHash": "sha256-sothIS6GUdLLD/56/qRnanGraDJ2WUinrnMTMz0IBkw=",
+        "lastModified": 1669263588,
+        "narHash": "sha256-Q7q9a7TmdbU+pmaztl0LcUtS8LIZ7VxIrxTqEhIsCDE=",
         "owner": "GTrunSec",
         "repo": "cells-lab",
-        "rev": "91a7e5eb49749ffb0a79ae62f84bc75bcb03330a",
+        "rev": "78485d76fb0914ed9be141c200e6030e63a2194d",
         "type": "github"
       },
       "original": {
@@ -488,11 +487,11 @@
         "std": "std_23"
       },
       "locked": {
-        "lastModified": 1669263588,
-        "narHash": "sha256-Q7q9a7TmdbU+pmaztl0LcUtS8LIZ7VxIrxTqEhIsCDE=",
+        "lastModified": 1671012212,
+        "narHash": "sha256-4JIAFwyRwO5Q6/suflt6FwD7j1Qfk0/WOC6qXJW2hls=",
         "owner": "GTrunSec",
         "repo": "cells-lab",
-        "rev": "78485d76fb0914ed9be141c200e6030e63a2194d",
+        "rev": "a816f192c83d74d3085467e6740990dc166688cc",
         "type": "github"
       },
       "original": {
@@ -503,18 +502,17 @@
     },
     "cells-lab_2": {
       "inputs": {
-        "incl": "incl_3",
         "nixos": "nixos_2",
         "nixpkgs": "nixpkgs_5",
         "org-roam-book-template": "org-roam-book-template_2",
         "std": "std_4"
       },
       "locked": {
-        "lastModified": 1669086490,
-        "narHash": "sha256-oB8lA/87ZMnqDijB+1PIOsTQLejuKu+BN/4DGCeRgpI=",
+        "lastModified": 1669263588,
+        "narHash": "sha256-Q7q9a7TmdbU+pmaztl0LcUtS8LIZ7VxIrxTqEhIsCDE=",
         "owner": "gtrunsec",
         "repo": "cells-lab",
-        "rev": "156f7fe91e1cc869f5a1a1fe91f59cced0098e05",
+        "rev": "78485d76fb0914ed9be141c200e6030e63a2194d",
         "type": "github"
       },
       "original": {
@@ -569,7 +567,7 @@
       "inputs": {
         "nixos": "nixos_5",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "nixpkgs"
         ],
@@ -641,11 +639,11 @@
         "std": "std_16"
       },
       "locked": {
-        "lastModified": 1667947745,
-        "narHash": "sha256-bTUmTOnYgvph0Hrkn0dALaa0G8Zmc0tyie690oFg7ZU=",
+        "lastModified": 1669263588,
+        "narHash": "sha256-Q7q9a7TmdbU+pmaztl0LcUtS8LIZ7VxIrxTqEhIsCDE=",
         "owner": "gtrunsec",
         "repo": "cells-lab",
-        "rev": "7f550faf8a76dcdee4f54eb9d4f007b3fe2577ef",
+        "rev": "78485d76fb0914ed9be141c200e6030e63a2194d",
         "type": "github"
       },
       "original": {
@@ -681,18 +679,18 @@
         "flake-utils": "flake-utils_46",
         "nix-eval-jobs": "nix-eval-jobs",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "nixpkgs"
         ],
         "stable": "stable"
       },
       "locked": {
-        "lastModified": 1667072567,
-        "narHash": "sha256-z8ciml6BOzVDX3MbRY22C5GonJrDxi2xrVuS6Gyxorc=",
+        "lastModified": 1668384235,
+        "narHash": "sha256-bt2drRd1v+efic9MLnO3KI2x96g+J4TxhKiQQKqvyik=",
         "owner": "zhaofengli",
         "repo": "colmena",
-        "rev": "5432fe488ebec7ee30aaea5fb18a759e30e59612",
+        "rev": "fff97f729086b4fc463e30d33d3350bcfa2838bb",
         "type": "github"
       },
       "original": {
@@ -906,7 +904,7 @@
         "std": "std_14",
         "tullia": "tullia_4",
         "users": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
@@ -938,16 +936,15 @@
           "dc",
           "nixpkgs"
         ],
-        "nixpkgs-prefect": "nixpkgs-prefect",
         "std": "std_2",
         "tullia": "tullia"
       },
       "locked": {
-        "lastModified": 1669906053,
-        "narHash": "sha256-c5tZ2FqeEjeANjUPxWrlengAqw6hyId7x/zSy1nq7Dg=",
+        "lastModified": 1670744564,
+        "narHash": "sha256-vDxc4TAZwz87yXDVflir7rbjOS8ZMmY0Opn9rDJd6Z8=",
         "owner": "GTrunSec",
         "repo": "dataflow2nix",
-        "rev": "f33fb66f4da5e68a6769cd36ef0bd59e4e58c1db",
+        "rev": "dd1f41abf5282049428bf0e902bdc849a44ea156",
         "type": "github"
       },
       "original": {
@@ -960,16 +957,16 @@
       "inputs": {
         "arion": "arion_2",
         "cells-lab": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "nixpkgs"
         ],
-        "nixpkgs-prefect": "nixpkgs-prefect_2",
+        "nixpkgs-prefect": "nixpkgs-prefect",
         "std": "std_10",
         "tullia": "tullia_3"
       },
@@ -999,6 +996,7 @@
         "nix-nomad": "nix-nomad_2",
         "nixpkgs": "nixpkgs_12",
         "std": "std_6",
+        "std-utils": "std-utils",
         "tullia": "tullia_2",
         "users": [
           "dc",
@@ -1008,17 +1006,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1670288580,
-        "narHash": "sha256-3B00B/YO3qm9ogfyS4dPSCTytYphAssVA8y9nUA5c0A=",
-        "ref": "refs/heads/main",
-        "rev": "02f76a433bc0ea60add0f71dd246f9ac4452f299",
-        "revCount": 71,
-        "type": "git",
-        "url": "file:///home/gtrun/ghq/github.com/GTrunSec/data-science-threat-intelligence"
+        "lastModified": 1671400517,
+        "narHash": "sha256-Rl3WnkID/uNQbRVfceIuO9rUoACP/yyNC2sdsyqV4m4=",
+        "owner": "gtrunsec",
+        "repo": "DeSci",
+        "rev": "043f41899ea8d6c77b31581923f989958bbb6489",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/gtrun/ghq/github.com/GTrunSec/data-science-threat-intelligence"
+        "owner": "gtrunsec",
+        "repo": "DeSci",
+        "type": "github"
       }
     },
     "devshell": {
@@ -1053,14 +1051,14 @@
     "devshell_10": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "std",
@@ -1084,7 +1082,7 @@
     "devshell_11": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "tullia",
@@ -1092,7 +1090,7 @@
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "tullia",
@@ -1117,7 +1115,7 @@
     "devshell_12": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "julia2nix",
           "cells-lab",
@@ -1125,7 +1123,7 @@
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "julia2nix",
           "cells-lab",
@@ -1150,7 +1148,7 @@
     "devshell_13": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -1158,7 +1156,7 @@
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -1183,13 +1181,13 @@
     "devshell_14": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "std",
           "nixpkgs"
@@ -1212,14 +1210,14 @@
     "devshell_15": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "tullia",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "tullia",
           "std",
@@ -1243,14 +1241,14 @@
     "devshell_16": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "cells-lab",
           "std",
@@ -1274,14 +1272,14 @@
     "devshell_17": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "std",
@@ -1305,13 +1303,13 @@
     "devshell_18": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "std",
           "nixpkgs"
@@ -1334,14 +1332,14 @@
     "devshell_19": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "std",
@@ -1394,14 +1392,14 @@
     "devshell_20": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "std",
@@ -1425,13 +1423,13 @@
     "devshell_21": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "std",
           "nixpkgs"
@@ -1454,14 +1452,14 @@
     "devshell_22": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "std",
@@ -1663,13 +1661,13 @@
     "devshell_8": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "std",
           "nixpkgs"
@@ -1692,14 +1690,14 @@
     "devshell_9": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
@@ -1723,23 +1721,22 @@
     "disko": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1667712650,
-        "narHash": "sha256-fvOhYk8ZcvMc7b4bzztqrdm7WfupX73tblmcb54yIB4=",
-        "owner": "blaggacao",
+        "lastModified": 1668081890,
+        "narHash": "sha256-xm7yDuwuQLL/F0tJycutdprQekpETy3DssqfTudM9NI=",
+        "owner": "nix-community",
         "repo": "disko",
-        "rev": "27e6902d2fe2c1a6ff431dc68b30422c9af61398",
+        "rev": "d7e25ced8a15554e3afb2eb9b1800de271efbd87",
         "type": "github"
       },
       "original": {
-        "owner": "blaggacao",
-        "ref": "module",
+        "owner": "nix-community",
         "repo": "disko",
         "type": "github"
       }
@@ -1776,14 +1773,14 @@
     "dmerge_10": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "std",
           "nixpkgs"
         ],
         "yants": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "std",
@@ -1807,7 +1804,7 @@
     "dmerge_11": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "tullia",
@@ -1815,7 +1812,7 @@
           "nixpkgs"
         ],
         "yants": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "tullia",
@@ -1840,7 +1837,7 @@
     "dmerge_12": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "julia2nix",
           "cells-lab",
@@ -1848,7 +1845,7 @@
           "nixpkgs"
         ],
         "yants": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "julia2nix",
           "cells-lab",
@@ -1873,7 +1870,7 @@
     "dmerge_13": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -1881,7 +1878,7 @@
           "nixpkgs"
         ],
         "yants": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -1906,13 +1903,13 @@
     "dmerge_14": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "std",
           "nixpkgs"
         ],
         "yants": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "std",
           "yants"
@@ -1935,14 +1932,14 @@
     "dmerge_15": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "tullia",
           "std",
           "nixpkgs"
         ],
         "yants": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "tullia",
           "std",
@@ -1966,14 +1963,14 @@
     "dmerge_16": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "cells-lab",
           "std",
           "nixpkgs"
         ],
         "yants": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "cells-lab",
           "std",
@@ -1997,14 +1994,14 @@
     "dmerge_17": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "std",
           "nixpkgs"
         ],
         "yants": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "std",
@@ -2028,13 +2025,13 @@
     "dmerge_18": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "std",
           "nixpkgs"
         ],
         "yants": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "std",
           "yants"
@@ -2057,14 +2054,14 @@
     "dmerge_19": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "std",
           "nixpkgs"
         ],
         "yants": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "std",
@@ -2117,14 +2114,14 @@
     "dmerge_20": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "std",
           "nixpkgs"
         ],
         "yants": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "std",
@@ -2148,13 +2145,13 @@
     "dmerge_21": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "std",
           "nixpkgs"
         ],
         "yants": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "std",
           "yants"
@@ -2177,14 +2174,14 @@
     "dmerge_22": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "std",
           "nixpkgs"
         ],
         "yants": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "std",
@@ -2386,13 +2383,13 @@
     "dmerge_8": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "std",
           "nixpkgs"
         ],
         "yants": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "std",
           "yants"
@@ -2415,14 +2412,14 @@
     "dmerge_9": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
           "nixpkgs"
         ],
         "yants": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
@@ -4104,7 +4101,7 @@
         "cells-lab": "cells-lab_8",
         "colmena": "colmena",
         "disko": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "disko"
@@ -4119,11 +4116,11 @@
         "std": "std_18"
       },
       "locked": {
-        "lastModified": 1668146122,
-        "narHash": "sha256-5xMpiDy/vEpaqCHfe4RZKREHjNo7clUMovNI7K0bupk=",
+        "lastModified": 1669868861,
+        "narHash": "sha256-O2MM2cehInQRmI/kIXqqsI3ssCm/dWlOXrkwLKJFHtY=",
         "owner": "gtrunsec",
         "repo": "hive",
-        "rev": "fd7975188ad37629cc1c8f0fa0151e622c884c97",
+        "rev": "b44302d4074116bc1336143f7a50d1fca4a8485a",
         "type": "github"
       },
       "original": {
@@ -4135,13 +4132,13 @@
     "hivelib": {
       "inputs": {
         "colmena": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "colmena"
         ],
         "disko": "disko",
         "home": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "home-22-05"
@@ -4149,7 +4146,7 @@
         "home-22-05": "home-22-05",
         "nixgl": "nixgl",
         "nixos": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "nixos-22-05"
@@ -4157,23 +4154,23 @@
         "nixos-22-05": "nixos-22-05",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "nixos-hardware"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "nixpkgs"
         ],
         "std": "std_17"
       },
       "locked": {
-        "lastModified": 1667848198,
-        "narHash": "sha256-Gs3GyU1vFq8QEdV9NJ4SGTFVX0fwooRSaAyIBMjOseU=",
+        "lastModified": 1668294411,
+        "narHash": "sha256-jZRq/eUcfn1hGjzMnvBNyuWpwhi7TjSRCEThleJ4IRs=",
         "owner": "divnix",
         "repo": "hive",
-        "rev": "822a06f7a187109791468ab8f523cfddfefb6b8e",
+        "rev": "b942986b03d4dd497f5405959c8f754800059b1e",
         "type": "github"
       },
       "original": {
@@ -4207,7 +4204,7 @@
     "home": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "nixos"
         ]
@@ -4243,49 +4240,6 @@
         "owner": "blaggacao",
         "ref": "release-22.05",
         "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "hunting-cells": {
-      "inputs": {
-        "cells-lab": "cells-lab_4",
-        "data-science-threat-intelligence": "data-science-threat-intelligence",
-        "hive": "hive",
-        "nixos": [
-          "hunting-cells",
-          "hive",
-          "nixos"
-        ],
-        "nixpkgs": [
-          "hunting-cells",
-          "cells-lab",
-          "nixpkgs"
-        ],
-        "nixpkgs-hardenedlinux": "nixpkgs-hardenedlinux",
-        "org-roam-book-template": [
-          "hunting-cells",
-          "cells-lab",
-          "org-roam-book-template"
-        ],
-        "std": [
-          "hunting-cells",
-          "hive",
-          "std"
-        ],
-        "vast2nix": "vast2nix",
-        "zeek2nix": "zeek2nix"
-      },
-      "locked": {
-        "lastModified": 1669331327,
-        "narHash": "sha256-KFrsDrPPwfO3UIYstpQ6zRmNZN3hJl7GGX+qIj9zzyI=",
-        "owner": "gtrunsec",
-        "repo": "hunting-cells",
-        "rev": "a9d721426ea4f81a99c44c23de5f58374711a0dd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gtrunsec",
-        "repo": "hunting-cells",
         "type": "github"
       }
     },
@@ -4348,6 +4302,77 @@
     "incl_10": {
       "inputs": {
         "nixlib": [
+          "lambdahunt",
+          "hive",
+          "std",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1669263024,
+        "narHash": "sha256-E/+23NKtxAqYG/0ydYgxlgarKnxmDbg6rCMWnOBqn9Q=",
+        "owner": "divnix",
+        "repo": "incl",
+        "rev": "ce7bebaee048e4cd7ebdb4cee7885e00c4e2abca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "divnix",
+        "repo": "incl",
+        "type": "github"
+      }
+    },
+    "incl_11": {
+      "inputs": {
+        "nixlib": [
+          "lambdahunt",
+          "nixpkgs-hardenedlinux",
+          "cells-lab",
+          "std",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1667701840,
+        "narHash": "sha256-Nib6hrSFvZWO+20A/8vHtbSEi8YHdnOFXg/52Ff3R8w=",
+        "owner": "divnix",
+        "repo": "incl",
+        "rev": "bb3a06f5dd32738fa02999bd1e1c0b41cc4a234e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "divnix",
+        "repo": "incl",
+        "type": "github"
+      }
+    },
+    "incl_12": {
+      "inputs": {
+        "nixlib": [
+          "lambdahunt",
+          "zeek2nix",
+          "cells-lab",
+          "std",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1669263024,
+        "narHash": "sha256-E/+23NKtxAqYG/0ydYgxlgarKnxmDbg6rCMWnOBqn9Q=",
+        "owner": "divnix",
+        "repo": "incl",
+        "rev": "ce7bebaee048e4cd7ebdb4cee7885e00c4e2abca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "divnix",
+        "repo": "incl",
+        "type": "github"
+      }
+    },
+    "incl_13": {
+      "inputs": {
+        "nixlib": [
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "std",
@@ -4393,20 +4418,25 @@
     },
     "incl_3": {
       "inputs": {
-        "nixlib": "nixlib"
+        "nixlib": [
+          "dc",
+          "julia2nix",
+          "cells-lab",
+          "std",
+          "nixpkgs"
+        ]
       },
       "locked": {
-        "lastModified": 1667701840,
-        "narHash": "sha256-Nib6hrSFvZWO+20A/8vHtbSEi8YHdnOFXg/52Ff3R8w=",
+        "lastModified": 1669263024,
+        "narHash": "sha256-E/+23NKtxAqYG/0ydYgxlgarKnxmDbg6rCMWnOBqn9Q=",
         "owner": "divnix",
         "repo": "incl",
-        "rev": "bb3a06f5dd32738fa02999bd1e1c0b41cc4a234e",
+        "rev": "ce7bebaee048e4cd7ebdb4cee7885e00c4e2abca",
         "type": "github"
       },
       "original": {
         "owner": "divnix",
         "repo": "incl",
-        "rev": "bb3a06f5dd32738fa02999bd1e1c0b41cc4a234e",
         "type": "github"
       }
     },
@@ -4435,7 +4465,7 @@
     "incl_5": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "std",
           "nixpkgs"
@@ -4458,7 +4488,7 @@
     "incl_6": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
@@ -4482,7 +4512,7 @@
     "incl_7": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "std",
@@ -4506,7 +4536,7 @@
     "incl_8": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "std",
           "nixpkgs"
@@ -4529,19 +4559,19 @@
     "incl_9": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
-          "nixpkgs-hardenedlinux",
+          "lambdahunt",
+          "hive",
           "cells-lab",
           "std",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1667701840,
-        "narHash": "sha256-Nib6hrSFvZWO+20A/8vHtbSEi8YHdnOFXg/52Ff3R8w=",
+        "lastModified": 1669263024,
+        "narHash": "sha256-E/+23NKtxAqYG/0ydYgxlgarKnxmDbg6rCMWnOBqn9Q=",
         "owner": "divnix",
         "repo": "incl",
-        "rev": "bb3a06f5dd32738fa02999bd1e1c0b41cc4a234e",
+        "rev": "ce7bebaee048e4cd7ebdb4cee7885e00c4e2abca",
         "type": "github"
       },
       "original": {
@@ -4566,11 +4596,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1669088233,
-        "narHash": "sha256-DSJ/WOzEulwvy6PTQ1Cbs3wu+G3VMtSsHL+ZH1MSGNg=",
+        "lastModified": 1670721278,
+        "narHash": "sha256-0nMYpdvYueXf4xO6GIAwOkAqYGo6AxQjScIHjXQmcIE=",
         "owner": "JuliaCN",
         "repo": "Julia2Nix.jl",
-        "rev": "5b24fccbe2b72c987569b80fbed3176de552dd1f",
+        "rev": "846ff3a44a6a2b9457baf847215c6fa23f080242",
         "type": "github"
       },
       "original": {
@@ -4584,12 +4614,12 @@
         "cells-lab": "cells-lab_6",
         "nix-filter": "nix-filter_8",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "nixpkgs"
         ],
         "std": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "julia2nix",
           "cells-lab",
@@ -4627,11 +4657,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1670263541,
-        "narHash": "sha256-WAdI+n14b55/NC0XF4wScfPfhuJvNvktLszoEJYi/xY=",
+        "lastModified": 1670367462,
+        "narHash": "sha256-0jRwQuALKTJHKjCzyz6axghCoLJ1e/lAsjh3OjwnB7M=",
         "owner": "gtrunsec",
         "repo": "jupyterWith",
-        "rev": "a95ad2fe6e28324f8b96e5b4e94e6e3eb9207fdb",
+        "rev": "35ad78af1d0a951a52168b48f3df09ff7b5a5886",
         "type": "github"
       },
       "original": {
@@ -4663,6 +4693,50 @@
       "original": {
         "owner": "tweag",
         "repo": "jupyterWith",
+        "type": "github"
+      }
+    },
+    "lambdahunt": {
+      "inputs": {
+        "cells-lab": "cells-lab_4",
+        "data-science-threat-intelligence": "data-science-threat-intelligence",
+        "hive": "hive",
+        "nixos": [
+          "lambdahunt",
+          "hive",
+          "nixos"
+        ],
+        "nixpkgs": [
+          "lambdahunt",
+          "cells-lab",
+          "nixpkgs"
+        ],
+        "nixpkgs-hardenedlinux": "nixpkgs-hardenedlinux",
+        "org-roam-book-template": [
+          "lambdahunt",
+          "cells-lab",
+          "org-roam-book-template"
+        ],
+        "std": [
+          "lambdahunt",
+          "hive",
+          "std"
+        ],
+        "thehive": "thehive",
+        "vast2nix": "vast2nix",
+        "zeek2nix": "zeek2nix"
+      },
+      "locked": {
+        "lastModified": 1670605030,
+        "narHash": "sha256-0MtYaLzVQvYO4imzpbmZD4ohYuyYAUnrh69n7UqYZVk=",
+        "owner": "gtrunsec",
+        "repo": "LambdaHunt",
+        "rev": "a1210388f19f39788a492fefe878dba7e6a0a26f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gtrunsec",
+        "repo": "LambdaHunt",
         "type": "github"
       }
     },
@@ -4728,22 +4802,6 @@
         "type": "github"
       }
     },
-    "latest_5": {
-      "locked": {
-        "lastModified": 1665426037,
-        "narHash": "sha256-s72gVm1HNTHl4nWjq2szGdSTV0AfF/g/dNiUfuccSYg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "8a30fc2b4bf7804e0f7dbfa9c760ff6a4e2a3597",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "matrix-attack-data": {
       "inputs": {
         "cells-lab": "cells-lab_3",
@@ -4781,18 +4839,18 @@
       "inputs": {
         "cells-lab": "cells-lab_7",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "nixpkgs"
         ],
         "nixpkgs-lock": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "nixpkgs"
         ],
         "std": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -5171,11 +5229,11 @@
         "nixpkgs": "nixpkgs_32"
       },
       "locked": {
-        "lastModified": 1668021031,
-        "narHash": "sha256-TVYSfl2D10gJ+z98wON2MRCDgyp4hRaz9F03mBQlsSA=",
+        "lastModified": 1669306943,
+        "narHash": "sha256-F6xVWFJkcCXp5IcnpRlECT10H2ps8RO1yM4W0OXiXPs=",
         "owner": "astro",
         "repo": "microvm.nix",
-        "rev": "e7c1a4c9a145f0b7613bd4ee27404c7e1d51b775",
+        "rev": "c21a70fe1ac05ccdfceff6506625e9d44cd91da5",
         "type": "github"
       },
       "original": {
@@ -5232,14 +5290,14 @@
     "n2c_10": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "std",
@@ -5264,7 +5322,7 @@
       "inputs": {
         "flake-utils": "flake-utils_30",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "tullia",
@@ -5289,7 +5347,7 @@
     "n2c_12": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "julia2nix",
           "cells-lab",
@@ -5297,7 +5355,7 @@
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "julia2nix",
           "cells-lab",
@@ -5322,7 +5380,7 @@
     "n2c_13": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -5330,7 +5388,7 @@
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -5356,7 +5414,7 @@
       "inputs": {
         "flake-utils": "flake-utils_38",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
@@ -5381,7 +5439,7 @@
       "inputs": {
         "flake-utils": "flake-utils_42",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "tullia",
           "std",
@@ -5405,14 +5463,14 @@
     "n2c_16": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "cells-lab",
           "std",
@@ -5436,14 +5494,14 @@
     "n2c_17": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "std",
@@ -5467,13 +5525,13 @@
     "n2c_18": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "std",
           "nixpkgs"
@@ -5496,14 +5554,14 @@
     "n2c_19": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "std",
@@ -5556,14 +5614,14 @@
     "n2c_20": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "std",
@@ -5606,14 +5664,14 @@
     "n2c_22": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "std",
@@ -5801,13 +5859,13 @@
     "n2c_8": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "std",
           "nixpkgs"
@@ -5830,14 +5888,14 @@
     "n2c_9": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
@@ -5861,13 +5919,13 @@
     "nix-eval-jobs": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "colmena",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "colmena",
           "nixpkgs"
@@ -6177,7 +6235,7 @@
       "inputs": {
         "flake-compat": "flake-compat_11",
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "tullia",
@@ -6186,14 +6244,14 @@
         ],
         "gomod2nix": "gomod2nix_3",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "tullia",
           "nixpkgs"
         ],
         "nixpkgs-lib": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "tullia",
@@ -6218,7 +6276,7 @@
       "inputs": {
         "flake-compat": "flake-compat_15",
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "tullia",
           "nix2container",
@@ -6226,13 +6284,13 @@
         ],
         "gomod2nix": "gomod2nix_4",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "tullia",
           "nixpkgs"
         ],
         "nixpkgs-lib": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "tullia",
           "nixpkgs"
@@ -6347,21 +6405,21 @@
     "nixago_10": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "std",
           "flake-utils"
         ],
         "nixago-exts": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "std",
           "blank"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "std",
@@ -6385,7 +6443,7 @@
     "nixago_11": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "tullia",
@@ -6393,7 +6451,7 @@
           "flake-utils"
         ],
         "nixago-exts": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "tullia",
@@ -6401,7 +6459,7 @@
           "blank"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "tullia",
@@ -6426,7 +6484,7 @@
     "nixago_12": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "julia2nix",
           "cells-lab",
@@ -6434,7 +6492,7 @@
           "flake-utils"
         ],
         "nixago-exts": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "julia2nix",
           "cells-lab",
@@ -6442,7 +6500,7 @@
           "blank"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "julia2nix",
           "cells-lab",
@@ -6467,7 +6525,7 @@
     "nixago_13": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -6475,7 +6533,7 @@
           "flake-utils"
         ],
         "nixago-exts": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -6483,7 +6541,7 @@
           "blank"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -6508,19 +6566,19 @@
     "nixago_14": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "std",
           "flake-utils"
         ],
         "nixago-exts": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "std",
           "blank"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "std",
           "nixpkgs"
@@ -6543,21 +6601,21 @@
     "nixago_15": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "tullia",
           "std",
           "flake-utils"
         ],
         "nixago-exts": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "tullia",
           "std",
           "blank"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "tullia",
           "std",
@@ -6581,21 +6639,21 @@
     "nixago_16": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixago-exts": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "cells-lab",
           "std",
           "blank"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "cells-lab",
           "std",
@@ -6619,21 +6677,21 @@
     "nixago_17": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "std",
           "flake-utils"
         ],
         "nixago-exts": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "std",
           "blank"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "std",
@@ -6657,19 +6715,19 @@
     "nixago_18": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "std",
           "flake-utils"
         ],
         "nixago-exts": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "std",
           "blank"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "std",
           "nixpkgs"
@@ -6692,21 +6750,21 @@
     "nixago_19": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixago-exts": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "std",
           "blank"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "std",
@@ -6765,21 +6823,21 @@
     "nixago_20": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixago-exts": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "std",
           "blank"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "std",
@@ -6803,19 +6861,19 @@
     "nixago_21": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "std",
           "flake-utils"
         ],
         "nixago-exts": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "std",
           "blank"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "std",
           "nixpkgs"
@@ -6838,21 +6896,21 @@
     "nixago_22": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixago-exts": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "std",
           "blank"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "std",
@@ -7092,19 +7150,19 @@
     "nixago_8": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixago-exts": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "std",
           "blank"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "std",
           "nixpkgs"
@@ -7127,21 +7185,21 @@
     "nixago_9": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
           "flake-utils"
         ],
         "nixago-exts": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
           "blank"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
@@ -7165,14 +7223,14 @@
     "nixgl": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "std",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "nixpkgs"
@@ -7194,21 +7252,6 @@
     },
     "nixlib": {
       "locked": {
-        "lastModified": 1667696192,
-        "narHash": "sha256-hOdbIhnpWvtmVynKcsj10nxz9WROjZja+1wRAJ/C9+s=",
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "rev": "babd9cd2ca6e413372ed59fbb1ecc3c3a5fd3e5b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "type": "github"
-      }
-    },
-    "nixlib_2": {
-      "locked": {
         "lastModified": 1636849918,
         "narHash": "sha256-nzUK6dPcTmNVrgTAC1EOybSMsrcx+QrVPyqRdyKLkjA=",
         "owner": "nix-community",
@@ -7224,16 +7267,16 @@
     },
     "nixos": {
       "locked": {
-        "lastModified": 1667821506,
-        "narHash": "sha256-u4HKBBfTOPpFsGnM7sjS0+F67Hmf2or3uHKNVxXZtiM=",
+        "lastModified": 1670461440,
+        "narHash": "sha256-jy1LB8HOMKGJEGXgzFRLDU1CBGL0/LlkolgnqIsF0D8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ebf65554b18ee053311f43e5faa5a3f36626c52e",
+        "rev": "04a75b2eecc0acf6239acf9dd04485ff8d14f425",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-22.05",
+        "ref": "nixos-22.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -7257,13 +7300,13 @@
     "nixos-generators": {
       "inputs": {
         "nixlib": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "nixpkgs"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "nixpkgs"
@@ -7285,15 +7328,15 @@
     },
     "nixos-generators_2": {
       "inputs": {
-        "nixlib": "nixlib_2",
+        "nixlib": "nixlib",
         "nixpkgs": "nixpkgs_33"
       },
       "locked": {
-        "lastModified": 1666812839,
-        "narHash": "sha256-0nBDgjPU+iDsvz89W+cDEyhnFGSwCJmwDl/gMGqYiU0=",
+        "lastModified": 1669065280,
+        "narHash": "sha256-3+pq1oJWjGDLfd8G/vR3IIFZ+EQ/aglukA0bTiMlf3o=",
         "owner": "nix-community",
         "repo": "nixos-generators",
-        "rev": "41f3518bc194389df22a3d198215eae75e6b5ab9",
+        "rev": "50aeec40f2072d2ab267c8ec8a345573704ec110",
         "type": "github"
       },
       "original": {
@@ -7304,11 +7347,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1668005176,
-        "narHash": "sha256-1Z6ysp8I7NvK8ccL0+r8GI5mxzVqhPLVCI01uPg1ul4=",
+        "lastModified": 1669146234,
+        "narHash": "sha256-HEby7EG1yaq1oT2Ze6Cvok9CFju1XHkSvVHmkptLW9U=",
         "owner": "nixos",
         "repo": "nixos-hardware",
-        "rev": "909f0259470f6e9edea71f281410ef25bfa274ee",
+        "rev": "0099253ad0b5283f06ffe31cf010af3f9ad7837d",
         "type": "github"
       },
       "original": {
@@ -7351,11 +7394,11 @@
     },
     "nixos_12": {
       "locked": {
-        "lastModified": 1665132027,
-        "narHash": "sha256-zoHPqSQSENt96zTk6Mt1AP+dMNqQDshXKQ4I6MfjP80=",
+        "lastModified": 1667821506,
+        "narHash": "sha256-u4HKBBfTOPpFsGnM7sjS0+F67Hmf2or3uHKNVxXZtiM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9ecc270f02b09b2f6a76b98488554dd842797357",
+        "rev": "ebf65554b18ee053311f43e5faa5a3f36626c52e",
         "type": "github"
       },
       "original": {
@@ -7383,16 +7426,16 @@
     },
     "nixos_14": {
       "locked": {
-        "lastModified": 1667821506,
-        "narHash": "sha256-u4HKBBfTOPpFsGnM7sjS0+F67Hmf2or3uHKNVxXZtiM=",
+        "lastModified": 1670461440,
+        "narHash": "sha256-jy1LB8HOMKGJEGXgzFRLDU1CBGL0/LlkolgnqIsF0D8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ebf65554b18ee053311f43e5faa5a3f36626c52e",
+        "rev": "04a75b2eecc0acf6239acf9dd04485ff8d14f425",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-22.05",
+        "ref": "nixos-22.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -7511,11 +7554,11 @@
     },
     "nixos_9": {
       "locked": {
-        "lastModified": 1668031106,
-        "narHash": "sha256-FdLrwTOHtAPy1tE9JdXYWkVuda1VaYfh+KZ/9Vpfdd4=",
+        "lastModified": 1669418739,
+        "narHash": "sha256-T86oFvcUIRwHWBWUt7WjaP4BP/3lDGbv5AppQSI1FkI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d0e1dd63a4fc4b0b3ef8bf2885f578e3d9b9b1d9",
+        "rev": "695b3515251873e0a7e2021add4bba643c56cde3",
         "type": "github"
       },
       "original": {
@@ -7543,23 +7586,23 @@
       "inputs": {
         "cells-lab": "cells-lab_9",
         "nixos": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "nixos"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs"
         ],
         "org-roam-book-template": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "org-roam-book-template"
         ],
         "std": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "std"
@@ -7600,11 +7643,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1670293105,
-        "narHash": "sha256-6I4KaN5O5cM1Tg7ucPYsuC2+zHJv621zvsFvMj8p6ro=",
+        "lastModified": 1671769836,
+        "narHash": "sha256-Nt5cM47RWy+jLKKn4pCv4aMHgIoPc2DppbiVK82uPwA=",
         "owner": "hardenedlinux",
         "repo": "nixpkgs-hardenedlinux",
-        "rev": "391cc012bc97ac176ccff71be713ca7084b0ab74",
+        "rev": "0c539c3e0d4689be048f692ec4a0a7f2b812bafc",
         "type": "github"
       },
       "original": {
@@ -7629,22 +7672,6 @@
       }
     },
     "nixpkgs-prefect": {
-      "locked": {
-        "lastModified": 1665087388,
-        "narHash": "sha256-FZFPuW9NWHJteATOf79rZfwfRn5fE0wi9kRzvGfDHPA=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "95fda953f6db2e9496d2682c4fc7b82f959878f7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "95fda953f6db2e9496d2682c4fc7b82f959878f7",
-        "type": "github"
-      }
-    },
-    "nixpkgs-prefect_2": {
       "locked": {
         "lastModified": 1665087388,
         "narHash": "sha256-FZFPuW9NWHJteATOf79rZfwfRn5fE0wi9kRzvGfDHPA=",
@@ -8020,11 +8047,11 @@
     },
     "nixpkgs_29": {
       "locked": {
-        "lastModified": 1665296151,
-        "narHash": "sha256-uOB0oxqxN9K7XGF1hcnY+PQnlQJ+3bP2vCn/+Ru/bbc=",
+        "lastModified": 1668650906,
+        "narHash": "sha256-JuiYfDO23O8oxUUOmhQflmOoJovyC5G4RjcYQMQjrRE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "14ccaaedd95a488dd7ae142757884d8e125b3363",
+        "rev": "3a86856a13c88c8c64ea32082a851fefc79aa700",
         "type": "github"
       },
       "original": {
@@ -8111,11 +8138,11 @@
     },
     "nixpkgs_34": {
       "locked": {
-        "lastModified": 1667969101,
-        "narHash": "sha256-GL53T705HO7Q/KVfbb5STx8AxFs8YgaGY8pvAZC+O7U=",
+        "lastModified": 1669443273,
+        "narHash": "sha256-/Ow9P6dWfkQF/9NKD7+OnMnz5DJr2pVCAUMjU9SwFoo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "bbf77421ac51a7c93f5f0f760da99e4dbce614fa",
+        "rev": "6b86759692b80e2b563e7f6c608f753de4aad3a7",
         "type": "github"
       },
       "original": {
@@ -8250,11 +8277,11 @@
     },
     "nixpkgs_42": {
       "locked": {
-        "lastModified": 1665296151,
-        "narHash": "sha256-uOB0oxqxN9K7XGF1hcnY+PQnlQJ+3bP2vCn/+Ru/bbc=",
+        "lastModified": 1668650906,
+        "narHash": "sha256-JuiYfDO23O8oxUUOmhQflmOoJovyC5G4RjcYQMQjrRE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "14ccaaedd95a488dd7ae142757884d8e125b3363",
+        "rev": "3a86856a13c88c8c64ea32082a851fefc79aa700",
         "type": "github"
       },
       "original": {
@@ -8296,11 +8323,11 @@
     },
     "nixpkgs_45": {
       "locked": {
-        "lastModified": 1668650906,
-        "narHash": "sha256-JuiYfDO23O8oxUUOmhQflmOoJovyC5G4RjcYQMQjrRE=",
+        "lastModified": 1670525689,
+        "narHash": "sha256-YIjGzxrRQa5LYO0zlnH/ardcwXsRgsnHe3TkGkvCxbc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "3a86856a13c88c8c64ea32082a851fefc79aa700",
+        "rev": "f21f11aa2a02cb78651c6d57546c7d7541f9240c",
         "type": "github"
       },
       "original": {
@@ -8507,6 +8534,21 @@
       }
     },
     "nosys_15": {
+      "locked": {
+        "lastModified": 1667881534,
+        "narHash": "sha256-FhwJ15uPLRsvaxtt/bNuqE/ykMpNAPF0upozFKhTtXM=",
+        "owner": "divnix",
+        "repo": "nosys",
+        "rev": "2d0d5207f6a230e9d0f660903f8db9807b54814f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "divnix",
+        "repo": "nosys",
+        "type": "github"
+      }
+    },
+    "nosys_16": {
       "locked": {
         "lastModified": 1667881534,
         "narHash": "sha256-FhwJ15uPLRsvaxtt/bNuqE/ykMpNAPF0upozFKhTtXM=",
@@ -8801,7 +8843,7 @@
         "flake-utils": "flake-utils_54",
         "nix-filter": "nix-filter_12",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "nixpkgs"
@@ -8830,7 +8872,7 @@
         "flake-utils": "flake-utils_60",
         "nix-filter": "nix-filter_14",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "nixpkgs"
@@ -8945,7 +8987,7 @@
         "flake-utils": "flake-utils_22",
         "nix-filter": "nix-filter_5",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "nixpkgs"
         ],
@@ -8973,7 +9015,7 @@
         "flake-utils": "flake-utils_25",
         "nix-filter": "nix-filter_6",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "nixpkgs"
@@ -9002,7 +9044,7 @@
         "flake-utils": "flake-utils_32",
         "nix-filter": "nix-filter_7",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "julia2nix",
           "cells-lab",
@@ -9032,7 +9074,7 @@
         "flake-utils": "flake-utils_36",
         "nix-filter": "nix-filter_9",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -9062,7 +9104,7 @@
         "flake-utils": "flake-utils_44",
         "nix-filter": "nix-filter_10",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "cells-lab",
           "nixpkgs"
@@ -9091,7 +9133,7 @@
         "flake-utils": "flake-utils_51",
         "nix-filter": "nix-filter_11",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "nixpkgs"
@@ -9334,13 +9376,13 @@
     "poetry2nix_2": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "jupyterWith",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "jupyterWith",
           "nixpkgs"
@@ -9424,13 +9466,13 @@
     "pre-commit-hooks_3": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "jupyterWith",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "jupyterWith",
           "nixpkgs"
@@ -9453,7 +9495,7 @@
     "root": {
       "inputs": {
         "dc": "dc",
-        "hunting-cells": "hunting-cells",
+        "lambdahunt": "lambdahunt",
         "nixpkgs-hardenedlinux": "nixpkgs-hardenedlinux_2"
       }
     },
@@ -9487,13 +9529,13 @@
     "rust-overlay_2": {
       "inputs": {
         "flake-utils": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "jupyterWith",
           "flake-utils"
         ],
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "jupyterWith",
           "nixpkgs"
@@ -9566,11 +9608,11 @@
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1669263222,
-        "narHash": "sha256-Adg/36FHAC3j8HBie997YmUGDf4gdvO9IuDCRXMEkyc=",
+        "lastModified": 1670364577,
+        "narHash": "sha256-dMIUIOv5WDQY/bHBEoQH/Z2v7qU01CxNB1Uswq8QSnk=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "5990c894cff6a05617fb254c82251907e5a60dab",
+        "rev": "28ab21483243cb32203bc675bebab8306c466e90",
         "type": "github"
       },
       "original": {
@@ -9579,10 +9621,35 @@
         "type": "github"
       }
     },
+    "std-utils": {
+      "inputs": {
+        "nixpkgs": [
+          "dc",
+          "nixpkgs"
+        ],
+        "std": [
+          "dc",
+          "std"
+        ]
+      },
+      "locked": {
+        "lastModified": 1668458715,
+        "narHash": "sha256-N9+TH64NveOsn7sU+lQVbuao3woTv/l6sA409IIj4Ow=",
+        "owner": "jmgilman",
+        "repo": "nix-utils",
+        "rev": "d83211db8345b71368a0f99c4997bfcc049a8ae1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jmgilman",
+        "repo": "nix-utils",
+        "type": "github"
+      }
+    },
     "std_10": {
       "inputs": {
         "arion": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "arion"
@@ -9593,7 +9660,7 @@
         "flake-utils": "flake-utils_27",
         "incl": "incl_7",
         "makes": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "std",
@@ -9601,7 +9668,7 @@
         ],
         "mdbook-kroki-preprocessor": "mdbook-kroki-preprocessor_10",
         "microvm": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "std",
@@ -9610,7 +9677,7 @@
         "n2c": "n2c_10",
         "nixago": "nixago_10",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "nixpkgs"
@@ -9639,7 +9706,7 @@
         "dmerge": "dmerge_11",
         "flake-utils": "flake-utils_29",
         "makes": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "tullia",
@@ -9648,7 +9715,7 @@
         ],
         "mdbook-kroki-preprocessor": "mdbook-kroki-preprocessor_11",
         "microvm": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "tullia",
@@ -9681,7 +9748,7 @@
         "dmerge": "dmerge_12",
         "flake-utils": "flake-utils_33",
         "makes": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "julia2nix",
           "cells-lab",
@@ -9690,7 +9757,7 @@
         ],
         "mdbook-kroki-preprocessor": "mdbook-kroki-preprocessor_12",
         "microvm": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "julia2nix",
           "cells-lab",
@@ -9700,7 +9767,7 @@
         "n2c": "n2c_12",
         "nixago": "nixago_12",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "julia2nix",
           "cells-lab",
@@ -9725,7 +9792,7 @@
     "std_13": {
       "inputs": {
         "arion": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -9737,7 +9804,7 @@
         "dmerge": "dmerge_13",
         "flake-utils": "flake-utils_37",
         "makes": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -9746,7 +9813,7 @@
         ],
         "mdbook-kroki-preprocessor": "mdbook-kroki-preprocessor_13",
         "microvm": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -9756,7 +9823,7 @@
         "n2c": "n2c_13",
         "nixago": "nixago_13",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -9782,7 +9849,7 @@
     "std_14": {
       "inputs": {
         "arion": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "std",
           "blank"
@@ -9793,26 +9860,26 @@
         "flake-utils": "flake-utils_39",
         "incl": "incl_8",
         "makes": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "std",
           "blank"
         ],
         "mdbook-kroki-preprocessor": "mdbook-kroki-preprocessor_14",
         "microvm": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "std",
           "blank"
         ],
         "n2c": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "n2c"
         ],
         "nixago": "nixago_14",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "nixpkgs"
@@ -9841,7 +9908,7 @@
         "dmerge": "dmerge_15",
         "flake-utils": "flake-utils_41",
         "makes": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "tullia",
           "std",
@@ -9849,7 +9916,7 @@
         ],
         "mdbook-kroki-preprocessor": "mdbook-kroki-preprocessor_15",
         "microvm": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "tullia",
           "std",
@@ -9877,7 +9944,7 @@
     "std_16": {
       "inputs": {
         "arion": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "cells-lab",
           "std",
@@ -9887,8 +9954,9 @@
         "devshell": "devshell_16",
         "dmerge": "dmerge_16",
         "flake-utils": "flake-utils_45",
+        "incl": "incl_9",
         "makes": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "cells-lab",
           "std",
@@ -9896,7 +9964,7 @@
         ],
         "mdbook-kroki-preprocessor": "mdbook-kroki-preprocessor_16",
         "microvm": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "cells-lab",
           "std",
@@ -9905,7 +9973,7 @@
         "n2c": "n2c_16",
         "nixago": "nixago_16",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "cells-lab",
           "nixpkgs"
@@ -9914,11 +9982,11 @@
         "yants": "yants_16"
       },
       "locked": {
-        "lastModified": 1667882600,
-        "narHash": "sha256-dxITQi5siKxrnAlW8A5iJV3Kpu9vgReg23WUD84RW1Y=",
+        "lastModified": 1669263222,
+        "narHash": "sha256-Adg/36FHAC3j8HBie997YmUGDf4gdvO9IuDCRXMEkyc=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "ea1b908c06276510d18ab3e53b52fff0a0a9c745",
+        "rev": "5990c894cff6a05617fb254c82251907e5a60dab",
         "type": "github"
       },
       "original": {
@@ -9930,7 +9998,7 @@
     "std_17": {
       "inputs": {
         "arion": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "std",
@@ -9941,21 +10009,21 @@
         "dmerge": "dmerge_17",
         "flake-utils": "flake-utils_47",
         "makes": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "std",
           "blank"
         ],
         "mdbook-kroki-preprocessor": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "std",
           "blank"
         ],
         "microvm": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "std",
@@ -9964,7 +10032,7 @@
         "n2c": "n2c_17",
         "nixago": "nixago_17",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "nixpkgs"
@@ -9989,7 +10057,7 @@
     "std_18": {
       "inputs": {
         "arion": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "arion"
         ],
@@ -9997,22 +10065,23 @@
         "devshell": "devshell_18",
         "dmerge": "dmerge_18",
         "flake-utils": "flake-utils_49",
+        "incl": "incl_10",
         "makes": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "std",
           "blank"
         ],
         "mdbook-kroki-preprocessor": "mdbook-kroki-preprocessor_17",
         "microvm": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "microvm"
         ],
         "n2c": "n2c_18",
         "nixago": "nixago_18",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "nixpkgs"
         ],
@@ -10020,11 +10089,11 @@
         "yants": "yants_18"
       },
       "locked": {
-        "lastModified": 1667882600,
-        "narHash": "sha256-dxITQi5siKxrnAlW8A5iJV3Kpu9vgReg23WUD84RW1Y=",
+        "lastModified": 1669595171,
+        "narHash": "sha256-YCqzwIU0vFziwAUI6gz5WhYa4fFJGBKVxKX9V16fcVw=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "ea1b908c06276510d18ab3e53b52fff0a0a9c745",
+        "rev": "18fc2ed09072baf480801fc99b10429f81c181f3",
         "type": "github"
       },
       "original": {
@@ -10036,7 +10105,7 @@
     "std_19": {
       "inputs": {
         "arion": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "std",
@@ -10046,9 +10115,9 @@
         "devshell": "devshell_19",
         "dmerge": "dmerge_19",
         "flake-utils": "flake-utils_52",
-        "incl": "incl_9",
+        "incl": "incl_11",
         "makes": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "std",
@@ -10056,7 +10125,7 @@
         ],
         "mdbook-kroki-preprocessor": "mdbook-kroki-preprocessor_18",
         "microvm": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "std",
@@ -10065,7 +10134,7 @@
         "n2c": "n2c_19",
         "nixago": "nixago_19",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "nixpkgs"
@@ -10123,11 +10192,11 @@
         "yants": "yants_2"
       },
       "locked": {
-        "lastModified": 1669595171,
-        "narHash": "sha256-YCqzwIU0vFziwAUI6gz5WhYa4fFJGBKVxKX9V16fcVw=",
+        "lastModified": 1670364577,
+        "narHash": "sha256-dMIUIOv5WDQY/bHBEoQH/Z2v7qU01CxNB1Uswq8QSnk=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "18fc2ed09072baf480801fc99b10429f81c181f3",
+        "rev": "28ab21483243cb32203bc675bebab8306c466e90",
         "type": "github"
       },
       "original": {
@@ -10139,7 +10208,7 @@
     "std_20": {
       "inputs": {
         "arion": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "std",
@@ -10150,7 +10219,7 @@
         "dmerge": "dmerge_20",
         "flake-utils": "flake-utils_55",
         "makes": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "std",
@@ -10158,7 +10227,7 @@
         ],
         "mdbook-kroki-preprocessor": "mdbook-kroki-preprocessor_19",
         "microvm": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "std",
@@ -10167,7 +10236,7 @@
         "n2c": "n2c_20",
         "nixago": "nixago_20",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "nixpkgs"
@@ -10195,20 +10264,20 @@
         "dmerge": "dmerge_21",
         "flake-utils": "flake-utils_57",
         "makes": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "std",
           "blank"
         ],
         "mdbook-kroki-preprocessor": "mdbook-kroki-preprocessor_20",
         "microvm": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "std",
           "blank"
         ],
         "n2c": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "n2c"
         ],
@@ -10233,7 +10302,7 @@
     "std_22": {
       "inputs": {
         "arion": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "std",
@@ -10243,8 +10312,9 @@
         "devshell": "devshell_22",
         "dmerge": "dmerge_22",
         "flake-utils": "flake-utils_61",
+        "incl": "incl_12",
         "makes": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "std",
@@ -10252,7 +10322,7 @@
         ],
         "mdbook-kroki-preprocessor": "mdbook-kroki-preprocessor_21",
         "microvm": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "std",
@@ -10261,19 +10331,20 @@
         "n2c": "n2c_22",
         "nixago": "nixago_22",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "nixpkgs"
         ],
+        "nosys": "nosys_15",
         "yants": "yants_22"
       },
       "locked": {
-        "lastModified": 1667096308,
-        "narHash": "sha256-RNi27FFv072+uUZGjubanMns07v3EV8l3TyuiGiU0fQ=",
+        "lastModified": 1669263222,
+        "narHash": "sha256-Adg/36FHAC3j8HBie997YmUGDf4gdvO9IuDCRXMEkyc=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "3ab5852e9e53e1c3720ad4ceb0883f510bda2c56",
+        "rev": "5990c894cff6a05617fb254c82251907e5a60dab",
         "type": "github"
       },
       "original": {
@@ -10294,7 +10365,7 @@
         "devshell": "devshell_23",
         "dmerge": "dmerge_23",
         "flake-utils": "flake-utils_64",
-        "incl": "incl_10",
+        "incl": "incl_13",
         "makes": [
           "nixpkgs-hardenedlinux",
           "cells-lab",
@@ -10315,15 +10386,15 @@
           "cells-lab",
           "nixpkgs"
         ],
-        "nosys": "nosys_15",
+        "nosys": "nosys_16",
         "yants": "yants_23"
       },
       "locked": {
-        "lastModified": 1669263222,
-        "narHash": "sha256-Adg/36FHAC3j8HBie997YmUGDf4gdvO9IuDCRXMEkyc=",
+        "lastModified": 1670364577,
+        "narHash": "sha256-dMIUIOv5WDQY/bHBEoQH/Z2v7qU01CxNB1Uswq8QSnk=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "5990c894cff6a05617fb254c82251907e5a60dab",
+        "rev": "28ab21483243cb32203bc675bebab8306c466e90",
         "type": "github"
       },
       "original": {
@@ -10385,12 +10456,7 @@
         "devshell": "devshell_4",
         "dmerge": "dmerge_4",
         "flake-utils": "flake-utils_10",
-        "incl": [
-          "dc",
-          "julia2nix",
-          "cells-lab",
-          "incl"
-        ],
+        "incl": "incl_3",
         "makes": [
           "dc",
           "julia2nix",
@@ -10418,11 +10484,11 @@
         "yants": "yants_4"
       },
       "locked": {
-        "lastModified": 1669064207,
-        "narHash": "sha256-9wdHm7AInbl4CU5hEqC4ekvWBOpj9kqR229V+tAI7B4=",
+        "lastModified": 1669263222,
+        "narHash": "sha256-Adg/36FHAC3j8HBie997YmUGDf4gdvO9IuDCRXMEkyc=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "b1d379f97ace2e92d214f71941920beb67afed1c",
+        "rev": "5990c894cff6a05617fb254c82251907e5a60dab",
         "type": "github"
       },
       "original": {
@@ -10521,11 +10587,11 @@
         "yants": "yants_6"
       },
       "locked": {
-        "lastModified": 1669987194,
-        "narHash": "sha256-jwqWqdzYfc5UvNW1XpiQMtadshBT2YCfos2EaIGZ6yQ=",
+        "lastModified": 1670364577,
+        "narHash": "sha256-dMIUIOv5WDQY/bHBEoQH/Z2v7qU01CxNB1Uswq8QSnk=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "91e736f821d058a9db78560fb18ac24b5292f065",
+        "rev": "28ab21483243cb32203bc675bebab8306c466e90",
         "type": "github"
       },
       "original": {
@@ -10575,7 +10641,7 @@
     "std_8": {
       "inputs": {
         "arion": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "std",
           "blank"
@@ -10586,14 +10652,14 @@
         "flake-utils": "flake-utils_23",
         "incl": "incl_5",
         "makes": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "std",
           "blank"
         ],
         "mdbook-kroki-preprocessor": "mdbook-kroki-preprocessor_8",
         "microvm": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "std",
           "blank"
@@ -10601,7 +10667,7 @@
         "n2c": "n2c_8",
         "nixago": "nixago_8",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "nixpkgs"
         ],
@@ -10625,7 +10691,7 @@
     "std_9": {
       "inputs": {
         "arion": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
@@ -10637,7 +10703,7 @@
         "flake-utils": "flake-utils_26",
         "incl": "incl_6",
         "makes": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
@@ -10645,7 +10711,7 @@
         ],
         "mdbook-kroki-preprocessor": "mdbook-kroki-preprocessor_9",
         "microvm": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
@@ -10654,7 +10720,7 @@
         "n2c": "n2c_9",
         "nixago": "nixago_9",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "nixpkgs"
@@ -10673,6 +10739,22 @@
       "original": {
         "owner": "divnix",
         "repo": "std",
+        "type": "github"
+      }
+    },
+    "thehive": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1663055138,
+        "narHash": "sha256-E5FVJi1aDC0YYQ7j7j8yzqF5/zs7XcsV6Z0Sime3OJ4=",
+        "owner": "TheHive-Project",
+        "repo": "TheHive",
+        "rev": "b6649bb58938a414de9f0505cc0a1dad15f0d0ef",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TheHive-Project",
+        "repo": "TheHive",
         "type": "github"
       }
     },
@@ -10719,16 +10801,15 @@
         "std": "std_7"
       },
       "locked": {
-        "lastModified": 1670130868,
-        "narHash": "sha256-+u3OBuHhv5udoFZ/9PbgjdAVG0q9qq/3K6J+onAKuWg=",
-        "owner": "gtrunsec",
+        "lastModified": 1671222591,
+        "narHash": "sha256-Ysmf9N/fp8DB0N/S1bBtUWXYOUPgjD3WZvbs2k2tpJo=",
+        "owner": "input-output-hk",
         "repo": "tullia",
-        "rev": "ab5ecafb070c705229ae454b466832be25955561",
+        "rev": "1cb7cffbba1ce1a7146d1e310b167f2309db08d5",
         "type": "github"
       },
       "original": {
-        "owner": "gtrunsec",
-        "ref": "dev",
+        "owner": "input-output-hk",
         "repo": "tullia",
         "type": "github"
       }
@@ -10738,7 +10819,7 @@
         "nix-nomad": "nix-nomad_3",
         "nix2container": "nix2container_2",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "nixpkgs"
@@ -10764,7 +10845,7 @@
         "nix-nomad": "nix-nomad_4",
         "nix2container": "nix2container_3",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "nixpkgs"
         ],
@@ -10871,26 +10952,26 @@
         "cells-lab": "cells-lab_10",
         "n2c": "n2c_21",
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "nixpkgs"
         ],
         "org-roam-book-template": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "org-roam-book-template"
         ],
         "std": "std_21",
         "users": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "std",
           "blank"
         ],
         "vast-nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "vast-overlay",
           "nixpkgs"
@@ -10937,7 +11018,7 @@
     "yants_10": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "std",
@@ -10961,7 +11042,7 @@
     "yants_11": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "dataflow2nix",
           "tullia",
@@ -10986,7 +11067,7 @@
     "yants_12": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "julia2nix",
           "cells-lab",
@@ -11011,7 +11092,7 @@
     "yants_13": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "matrix-attack-data",
           "cells-lab",
@@ -11036,7 +11117,7 @@
     "yants_14": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "std",
           "nixpkgs"
@@ -11059,7 +11140,7 @@
     "yants_15": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "tullia",
           "std",
@@ -11083,7 +11164,7 @@
     "yants_16": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "cells-lab",
           "std",
@@ -11107,7 +11188,7 @@
     "yants_17": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "hivelib",
           "std",
@@ -11131,7 +11212,7 @@
     "yants_18": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "hive",
           "std",
           "nixpkgs"
@@ -11154,7 +11235,7 @@
     "yants_19": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "nixpkgs-hardenedlinux",
           "cells-lab",
           "std",
@@ -11201,7 +11282,7 @@
     "yants_20": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "cells-lab",
           "std",
@@ -11225,7 +11306,7 @@
     "yants_21": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "vast2nix",
           "std",
           "nixpkgs"
@@ -11248,7 +11329,7 @@
     "yants_22": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "std",
@@ -11412,7 +11493,7 @@
     "yants_8": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "cells-lab",
           "std",
           "nixpkgs"
@@ -11435,7 +11516,7 @@
     "yants_9": {
       "inputs": {
         "nixpkgs": [
-          "hunting-cells",
+          "lambdahunt",
           "data-science-threat-intelligence",
           "cells-lab",
           "std",
@@ -11462,18 +11543,18 @@
         "nixos": "nixos_13",
         "nixpkgs": "nixpkgs_44",
         "std": [
-          "hunting-cells",
+          "lambdahunt",
           "zeek2nix",
           "cells-lab",
           "std"
         ]
       },
       "locked": {
-        "lastModified": 1668909083,
-        "narHash": "sha256-biB3bY3kJXCUUfYgL9p8+YXciTufdfqNbajy/xthjfI=",
+        "lastModified": 1669752345,
+        "narHash": "sha256-PXGLigBcZVdMXI/V2lm5C1kwUFRnXkbM4JKQs8iSevQ=",
         "owner": "hardenedlinux",
         "repo": "zeek2nix",
-        "rev": "0c6b1f54a6a81a940e9f80c82737ca28cae4a75f",
+        "rev": "258f8d5122802df43ab587e275436586e7f3c9f1",
         "type": "github"
       },
       "original": {
