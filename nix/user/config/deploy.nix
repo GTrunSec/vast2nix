@@ -81,7 +81,7 @@
     (lib.range 1 deploy.config.info.machines)
   );
 in
-  __inputs__.xnlib.lib.recursiveMerge [
+  __inputs__.xnlib.lib.xnlib.recursiveMerge [
     default
     nodes
     init-nodes
