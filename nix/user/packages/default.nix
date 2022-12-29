@@ -5,7 +5,7 @@
   inherit (inputs) cells-lab;
   inherit (inputs) lock nixpkgs;
   inherit (inputs.nixpkgs) lib;
-  inherit (inputs.cells.vast.lib) __inputs__;
+  inherit (inputs.cells.common.lib) __inputs__;
 in {
   env = cells-lab._builder.lib.mkPaths {
     name = "env";

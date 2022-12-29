@@ -17,7 +17,7 @@
   };
 in {
   #deploy = utils;
-  deploy = __inputs__.xnlib.lib.xnlib.recursiveMerge [(import ./deploy.nix args) utils];
+  deploy = inputs.cells-lab.inputs.xnlib.lib.recursiveMerge [(import ./deploy.nix args) utils];
 
   watchexec-systemd = env:
     makeSubstitution {

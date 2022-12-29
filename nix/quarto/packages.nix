@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells.vast.lib) __inputs__;
+  inherit (inputs.cells.common.lib) __inputs__;
   inherit (inputs) nixpkgs;
 in {
   blog.pythonEnv =
