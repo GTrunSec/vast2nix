@@ -5,7 +5,7 @@
   inherit (inputs.cells-lab.writers.lib) writeConfiguration;
   inherit (inputs) std self cells-lab;
 
-  nixpkgs = inputs.vast-upstream.pkgs.appendOverlays [
+  nixpkgs = inputs.vast-upstream.pkgs.x86_64-linux.appendOverlays [
     cell.overlays.default
   ];
 in {
