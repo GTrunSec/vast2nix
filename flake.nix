@@ -7,6 +7,7 @@
 
     # std.url = "github:divnix/std?ref=refs/pull/164/head";
     std.follows = "cells-lab/std";
+    std-data-collection.follows = "cells-lab/std-data-collection";
     org-roam-book-template.follows = "cells-lab/org-roam-book-template";
     std.inputs.n2c.follows = "n2c";
 
@@ -14,9 +15,7 @@
   };
 
   inputs = {
-    vast-overlay.url = "github:tenzir/vast";
-    vast-nixpkgs.follows = "vast-overlay/nixpkgs";
-    users.follows = "cells-lab/std/blank";
+    vast-upstream.url = "github:tenzir/vast";
   };
   outputs = {
     std,

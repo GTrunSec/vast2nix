@@ -27,10 +27,6 @@ in {
         package = inputs.cells.vast.packages.vast-integration;
       }
       {
-        package = nixpkgs.cargo-make;
-        category = "workflow";
-      }
-      {
         package = nixpkgs.just;
         category = "workflow";
       }
