@@ -73,36 +73,10 @@ in {
       }
     )
   );
-  vast-release = with final;
-    (
-      final.pkgsStatic.vast.override {
-        vast-source = vast-sources.vast-release.src;
-        versionOverride = vast-sources.vast-release.version;
-        extraPlugins = [];
-      }
-    )
-    .overrideAttrs (
-      old: {
-        doInstallCheck = false;
-        # cmakeFlags = old.cmakeFlags ++ lib.optionals stdenv.isLinux [
-        #   "-DVAST_ENABLE_JOURNALD_LOGGING=ON"
-        # ];
-        # buildInputs = old.buildInputs ++ lib.optionals stdenv.isLinux [
-        #   systemdMinimal
-        # ];
-      }
-    );
-  vast-latest = with final;
-    (
-      vast-release.override (
-        old: {
-          vast-source = vast-sources.vast-latest.src;
-          versionOverride =
-            (kversion vast-sources.vast-release.version + "-")
-            + (builtins.substring 0 7 final.vast-sources.vast-latest.version)
-            + "-dirty";
-        }
-      )
-    )
-    .overrideAttrs (old: {});
+  vast-release = with final; (
+    final.pkgsStatic.vast.override {
+      vast-source = vast-sources.vast-release.src;
+    }
+  );
+  vast-latest = final.pkgsStatic.vast;
 }

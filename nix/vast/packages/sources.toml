@@ -3,16 +3,14 @@
 src.github_tag = "tenzir/vast"
 src.include_regex = "v2.*"
 fetch.github = "tenzir/vast"
-git.fetchSubmodules = true
 
 [vast-latest]
 src.git = "https://github.com/tenzir/vast"
 fetch.github = "tenzir/vast"
-git.fetchSubmodules = true
 
 [vast-bin]
 # src.github = "tenzir/vast"
-src.manual = "v2.4.0-rc2"
+src.manual = "v2.4.1"
 fetch.url = "https://github.com/tenzir/vast/releases/download/$ver/vast-linux-static.tar.gz"
 
 [dynaconf]
