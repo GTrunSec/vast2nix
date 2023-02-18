@@ -17,7 +17,7 @@
     attrsSet;
 
   config = attrsSet:
-    inputs.cells-lab.inputs.xnlib.lib.recursiveMerge [
+    inputs.cells-lab.inputs.xnlib.lib.attrsets.recursiveMerge [
       (filterValue "value" (import ./vast.nix args attrsSet))
       (filterValue "value" (import ./caf.nix args))
       mergeAttrs
