@@ -73,10 +73,4 @@ in {
       }
     )
   );
-  vast-release = with final; (
-    final.pkgsStatic.vast.override {
-      vast-source = vast-sources.vast-release.src;
-    }
-  );
-  vast-latest = final.pkgsStatic.vast;
 }
