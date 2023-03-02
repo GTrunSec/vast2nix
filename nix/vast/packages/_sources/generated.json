@@ -61,7 +61,7 @@
     },
     "vast-latest": {
         "cargoLocks": null,
-        "date": "2023-02-18",
+        "date": "2023-03-01",
         "extract": null,
         "name": "vast-latest",
         "passthru": null,
@@ -73,11 +73,11 @@
             "name": null,
             "owner": "tenzir",
             "repo": "vast",
-            "rev": "8f9ae90de3091784a1b7d0f5aef1ac745df7127f",
-            "sha256": "sha256-9WJ61GsKr7mu0+mWpw494wus5JQdjXXDVJ2VIe1jZpg=",
+            "rev": "4eba778b74b49c880341e0fbc4cc5dd4ddfa367c",
+            "sha256": "sha256-hglYguhvSmD/u6KrOlNOwuV7Es7bUbpqpHCibpmUC6o=",
             "type": "github"
         },
-        "version": "8f9ae90de3091784a1b7d0f5aef1ac745df7127f"
+        "version": "4eba778b74b49c880341e0fbc4cc5dd4ddfa367c"
     },
     "vast-release": {
         "cargoLocks": null,

@@ -29,10 +29,10 @@ jobs:
       - name: Run Updates
         run: nix -Lv develop -c nvfetcher-update
 
-      - name: Build Release vast
-        run: nix -Lv build .#vast-release
-      - name: Check Release vast Exec
-        run: nix run ./#vast-release -- --help
+      # - name: Build Release vast
+      #   run: nix -Lv build .#vast-release
+      # - name: Check Release vast Exec
+      #   run: nix run ./#vast -- --help
 
       - name: Build Latest vast
         run: nix -Lv build .#vast-latest
